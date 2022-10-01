@@ -1,8 +1,8 @@
 package dto
 
-import models.tipoResiduo
+import kotlinx.serialization.Serializable
 
-
+@Serializable
 data class ResiduosDto(
     val año: Short,
     val mes: String,

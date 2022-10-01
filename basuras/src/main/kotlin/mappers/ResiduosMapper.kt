@@ -1,13 +1,20 @@
 package mappers
 
 import dto.ResiduosDto
+import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
+import nl.adaptivity.xmlutil.serialization.XML
+import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 
 /**
  * Clase de mapeo de Residuos
+ * TODO pobrarlo con csv de prueba
+ * TODO toJson jsonTo toXML xmlTo
  */
 class ResiduosMapper {
 
@@ -101,7 +108,55 @@ class ResiduosMapper {
         return tipo
     }
 
-    
+
+    /**
+     * Pasar residuoDto a un xml
+     * @param directorio directorio donde debemos crear el xml
+     * @param listaResiduosDto lista de residuos para pasar a xml
+     */
+    fun toXml (directorio: String, listaResiduosDto: List<ResiduosDto>){
+        val xml = XML { indentString = "  " }
+        val fichero = File(directorio + File.separator +  "intercambio.xml")
+        fichero.writeText(xml.encodeToString(listaResiduosDto))
+    }
+
+    /**
+     * Pasar xml a lista de residuos
+     * @param directorio directorio donde debemos coger el xml
+     * @return lista de residuos dto
+     */
+    fun xmlTo(directorio: String):List<ResiduosDto>{
+        val xml = XML {indentString = "  "}
+        val fichero = File(directorio)
+        return xml.decodeFromString<List<ResiduosDto>>(fichero.readText())
+    }
+
+
+
+    /**
+     * Pasar residuoDto a un json
+     * @param directorio directorio donde debemos crear el json
+     * @param listaResiduosDto lista de residuos para pasar a json
+     */
+    fun toJson(directorio: String, listaResiduosDto: List<ResiduosDto>){
+        val json = Json { prettyPrint = true }
+        val fichero = File(directorio + File.separator + "fichero.json")
+        fichero.writeText(json.encodeToString(listaResiduosDto))
+    }
+
+
+    /**
+     * Pasar json a lista de residuos
+     * @param directorio directorio donde debemos coger el json
+     * @return lista de residuos dto
+     */
+    fun jsonTo(directorio: String):List<ResiduosDto>{
+        val json = Json {prettyPrint =true}
+        val fichero = File(directorio)
+        return json.decodeFromString<List<ResiduosDto>>(fichero.readText())
+    }
+
+
 }
 
 

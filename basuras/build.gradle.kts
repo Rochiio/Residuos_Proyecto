@@ -4,6 +4,8 @@ plugins {
     kotlin("jvm") version "1.7.20"
     // Para generar modelos de DataFrames
     id("org.jetbrains.kotlinx.dataframe") version "0.8.1"
+    //Serialization
+    kotlin("plugin.serialization") version "1.7.20"
     application
 }
 

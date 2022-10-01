@@ -19,14 +19,16 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.9.1")
-
     // DataFrames de Kotlin Jetbrains
     implementation("org.jetbrains.kotlinx:dataframe:0.8.1")
     // LetsPlot
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin:4.0.0")
     implementation("org.jetbrains.lets-plot:lets-plot-image-export:2.4.0")
-    //Serialization
+    // Serializa Json
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+    // Serializa a XML con Serialization  para jvm
+    implementation("io.github.pdvrieze.xmlutil:core-jvm:0.84.3")
+    implementation("io.github.pdvrieze.xmlutil:serialization-jvm:0.84.3")
 }
 
 tasks.test {

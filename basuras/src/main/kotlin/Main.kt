@@ -1,3 +1,7 @@
+import com.sun.tools.javac.Main
+import mappers.ContenedorMapper
+import java.nio.file.Path
+
 /**
  * Práctica Acceso a Datos.
  * Rocío Palao y Mohamed Asidah.
@@ -10,6 +14,7 @@ fun main(args: Array<String>) {
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+    val contenedores = ContenedorMapper.readCSV("")
+    println(contenedores)
 
 }

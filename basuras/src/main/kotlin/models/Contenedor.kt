@@ -23,7 +23,7 @@ data class Contenedor(
 enum class TipoContenedor(val tipo: String) {
     ENVASES("ENVASES"),
     ORGANICA("ORGANICA"),
-    PAPEL("PAPEL-CARTON"),
+    PAPELCARTON("PAPEL-CARTON"),
     RESTO("RESTO"),
     VIDRIO("VIDRIO")
 }

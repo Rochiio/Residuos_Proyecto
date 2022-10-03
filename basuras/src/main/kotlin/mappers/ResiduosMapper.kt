@@ -10,6 +10,7 @@ import nl.adaptivity.xmlutil.serialization.XML
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
+import kotlin.streams.toList
 
 /**
  * Clase de mapeo de Residuos
@@ -59,7 +60,9 @@ class ResiduosMapper {
      * @return lista de residuos.
      */
     fun csvToResiduo(directorio: String): List<Residuos> {
-        return Files.lines(Path.of(directorio)).skip(1).map { mapToResiduo(it) }.toList()
+        return Files.lines(Path.of(directorio))
+            .skip(1)
+            .map { mapToResiduo(it) }.toList()
     }
 
 

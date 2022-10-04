@@ -1,30 +1,34 @@
 package mappers
 
+import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.ObjectMapper
 import dto.ResiduosDto
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
-import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
 import nl.adaptivity.xmlutil.serialization.XML
+import repositories.ListaResiduosDto
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
-import kotlin.streams.toList
 
 /**
  * Clase de mapeo de Residuos
  * TODO pobrarlo con csv de prueba
  * TODO toJson jsonTo toXML xmlTo
  */
-class ResiduosMapper {
+object ResiduosMapper {
+    const val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+
+
 
     /**
      * Pasar un residuoDto a residuo
      * @param residuoDto residuo en tipo dto
      * @return el residuo en tipo residuo
      */
-    fun dtoTo(residuoDto: ResiduosDto): Residuos{
+    fun fromDto(residuoDto: ResiduosDto): Residuos{
         return Residuos(
             año = residuoDto.año,
             mes = residuoDto.mes,
@@ -55,14 +59,46 @@ class ResiduosMapper {
 
 
     /**
+     * Comprueba si el archivo tiene la CABECERA correcta y si tiene contenido
+     * @param file File
+     * @return Boolean
+     */
+    private fun checkCSV(file: File): Boolean {
+        val head = file.readLines().take(1).first().split(";").size == 7
+        val lines = file.readLines().size > 1
+        return head && lines
+    }
+
+
+    /**
      * pasar un csv a residuos
      * @param directorio directorio donde se encuentra el fichero csv
      * @return lista de residuos.
      */
-    fun csvToResiduo(directorio: String): List<Residuos> {
-        return Files.lines(Path.of(directorio))
-            .skip(1)
-            .map { mapToResiduo(it) }.toList()
+    fun readCsvResiduo(directorio: String): List<ResiduosDto>? {
+        val file = File(directorio)
+        return if (checkCSV(file)) {
+             Files.lines(Path.of(directorio))
+                .skip(1)
+                .map { mapToResiduo(it) }.toList()
+        }else
+        return null
+    }
+
+
+    /**
+     * Escribe la lista de contenedores en la ruta indicada
+     */
+    fun writeCsvResiduo(residuoLista: ListaResiduosDto, ruta: String) {
+        var destino = ruta
+        if (!ruta.endsWith(".csv"))
+            destino += "residuos-procesado.csv"
+        if (File(destino).createNewFile()) {
+            val file = File(destino)
+            file.writeText(CABECERA)
+            residuoLista.lista.forEach { file.appendText(it.toLine()) }
+        }
+
     }
 
 
@@ -71,16 +107,16 @@ class ResiduosMapper {
      * @param line linea a mappear a residuo
      * @return residuo creado
      */
-    private fun mapToResiduo(line:String):Residuos{
+    private fun mapToResiduo(line:String):ResiduosDto{
         val campos = line.split(";")
-        return Residuos(
+        return ResiduosDto(
             año = campos[0].toShort(),
             mes = campos[1],
             lote = campos[2].toByte(),
-            residuo = toTipoResiduo(campos[3]),
+            residuo = campos[3],
             distrito = campos[4].toByte(),
             nombreDistrito = campos[5],
-            toneladas = campos[6].toInt()
+            toneladas = campos[6].replace(",",".").toFloat()
         )
     }
 
@@ -128,7 +164,7 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos coger el xml
      * @return lista de residuos dto
      */
-    fun xmlTo(directorio: String):List<ResiduosDto>{
+    fun fromXml(directorio: String):List<ResiduosDto>{
         val xml = XML {indentString = "  "}
         val fichero = File(directorio)
         return xml.decodeFromString<List<ResiduosDto>>(fichero.readText())
@@ -138,13 +174,24 @@ class ResiduosMapper {
 
     /**
      * Pasar residuoDto a un json
-     * @param directorio directorio donde debemos crear el json
+     * @param ruta ruta donde debemos crear el json
      * @param listaResiduosDto lista de residuos para pasar a json
      */
-    fun toJson(directorio: String, listaResiduosDto: List<ResiduosDto>){
-        val json = Json { prettyPrint = true }
-        val fichero = File(directorio + File.separator + "fichero.json")
-        fichero.writeText(json.encodeToString(listaResiduosDto))
+    fun toJson(ruta: String, listaResiduosDto: ListaResiduosDto){
+        var fichero :File
+        if(ruta.endsWith(".json"))
+            fichero = File(ruta)
+        else
+            fichero = File(ruta.plus("fichero.json"))
+
+        if (!fichero.exists()) {
+            File("fichero.json").createNewFile()
+            fichero = File("fichero.json")
+        }
+
+        var jsonMapper = ObjectMapper()
+        var listaMapper =jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaResiduosDto)
+        fichero.writeText(listaMapper)
     }
 
 
@@ -153,10 +200,14 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos coger el json
      * @return lista de residuos dto
      */
-    fun jsonTo(directorio: String):List<ResiduosDto>{
-        val json = Json {prettyPrint =true}
-        val fichero = File(directorio)
-        return json.decodeFromString<List<ResiduosDto>>(fichero.readText())
+    fun fromJson(directorio: String):ListaResiduosDto?{
+        var fichero = File(directorio)
+
+        if(fichero.exists() && fichero.endsWith(".json")){
+            var jsonMapper = ObjectMapper()
+            return jsonMapper.readValue(fichero, ListaResiduosDto::class.java)
+        }
+        return null
     }
 
 

@@ -10,7 +10,11 @@ data class ResiduosDto(
     val residuo: String,
     val distrito: Byte,
     val nombreDistrito: String,
-    val toneladas: Int
+    val toneladas: Float
 ) {
+
+    fun toLine() : String{
+        return "$año;$mes;$lote;$residuo;$distrito;$nombreDistrito;$toneladas"
+    }
 
 }

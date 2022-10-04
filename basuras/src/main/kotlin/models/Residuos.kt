@@ -7,6 +7,6 @@ data class Residuos(
     val residuo: tipoResiduo,
     val distrito: Byte,
     val nombreDistrito: String,
-    val toneladas: Int
+    val toneladas: Float
 ) {
 }

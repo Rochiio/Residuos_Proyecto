@@ -1,10 +1,12 @@
 package mappers
 
 import com.fasterxml.jackson.core.type.TypeReference
+import com.fasterxml.jackson.databind.JsonMappingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import dto.ResiduosDto
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
 import nl.adaptivity.xmlutil.serialization.XML
@@ -153,7 +155,7 @@ object ResiduosMapper {
      * @param directorio directorio donde debemos crear el xml
      * @param listaResiduosDto lista de residuos para pasar a xml
      */
-    fun toXml (directorio: String, listaResiduosDto: List<ResiduosDto>){
+    fun toXml (directorio: String, listaResiduosDto: ListaResiduosDto){
         val xml = XML { indentString = "  " }
         val fichero = File(directorio + File.separator +  "intercambio.xml")
         fichero.writeText(xml.encodeToString(listaResiduosDto))
@@ -178,7 +180,8 @@ object ResiduosMapper {
      * @param listaResiduosDto lista de residuos para pasar a json
      */
     fun toJson(ruta: String, listaResiduosDto: ListaResiduosDto){
-        var fichero :File
+        val json = Json { prettyPrint = true }
+        var fichero : File
         if(ruta.endsWith(".json"))
             fichero = File(ruta)
         else
@@ -188,10 +191,7 @@ object ResiduosMapper {
             File("fichero.json").createNewFile()
             fichero = File("fichero.json")
         }
-
-        var jsonMapper = ObjectMapper()
-        var listaMapper =jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaResiduosDto)
-        fichero.writeText(listaMapper)
+        fichero.writeText(json.encodeToString(listaResiduosDto))
     }
 
 
@@ -201,11 +201,11 @@ object ResiduosMapper {
      * @return lista de residuos dto
      */
     fun fromJson(directorio: String):ListaResiduosDto?{
-        var fichero = File(directorio)
+        val fichero = File(directorio)
 
         if(fichero.exists() && fichero.endsWith(".json")){
-            var jsonMapper = ObjectMapper()
-            return jsonMapper.readValue(fichero, ListaResiduosDto::class.java)
+            val json = Json{prettyPrint = true}
+            return json.decodeFromString(fichero.readText())
         }
         return null
     }

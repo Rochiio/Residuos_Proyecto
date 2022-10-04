@@ -1,6 +1,8 @@
 import com.sun.tools.javac.Main
 import mappers.ContenedorMapper
 import mappers.ListaContenedorDTO
+import mappers.ResiduosMapper
+import repositories.ListaResiduosDto
 
 /**
  * Práctica Acceso a Datos.
@@ -15,12 +17,13 @@ fun main(args: Array<String>) {
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
 
-    val path = Main::class.java.classLoader.getResource("datos/contenedores_varios.csv")
-    val csv = ContenedorMapper.readCSV(path.file)
+    val path = Main::class.java.classLoader.getResource("datos/modelo_residuos_2021.csv")
+    val residuos = ResiduosMapper.readCsvResiduo("D:\\PracticasDAM\\residuos-ad\\basuras\\src\\main\\resources\\datos\\modelo_residuos_2021.csv")
 
-    val cosa = ContenedorMapper.toJson("fichero.json", ListaContenedorDTO(csv))
-    val lista = ContenedorMapper.fromJson("fichero.json")
-    ContenedorMapper.toXML("fichero.xml", ListaContenedorDTO(csv))
-    val listaxml = ContenedorMapper.fromXML("fichero.xml")
+    ResiduosMapper.toJson("residuos.json", ListaResiduosDto(residuos!!))
+    ResiduosMapper.toXml("/", ListaResiduosDto(residuos))
+    val rJ = ResiduosMapper.fromJson("residuos.json")
+    val rX = ResiduosMapper.fromXml("residuos.xml")
+
 println()
 }

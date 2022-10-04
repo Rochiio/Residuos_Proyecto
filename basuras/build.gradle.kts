@@ -54,7 +54,13 @@ dependencies {
     // https://github.com/pdvrieze/xmlutil
     implementation("io.github.pdvrieze.xmlutil:core-jvm:0.84.3")
     implementation("io.github.pdvrieze.xmlutil:serialization-jvm:0.84.3")
+
+    //Jackson
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0-rc1")
+
 }
+
 
 tasks.test {
     useJUnitPlatform()

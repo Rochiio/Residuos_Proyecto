@@ -1,12 +1,12 @@
 package mappers
 
+import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import dto.ContenedorDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import models.Contenedor
 import models.TipoContenedor
-import kotlinx.serialization.json.Json
-
 import java.io.File
 
 object ContenedorMapper {
@@ -168,5 +168,12 @@ object ContenedorMapper {
         val json = Json { prettyPrint = true }
         val file = File(ruta)
         return json.decodeFromString(file.readText())
+    }
+
+    fun toXML(ruta: String, contenedores: List<ContenedorDTO?>?){
+        val xml : XmlMapper = XmlMapper()
+        contenedores?.forEach {it -> xml.writeValue(File("fichero.xml"), it) }
+
+        //val file = File("simple_bean.xml")
     }
 }

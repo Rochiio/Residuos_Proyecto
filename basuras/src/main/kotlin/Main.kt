@@ -1,5 +1,7 @@
+import com.fasterxml.jackson.dataformat.xml.XmlMapper
 import com.sun.tools.javac.Main
 import mappers.ContenedorMapper
+import java.io.File
 
 /**
  * Práctica Acceso a Datos.
@@ -13,6 +15,7 @@ fun main(args: Array<String>) {
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
+
 
     val path = Main::class.java.classLoader.getResource("datos/contenedores_varios.csv")
     val csv = ContenedorMapper.readCSV(path.file)?.take(5)

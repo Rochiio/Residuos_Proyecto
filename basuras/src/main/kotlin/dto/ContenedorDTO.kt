@@ -4,6 +4,7 @@ import kotlinx.serialization.Serializable
 
 
 @Serializable
+
 data class ContenedorDTO(
     val codigoSituacion: String,
     val tipoContenedor: String,

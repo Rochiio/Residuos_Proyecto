@@ -1,6 +1,8 @@
 package mappers
 
+import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import dto.ContenedorDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -170,10 +172,26 @@ object ContenedorMapper {
         return json.decodeFromString(file.readText())
     }
 
-    fun toXML(ruta: String, contenedores: List<ContenedorDTO?>?){
-        val xml : XmlMapper = XmlMapper()
-        contenedores?.forEach {it -> xml.writeValue(File("fichero.xml"), it) }
+    @JacksonXmlElementWrapper(localName ="Contenedores")
 
+    fun toXML(ruta: String, contenedores: List<ContenedorDTO?>?){
+        var s = ""
+        val xml : XmlMapper = XmlMapper()
+        xml.enable(SerializationFeature.INDENT_OUTPUT)
+        s = xml.writeValueAsString(contenedores)
+        xml.writeValue(File("fichero.xml"),contenedores)
+        //contenedores?.forEach {it -> xml.(File("fichero.xml"), it) }
+println()
         //val file = File("simple_bean.xml")
+    }
+
+    fun fromXML(ruta : String) : List<ContenedorDTO>{
+        val contenedores = listOf<ContenedorDTO>()
+        val file = File(ruta)
+        return contenedores
+    }
+
+    fun checkRutaCSV(ruta : String) : Boolean{
+        return ruta.endsWith(".csv")
     }
 }

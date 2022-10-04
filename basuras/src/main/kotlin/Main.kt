@@ -1,6 +1,5 @@
 import com.sun.tools.javac.Main
 import mappers.ContenedorMapper
-import java.nio.file.Path
 
 /**
  * Práctica Acceso a Datos.
@@ -14,7 +13,10 @@ fun main(args: Array<String>) {
 
     // Try adding program arguments via Run/Debug configuration.
     // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    val contenedores = ContenedorMapper.readCSV("")
-    println(contenedores)
+
+    val path = Main::class.java.classLoader.getResource("datos/contenedores_varios.csv")
+    val csv = ContenedorMapper.readCSV(path.file)
+    val json = ContenedorMapper.toJson("basuras/src/main/resources/datos/contenedores_varios.json", csv)
+
 
 }

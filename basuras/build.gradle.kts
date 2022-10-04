@@ -20,6 +20,9 @@ repositories {
 }
 
 dependencies {
+    //Dependencia para la reflexión
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.20")
+
     testImplementation(kotlin("test"))
     // DataFrames de Kotlin Jetbrains
     implementation("org.jetbrains.kotlinx:dataframe:0.8.1")

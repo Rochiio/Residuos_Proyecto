@@ -1,12 +1,20 @@
 package mappers
 
+import CSVFormatException
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter
+import com.fasterxml.jackson.databind.ObjectMapper
+import com.fasterxml.jackson.databind.ObjectWriter
+import com.fasterxml.jackson.databind.SerializationFeature
 import com.fasterxml.jackson.dataformat.xml.XmlMapper
+import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import dto.ContenedorDTO
+import jetbrains.datalore.base.json.Obj
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.Contenedor
 import models.TipoContenedor
+import nl.adaptivity.xmlutil.serialization.XML
 import java.io.File
 
 object ContenedorMapper {
@@ -22,7 +30,7 @@ object ContenedorMapper {
     fun fromDto(contenedorDto: ContenedorDTO): Contenedor {
         return Contenedor(
             contenedorDto.codigoSituacion,
-            tipoContenedor = TipoContenedor.valueOf(contenedorDto.tipoContenedor),
+            tipoContenedor = TipoContenedor.valueOf(contenedorDto.tipoContenedor.replace("-", "")),
             modeloContenedor = contenedorDto.modeloContenedor,
             descripcionModelo = contenedorDto.descripcionModelo,
             cantidad = contenedorDto.cantidad,
@@ -69,15 +77,17 @@ object ContenedorMapper {
      * @param ruta String
      * @return List<Contenedor>
      */
-    fun readCSV(ruta: String): List<ContenedorDTO?>? {
+    fun readCSV(ruta: String): List<ContenedorDTO> {
 
         val file = File(ruta)
-        return if (checkCSV(file))
-            file.readLines()
+        if (!checkCSV(file))
+            throw CSVFormatException()
+        else
+            return file.readLines()
                 .drop(1)
                 .map { it.split(";") }
                 .map { mapContenedorDTO(it) }
-        else null
+
     }
 
     /**
@@ -96,9 +106,9 @@ object ContenedorMapper {
      * @param it List<String>
      * @return Contenedor
      */
-    private fun mapContenedorDTO(it: List<String>): ContenedorDTO? {
+    private fun mapContenedorDTO(it: List<String>): ContenedorDTO {
         if (it.size != 16)
-            return null
+            throw CSVFormatException()
         else return ContenedorDTO(
             it[0],
             it[1],
@@ -143,20 +153,9 @@ object ContenedorMapper {
      * @param ruta String
      * @param contenedores List<ContenedorDTO>
      */
-    fun toJson(ruta: String, contenedores: List<ContenedorDTO?>?) {
+    fun toJson(ruta: String, contenedores: ListaContenedorDTO) {
         val json = Json { prettyPrint = true }
-        var fichero :File
-        if(ruta.endsWith(".json"))
-            fichero = File(ruta)
-        else
-            fichero = File(ruta.plus("fichero.json"))
-
-        if (!fichero.exists()) {
-            File("fichero.json").createNewFile()
-            fichero = File("fichero.json")
-        }
-        fichero.writeText(json.encodeToString(contenedores))
-
+        File(ruta).writeText(json.encodeToString(contenedores))
     }
 
     /**
@@ -164,16 +163,26 @@ object ContenedorMapper {
      * @param ruta String
      * @return List<ContenedorDTO>
      */
-    fun fromJson(ruta: String): List<ContenedorDTO> {
+    fun fromJson(ruta: String): ListaContenedorDTO {
         val json = Json { prettyPrint = true }
-        val file = File(ruta)
-        return json.decodeFromString(file.readText())
+        return Json.decodeFromString<ListaContenedorDTO>(File(ruta).readText())
     }
 
-    fun toXML(ruta: String, contenedores: List<ContenedorDTO?>?){
-        val xml : XmlMapper = XmlMapper()
-        contenedores?.forEach {it -> xml.writeValue(File("fichero.xml"), it) }
 
-        //val file = File("simple_bean.xml")
+    fun toXML(ruta: String, contenedores: ListaContenedorDTO) {
+        val xml = XML{indentString = " "}
+        val file = File(ruta)
+        file.writeText(xml.encodeToString(contenedores))
+    }
+
+    fun fromXML(ruta: String): ListaContenedorDTO {
+        val file = File(ruta)
+        val xml= XML{indentString = " "}
+        val contenedores = XML.decodeFromString<ListaContenedorDTO>(file.readText())
+        return contenedores
+    }
+
+    fun checkRutaCSV(ruta: String): Boolean {
+        return ruta.endsWith(".csv")
     }
 }

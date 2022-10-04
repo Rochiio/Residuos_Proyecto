@@ -13,6 +13,7 @@ data class Contenedor(
     val cantidad: Int,
     val lote: Int,
     val distrito: String,
+    val barrio : String,
     val tipoVia: String,
     val nombreVia: String,
     val numeroVia: Int,
@@ -23,7 +24,7 @@ data class Contenedor(
 enum class TipoContenedor(val tipo: String) {
     ENVASES("ENVASES"),
     ORGANICA("ORGANICA"),
-    PAPEL("PAPEL-CARTON"),
+    PAPELCARTON("PAPEL-CARTON"),
     RESTO("RESTO"),
     VIDRIO("VIDRIO")
 }

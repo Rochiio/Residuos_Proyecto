@@ -20,6 +20,9 @@ repositories {
 }
 
 dependencies {
+    //Dependencia para la reflexión
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.20")
+
     testImplementation(kotlin("test"))
     // DataFrames de Kotlin Jetbrains
     implementation("org.jetbrains.kotlinx:dataframe:0.8.1")
@@ -51,7 +54,13 @@ dependencies {
     // https://github.com/pdvrieze/xmlutil
     implementation("io.github.pdvrieze.xmlutil:core-jvm:0.84.3")
     implementation("io.github.pdvrieze.xmlutil:serialization-jvm:0.84.3")
+
+    //Jackson
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.14.0-rc1")
+
 }
+
 
 tasks.test {
     useJUnitPlatform()

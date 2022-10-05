@@ -6,10 +6,10 @@ import java.io.File
 import java.nio.file.InvalidPathException
 import java.nio.file.Paths
 
-object InputHandler {
+class InputHandler(val rutaOrigen: String, val rutaDestino: String) {
 
-    fun checkPath(path : String){
-        if(!File(path).exists())
+    fun checkPath(path: String) {
+        if (!File(path).exists())
 
             println("ruta incorrecta")
 

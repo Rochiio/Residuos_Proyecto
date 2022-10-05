@@ -1,20 +1,14 @@
 package mappers
 
 import CSVFormatException
-import com.fasterxml.jackson.core.util.DefaultPrettyPrinter
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.ObjectWriter
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.dataformat.xml.XmlMapper
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
 import dto.ContenedorDTO
-import jetbrains.datalore.base.json.Obj
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.Contenedor
 import models.TipoContenedor
 import nl.adaptivity.xmlutil.serialization.XML
+import repositories.ListaContenedorDTO
 import java.io.File
 
 object ContenedorMapper {

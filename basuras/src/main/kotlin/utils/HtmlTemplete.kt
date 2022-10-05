@@ -31,7 +31,7 @@ class HtmlTemplete(
                 <title>Resumen</title>
             </head>
             <body>
-                <h1>Resumen de recogidas de basura y reciclaje de $distrito</h1>
+                <h1 id="titulo">Resumen de recogidas de basura y reciclaje de $distrito</h1>
                 <img id ="logo" src="./img/logo.png">
                 <p class="datos">$fechaHora</p>
                 <p class="datos">Rocío Palao & Mohamed Asidah</p>

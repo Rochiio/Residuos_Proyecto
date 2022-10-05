@@ -20,8 +20,9 @@ import java.nio.file.Path
  * TODO pobrarlo con csv de prueba
  * TODO toJson jsonTo toXML xmlTo
  */
-object ResiduosMapper {
-    const val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+class ResiduosMapper {
+    val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+
 
 
 

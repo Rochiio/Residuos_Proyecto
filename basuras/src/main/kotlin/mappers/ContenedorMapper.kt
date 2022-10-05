@@ -17,8 +17,8 @@ import models.TipoContenedor
 import nl.adaptivity.xmlutil.serialization.XML
 import java.io.File
 
-object ContenedorMapper {
-    val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
+class ContenedorMapper {
+    private val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
             "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" +
             "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
 
@@ -171,7 +171,7 @@ object ContenedorMapper {
 
     fun toXML(ruta: String, contenedores: ListaContenedorDTO) {
         val xml = XML{indentString = " "}
-        val file = File(ruta)
+        val file = File(ruta + "${File.separator}contenedores.xml")
         file.writeText(xml.encodeToString(contenedores))
     }
 

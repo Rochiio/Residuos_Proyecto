@@ -17,10 +17,8 @@ import java.util.InputMismatchException
  * TODO CSV CONTENEDORES CAMPO NUMERO CONTIENE VACIOS
  */
 fun main(args: Array<String>) {
-
-    File("/log/").createNewFile()
-    if(args.size < 3){
-        println("Introduce una opción válida para el programa")
-        val bitacora = Bitacora("error", false, 0, "")
-    }
+    val inputHandler = InputHandler()
+    val dir = System.getProperty("user.dir")
+    val origen = readln()
+    val lista = BasuraController.parser("${System.getProperty("user.dir")}${File.separator}$origen","${System.getProperty("user.dir")}${File.separator}datosPrueba")
 }

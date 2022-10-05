@@ -165,6 +165,7 @@ object ContenedorMapper {
 
     fun toXML(ruta: String, contenedores: ListaContenedorDTO) {
         val xml = XML{indentString = " "}
+
         val file = File(ruta)
         file.writeText(xml.encodeToString(contenedores))
     }

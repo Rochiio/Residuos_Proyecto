@@ -1,6 +1,5 @@
-import com.sun.tools.javac.Main
-import mappers.ContenedorMapper
-import mappers.ListaContenedorDTO
+import mappers.ResiduosMapper
+import repositories.ListaResiduosDto
 
 /**
  * Práctica Acceso a Datos.
@@ -10,17 +9,10 @@ import mappers.ListaContenedorDTO
  * TODO CSV CONTENEDORES CAMPO NUMERO CONTIENE VACIOS
  */
 fun main(args: Array<String>) {
-    println("Hello World!")
+    var csv = ResiduosMapper.readCsvResiduo("C:\\Users\\rpala\\Documents\\Residuos_Proyecto\\basuras\\datosPrueba\\modelo_residuos_2021.csv")
+    var lista = ListaResiduosDto(csv)
+    ResiduosMapper.writeCsvResiduo(lista,"C:\\Users\\rpala\\Documents\\Residuos_Proyecto\\basuras\\datosPrueba")
+    ResiduosMapper.toJson("C:\\Users\\rpala\\Documents\\Residuos_Proyecto\\basuras\\datosPrueba",lista)
+    ResiduosMapper.toXml("C:\\Users\\rpala\\Documents\\Residuos_Proyecto\\basuras\\datosPrueba",lista)
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-
-    val path = Main::class.java.classLoader.getResource("datos/contenedores_varios.csv")
-    val csv = ContenedorMapper.readCSV(path.file)
-
-    val cosa = ContenedorMapper.toJson("fichero.json", ListaContenedorDTO(csv))
-    val lista = ContenedorMapper.fromJson("fichero.json")
-    ContenedorMapper.toXML("fichero.xml", ListaContenedorDTO(csv))
-    val listaxml = ContenedorMapper.fromXML("fichero.xml")
-println()
 }

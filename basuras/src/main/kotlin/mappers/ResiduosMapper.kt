@@ -1,13 +1,16 @@
 package mappers
 
+import CSVFormatException
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 import dto.ResiduosDto
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
+import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
 import nl.adaptivity.xmlutil.serialization.XML
+import repositories.ListaContenedorDTO
 import repositories.ListaResiduosDto
 import java.io.File
 import java.nio.file.Files
@@ -75,14 +78,15 @@ object ResiduosMapper {
      * @param directorio directorio donde se encuentra el fichero csv
      * @return lista de residuos.
      */
-    fun readCsvResiduo(directorio: String): List<ResiduosDto>? {
+    fun readCsvResiduo(directorio: String): List<ResiduosDto> {
         val file = File(directorio)
-        return if (checkCSV(file)) {
-             Files.lines(Path.of(directorio))
+        if (!checkCSV(file))
+            throw CSVFormatException()
+        else
+            return Files.lines(Path.of(directorio))
                 .skip(1)
-                .map { mapToResiduo(it) }.toList()
-        }else
-        return null
+                .map { mapToResiduo(it) }
+                .toList()
     }
 
 
@@ -92,11 +96,11 @@ object ResiduosMapper {
     fun writeCsvResiduo(residuoLista: ListaResiduosDto, ruta: String) {
         var destino = ruta
         if (!ruta.endsWith(".csv"))
-            destino += "residuos-procesado.csv"
+            destino += File.separator + "residuos-procesado.csv"
         if (File(destino).createNewFile()) {
             val file = File(destino)
             file.writeText(CABECERA)
-            residuoLista.lista.forEach { file.appendText(it.toLine()) }
+            residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
         }
 
     }
@@ -153,7 +157,7 @@ object ResiduosMapper {
      * @param directorio directorio donde debemos crear el xml
      * @param listaResiduosDto lista de residuos para pasar a xml
      */
-    fun toXml (directorio: String, listaResiduosDto: List<ResiduosDto>){
+    fun toXml (directorio: String, listaResiduosDto: ListaResiduosDto){
         val xml = XML { indentString = "  " }
         val fichero = File(directorio + File.separator +  "intercambio.xml")
         fichero.writeText(xml.encodeToString(listaResiduosDto))
@@ -182,16 +186,15 @@ object ResiduosMapper {
         if(ruta.endsWith(".json"))
             fichero = File(ruta)
         else
-            fichero = File(ruta.plus("fichero.json"))
+            fichero = File(ruta + File.separator +"fichero.json")
 
         if (!fichero.exists()) {
             File("fichero.json").createNewFile()
             fichero = File("fichero.json")
         }
 
-        var jsonMapper = ObjectMapper()
-        var listaMapper =jsonMapper.writerWithDefaultPrettyPrinter().writeValueAsString(listaResiduosDto)
-        fichero.writeText(listaMapper)
+        val json = Json { prettyPrint = true }
+        fichero.writeText(json.encodeToString(listaResiduosDto))
     }
 
 
@@ -204,8 +207,8 @@ object ResiduosMapper {
         var fichero = File(directorio)
 
         if(fichero.exists() && fichero.endsWith(".json")){
-            var jsonMapper = ObjectMapper()
-            return jsonMapper.readValue(fichero, ListaResiduosDto::class.java)
+            val json = Json { prettyPrint = true }
+            return Json.decodeFromString<ListaResiduosDto>(File(directorio).readText())
         }
         return null
     }

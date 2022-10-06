@@ -1,5 +1,8 @@
 package models
 
+import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
+
+@DataSchema
 data class Residuos(
     val año: Short,
     val mes: String,

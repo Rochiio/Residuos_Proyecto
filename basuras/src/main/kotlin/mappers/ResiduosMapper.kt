@@ -36,7 +36,7 @@ object ResiduosMapper {
             año = residuoDto.año,
             mes = residuoDto.mes,
             lote = residuoDto.lote,
-            residuo = tipoResiduo.valueOf(residuoDto.residuo),
+            residuo = toTipoResiduo(residuoDto.residuo),
             distrito = residuoDto.distrito,
             nombreDistrito = residuoDto.nombreDistrito,
             toneladas = residuoDto.toneladas

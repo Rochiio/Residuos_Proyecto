@@ -5,6 +5,9 @@ GitHub: loopedMoha
 
 package models
 
+import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
+
+@DataSchema
 data class Contenedor(
     val codigoSituacion: String,
     val tipoContenedor: TipoContenedor,

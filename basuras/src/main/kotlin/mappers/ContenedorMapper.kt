@@ -1,14 +1,7 @@
 package mappers
 
-import CSVFormatException
-import com.fasterxml.jackson.core.util.DefaultPrettyPrinter
-import com.fasterxml.jackson.databind.ObjectMapper
-import com.fasterxml.jackson.databind.ObjectWriter
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fasterxml.jackson.dataformat.xml.XmlMapper
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
+import CsvException
 import dto.ContenedorDTO
-import jetbrains.datalore.base.json.Obj
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -81,7 +74,7 @@ class ContenedorMapper {
 
         val file = File(ruta)
         if (!checkCSV(file))
-            throw CSVFormatException()
+            throw CsvException("El formato del csv no es correcto")
         else
             return file.readLines()
                 .drop(1)
@@ -108,7 +101,7 @@ class ContenedorMapper {
      */
     private fun mapContenedorDTO(it: List<String>): ContenedorDTO {
         if (it.size != 16)
-            throw CSVFormatException()
+            throw CsvException("El formato del csv no es correcto")
         else return ContenedorDTO(
             it[0],
             it[1],
@@ -138,13 +131,11 @@ class ContenedorMapper {
      */
     fun writeCsv(contendores: List<ContenedorDTO>, ruta: String) {
         var destino = ruta
-        if (!ruta.endsWith(".csv"))
-            destino += "contenedores-procesado.csv"
-        if (File(destino).createNewFile()) {
-            val file = File(destino)
-            file.writeText(cabecera)
-            contendores.forEach { file.appendText(it.toLine()) }
-        }
+        File("$destino${File.separator}contenedores_procesado.csv").createNewFile()
+
+        val file = File("$destino${File.separator}contenedores_procesado.csv")
+        file.writeText(cabecera+"\n")
+        contendores.forEach { file.appendText(it.toLine()+"\n") }
 
     }
 

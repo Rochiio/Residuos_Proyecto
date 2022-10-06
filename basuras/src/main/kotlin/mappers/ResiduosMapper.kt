@@ -24,14 +24,12 @@ class ResiduosMapper {
     val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
 
 
-
-
     /**
      * Pasar un residuoDto a residuo
      * @param residuoDto residuo en tipo dto
      * @return el residuo en tipo residuo
      */
-    fun fromDto(residuoDto: ResiduosDto): Residuos{
+    fun fromDto(residuoDto: ResiduosDto): Residuos {
         return Residuos(
             año = residuoDto.año,
             mes = residuoDto.mes,
@@ -48,7 +46,7 @@ class ResiduosMapper {
      * @param residuo en tipo residuo
      * @return el residuo en tipo residuoDto
      */
-    fun toDto(residuo: Residuos): ResiduosDto{
+    fun toDto(residuo: Residuos): ResiduosDto {
         return ResiduosDto(
             año = residuo.año,
             mes = residuo.mes,
@@ -81,11 +79,11 @@ class ResiduosMapper {
     fun readCsvResiduo(directorio: String): List<ResiduosDto>? {
         val file = File(directorio)
         return if (checkCSV(file)) {
-             Files.lines(Path.of(directorio))
+            Files.lines(Path.of(directorio))
                 .skip(1)
                 .map { mapToResiduo(it) }.toList()
-        }else
-        return null
+        } else
+            return null
     }
 
 
@@ -94,13 +92,12 @@ class ResiduosMapper {
      */
     fun writeCsvResiduo(residuoLista: ListaResiduosDto, ruta: String) {
         var destino = ruta
-        if (!ruta.endsWith(".csv"))
-            destino += "residuos-procesado.csv"
-        if (File(destino).createNewFile()) {
-            val file = File(destino)
-            file.writeText(CABECERA)
-            residuoLista.lista.forEach { file.appendText(it.toLine()) }
-        }
+        File("$destino${File.separator}residuos_procesado.csv").createNewFile()
+
+        val file = File("$destino${File.separator}residuos_procesado.csv")
+        file.writeText(CABECERA+"\n")
+        residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
+
 
     }
 
@@ -110,7 +107,7 @@ class ResiduosMapper {
      * @param line linea a mappear a residuo
      * @return residuo creado
      */
-    private fun mapToResiduo(line:String):ResiduosDto{
+    private fun mapToResiduo(line: String): ResiduosDto {
         val campos = line.split(";")
         return ResiduosDto(
             año = campos[0].toShort(),
@@ -119,7 +116,7 @@ class ResiduosMapper {
             residuo = campos[3],
             distrito = campos[4].toByte(),
             nombreDistrito = campos[5],
-            toneladas = campos[6].replace(",",".").toFloat()
+            toneladas = campos[6].replace(",", ".").toFloat()
         )
     }
 
@@ -130,22 +127,22 @@ class ResiduosMapper {
      * @return tipo de residuo
      */
     private fun toTipoResiduo(campo: String): tipoResiduo {
-        var tipo:tipoResiduo = tipoResiduo.PILAS
-        when(campo){
-            "RESTO" -> tipo =tipoResiduo.RESTO
-            "ENVASES" -> tipo =tipoResiduo.ENVASES
-            "VIDRIO" -> tipo =tipoResiduo.VIDRIO
-            "VIDRIO COMERCIAL" -> tipo =tipoResiduo.VIDRIO_COMERCIAL
-            "CLINICOS" -> tipo =tipoResiduo.CLINICOS
-            "ORGANICA" -> tipo =tipoResiduo.ORGANICA
-            "PAPEL-CARTON" -> tipo =tipoResiduo.PAPEL_CARTON
-            "CARTON COMERCIAL" -> tipo =tipoResiduo.CARTON_COMERCIAL
-            "RCD" -> tipo =tipoResiduo.RCD
-            "PUNTOS LIMPIOS" -> tipo =tipoResiduo.PUNTOS_LIMPIOS
-            "CONTENEDORES DE ROPA" -> tipo =tipoResiduo.CONTENEDORES_DE_ROPA
-            "CAMA DE CABALLO" -> tipo =tipoResiduo.CAMA_DE_CABALLO
-            "ANIMALES MUERTOS" -> tipo =tipoResiduo.ANIMALES_MUERTOS
-            "PILAS" -> tipo =tipoResiduo.PILAS
+        var tipo: tipoResiduo = tipoResiduo.PILAS
+        when (campo) {
+            "RESTO" -> tipo = tipoResiduo.RESTO
+            "ENVASES" -> tipo = tipoResiduo.ENVASES
+            "VIDRIO" -> tipo = tipoResiduo.VIDRIO
+            "VIDRIO COMERCIAL" -> tipo = tipoResiduo.VIDRIO_COMERCIAL
+            "CLINICOS" -> tipo = tipoResiduo.CLINICOS
+            "ORGANICA" -> tipo = tipoResiduo.ORGANICA
+            "PAPEL-CARTON" -> tipo = tipoResiduo.PAPEL_CARTON
+            "CARTON COMERCIAL" -> tipo = tipoResiduo.CARTON_COMERCIAL
+            "RCD" -> tipo = tipoResiduo.RCD
+            "PUNTOS LIMPIOS" -> tipo = tipoResiduo.PUNTOS_LIMPIOS
+            "CONTENEDORES DE ROPA" -> tipo = tipoResiduo.CONTENEDORES_DE_ROPA
+            "CAMA DE CABALLO" -> tipo = tipoResiduo.CAMA_DE_CABALLO
+            "ANIMALES MUERTOS" -> tipo = tipoResiduo.ANIMALES_MUERTOS
+            "PILAS" -> tipo = tipoResiduo.PILAS
         }
         return tipo
     }
@@ -156,9 +153,9 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos crear el xml
      * @param listaResiduosDto lista de residuos para pasar a xml
      */
-    fun toXml (directorio: String, listaResiduosDto: ListaResiduosDto){
+    fun toXml(directorio: String, listaResiduosDto: ListaResiduosDto) {
         val xml = XML { indentString = "  " }
-        val fichero = File(directorio)
+        val fichero = File(directorio + "${File.separator}residuos_xml.xml")
         fichero.writeText(xml.encodeToString(listaResiduosDto))
     }
 
@@ -167,12 +164,11 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos coger el xml
      * @return lista de residuos dto
      */
-    fun fromXml(directorio: String):List<ResiduosDto>{
-        val xml = XML {indentString = "  "}
+    fun fromXml(directorio: String): List<ResiduosDto> {
+        val xml = XML { indentString = "  " }
         val fichero = File(directorio)
         return xml.decodeFromString<List<ResiduosDto>>(fichero.readText())
     }
-
 
 
     /**
@@ -180,7 +176,7 @@ class ResiduosMapper {
      * @param ruta ruta donde debemos crear el json
      * @param listaResiduosDto lista de residuos para pasar a json
      */
-    fun toJson(ruta: String, listaResiduosDto: ListaResiduosDto){
+    fun toJson(ruta: String, listaResiduosDto: ListaResiduosDto) {
         val json = Json { prettyPrint = true }
         var fichero = File(ruta)
 
@@ -197,11 +193,11 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos coger el json
      * @return lista de residuos dto
      */
-    fun fromJson(directorio: String):ListaResiduosDto?{
+    fun fromJson(directorio: String): ListaResiduosDto? {
         val fichero = File(directorio)
 
-        if(fichero.exists() && fichero.endsWith(".json")){
-            val json = Json{prettyPrint = true}
+        if (fichero.exists() && fichero.endsWith(".json")) {
+            val json = Json { prettyPrint = true }
             return json.decodeFromString(fichero.readText())
         }
         return null

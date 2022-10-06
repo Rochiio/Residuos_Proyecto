@@ -3,7 +3,6 @@ import mappers.ListaContenedorDTO
 import mappers.ResiduosMapper
 import repositories.ListaResiduosDto
 import java.io.File
-import java.util.StringJoiner
 
 object BasuraController {
     fun executeCommand(args: Array<String>) {
@@ -24,13 +23,15 @@ object BasuraController {
         val cabeceraResiduos = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
         val cabeceraContenedor =
             "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" + "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" + "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
+
         if (checkPath(origen) && checkPath(destino)) {
             val files = retrieveCsv(origen)
             if (files.isNotEmpty()) {
                 for (f in files) {
                     val file = File(origen + File.separator + f.path)
-                    val cabecera = file.bufferedReader().readLine()
-                    if (f.path.lowercase().contains("residuos")) {
+                    val firstLine = file.readLines().first().replace("\uFEFF", "")
+
+                    if (firstLine == cabeceraResiduos) {
                         val residuosMapper: ResiduosMapper = ResiduosMapper()
                         val residuos = residuosMapper.readCsvResiduo(file.path)
 
@@ -45,11 +46,13 @@ object BasuraController {
                                 destino,
                                 ListaResiduosDto(residuos)
                             )
+                            residuosMapper.writeCsvResiduo(ListaResiduosDto(residuos), destino)
                         } else
                             println("No se pudo leer el archivo CSV")
-                    } else {
+                    } else if (firstLine == cabeceraContenedor) {
                         val contenedorMapper = ContenedorMapper()
                         val contenedores = contenedorMapper.readCSV(file.path)
+
                         contenedorMapper.toJson(
                             "$destino${File.separator}contenedores_parse.json", ListaContenedorDTO(contenedores)
                         )
@@ -57,6 +60,7 @@ object BasuraController {
                             destino,
                             ListaContenedorDTO(contenedores)
                         )
+                        contenedorMapper.writeCsv(contenedores, destino)
                     }
                 }
             }
@@ -73,6 +77,7 @@ object BasuraController {
             }
         }
     }
+
 
     fun getOption(args: Array<String>): Int {
         var opt = -1

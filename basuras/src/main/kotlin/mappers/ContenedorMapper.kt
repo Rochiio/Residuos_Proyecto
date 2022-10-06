@@ -155,7 +155,10 @@ class ContenedorMapper {
      */
     fun toJson(ruta: String, contenedores: ListaContenedorDTO) {
         val json = Json { prettyPrint = true }
-        File(ruta).writeText(json.encodeToString(contenedores))
+        val file = File(ruta)
+        if(!file.exists())
+            file.createNewFile()
+        file.writeText(json.encodeToString(contenedores))
     }
 
     /**

@@ -158,7 +158,7 @@ class ResiduosMapper {
      */
     fun toXml (directorio: String, listaResiduosDto: ListaResiduosDto){
         val xml = XML { indentString = "  " }
-        val fichero = File(directorio + File.separator +  "intercambio.xml")
+        val fichero = File(directorio)
         fichero.writeText(xml.encodeToString(listaResiduosDto))
     }
 
@@ -182,15 +182,11 @@ class ResiduosMapper {
      */
     fun toJson(ruta: String, listaResiduosDto: ListaResiduosDto){
         val json = Json { prettyPrint = true }
-        var fichero : File
-        if(ruta.endsWith(".json"))
-            fichero = File(ruta)
-        else
-            fichero = File(ruta.plus("fichero.json"))
+        var fichero = File(ruta)
 
         if (!fichero.exists()) {
-            File("fichero.json").createNewFile()
-            fichero = File("fichero.json")
+            File(ruta).createNewFile()
+            fichero = File(ruta)
         }
         fichero.writeText(json.encodeToString(listaResiduosDto))
     }

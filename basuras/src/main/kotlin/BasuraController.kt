@@ -8,34 +8,39 @@ import java.util.StringJoiner
 object BasuraController {
     fun executeCommand(args: Array<String>) {
         when (getOption(args)) {
-            1 -> println()
+            1 -> parser(args[1], args[2])
             2 -> println()
             3 -> println()
             else -> println("Saliendo del programa")
         }
     }
 
+    /**
+     * Lee todos los csv en origen y los escribe en destino como csv, xml y json
+     * @param origen String
+     * @param destino String
+     */
     fun parser(origen: String, destino: String) {
         val cabeceraResiduos = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
         val cabeceraContenedor =
             "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" + "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" + "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
-
         if (checkPath(origen) && checkPath(destino)) {
             val files = retrieveCsv(origen)
             if (files.isNotEmpty()) {
                 for (f in files) {
-                    var file = File(origen + File.separator + f.path)
-                    var cabeza2 = f.path.lowercase()
-                    var cabeza3 = f.path.lowercase().contentEquals("residuos")
-
-
+                    val file = File(origen + File.separator + f.path)
+                    val cabecera = file.bufferedReader().readLine()
                     if (f.path.lowercase().contains("residuos")) {
                         val residuosMapper: ResiduosMapper = ResiduosMapper()
                         val residuos = residuosMapper.readCsvResiduo(file.path)
+
+                        //Aqui es donde podriamos meter concurrencia
                         if (residuos != null) {
+                            //un hilo
                             residuosMapper.toJson(
                                 "$destino${File.separator}residuos_parse.json", ListaResiduosDto(residuos)
                             )
+                            //otro hilo
                             residuosMapper.toXml(
                                 destino,
                                 ListaResiduosDto(residuos)
@@ -45,23 +50,28 @@ object BasuraController {
                     } else {
                         val contenedorMapper = ContenedorMapper()
                         val contenedores = contenedorMapper.readCSV(file.path)
-                        if (contenedores != null) {
-                            contenedorMapper.toJson(
-                                "$destino${File.separator}residuos_parse.json", ListaContenedorDTO(contenedores)
-                            )
-                            contenedorMapper.toXML(
-                                destino,
-                                ListaContenedorDTO(contenedores)
-                            )
-                        } else
-                            println("No se pudo leer el archivo CSV")
+                        contenedorMapper.toJson(
+                            "$destino${File.separator}contenedores_parse.json", ListaContenedorDTO(contenedores)
+                        )
+                        contenedorMapper.toXML(
+                            destino,
+                            ListaContenedorDTO(contenedores)
+                        )
                     }
-
-
                 }
             }
         }
 
+    }
+
+    fun resumen(origen: String, destino: String) {
+        if (checkPath(origen) && checkPath(destino)) {
+            //primero busca csvs
+            val files = retrieveCsv(origen)
+            for (f in files) {
+
+            }
+        }
     }
 
     fun getOption(args: Array<String>): Int {
@@ -101,12 +111,30 @@ object BasuraController {
     }
 
 
-    fun retrieveCsv(directory: String): List<File> {
+    private fun retrieveCsv(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {
             val file = File(directory)
 
             file.list()?.forEach { file -> if (file.endsWith(".csv")) list.add(File(file)) }
+        }
+        return list
+    }
+
+    fun retrieveJson(directory: String): List<File> {
+        val list = mutableListOf<File>()
+        if (checkPath(directory)) {
+            val file = File(directory)
+            file.list()?.forEach { file -> if (file.endsWith(".json")) list.add(File(file)) }
+        }
+        return list
+    }
+
+    fun retrieveXml(directory: String): List<File> {
+        val list = mutableListOf<File>()
+        if (checkPath(directory)) {
+            val file = File(directory)
+            file.list()?.forEach { file -> if (file.endsWith(".xml")) list.add(File(file)) }
         }
         return list
     }

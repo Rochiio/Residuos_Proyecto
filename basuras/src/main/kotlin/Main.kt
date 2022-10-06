@@ -19,6 +19,6 @@ import java.util.InputMismatchException
 fun main(args: Array<String>) {
     val inputHandler = InputHandler()
     val dir = System.getProperty("user.dir")
-    val origen = readln()
+    val origen = "datosPrueba"
     val lista = BasuraController.parser("${System.getProperty("user.dir")}${File.separator}$origen","${System.getProperty("user.dir")}${File.separator}datosPrueba")
 }

@@ -73,7 +73,7 @@ class HtmlTemplete(
             </html>
         """.trimIndent()
 
-
+    }
 
         /**
          * Generación html para la opción RESUMEN DISTRITO
@@ -122,4 +122,3 @@ class HtmlTemplete(
         """.trimIndent()
         }
     }
-}

@@ -1,14 +1,21 @@
+import dto.ContenedorDTO
+import dto.ResiduosDto
 import mappers.ContenedorMapper
 import mappers.ListaContenedorDTO
 import mappers.ResiduosMapper
+import models.Contenedor
 import repositories.ListaResiduosDto
 import java.io.File
 
 object BasuraController {
+    const val CABECERARESIDUOS = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+    const val CABECERACONTENEDOR =
+        "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" + "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" + "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
+
     fun executeCommand(args: Array<String>) {
         when (getOption(args)) {
             1 -> parser(args[1], args[2])
-            2 -> println()
+            2 -> resumen(args[1], args[2])
             3 -> println()
             else -> println("Saliendo del programa")
         }
@@ -20,9 +27,6 @@ object BasuraController {
      * @param destino String
      */
     fun parser(origen: String, destino: String) {
-        val cabeceraResiduos = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
-        val cabeceraContenedor =
-            "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" + "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" + "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
 
         if (checkPath(origen) && checkPath(destino)) {
             val files = retrieveCsv(origen)
@@ -31,7 +35,7 @@ object BasuraController {
                     val file = File(origen + File.separator + f.path)
                     val firstLine = file.readLines().first().replace("\uFEFF", "")
 
-                    if (firstLine == cabeceraResiduos) {
+                    if (firstLine == CABECERARESIDUOS) {
                         val residuosMapper: ResiduosMapper = ResiduosMapper()
                         val residuos = residuosMapper.readCsvResiduo(file.path)
 
@@ -49,7 +53,7 @@ object BasuraController {
                             residuosMapper.writeCsvResiduo(ListaResiduosDto(residuos), destino)
                         } else
                             println("No se pudo leer el archivo CSV")
-                    } else if (firstLine == cabeceraContenedor) {
+                    } else if (firstLine == CABECERACONTENEDOR) {
                         val contenedorMapper = ContenedorMapper()
                         val contenedores = contenedorMapper.readCSV(file.path)
 
@@ -69,16 +73,58 @@ object BasuraController {
     }
 
     fun resumen(origen: String, destino: String) {
-        if (checkPath(origen) && checkPath(destino)) {
-            //primero busca csvs
-            val files = retrieveCsv(origen)
-            for (f in files) {
+        val contenedorMapper = ContenedorMapper()
+        val residuosMapper = ResiduosMapper()
+        var contenedores: List<ContenedorDTO>
+        var residuos: List<ResiduosDto>
 
+
+        if (checkPath(origen) && checkPath(destino)) {
+            //Busca todos los archivos en destino
+            val files = File(origen).listFiles()
+
+            //primero busca csvs
+            val csvs = retrieveCsv(origen)
+            if (csvs.isNotEmpty()) {
+                for (f in files) {
+                    val file = File(origen + File.separator + f.path)
+                    val firstLine = file.readLines().first().replace("\uFEFF", "")
+                    if (firstLine == CABECERARESIDUOS) {
+                        residuos = residuosMapper.readCsvResiduo(file.path)!!
+                    } else if (firstLine == CABECERACONTENEDOR) {
+                        contenedores = contenedorMapper.readCSV(file.path)
+                    }
+                }
+                //TODO(CONSULTAS Y HTML AQUI)
             }
         }
     }
 
 
+    fun resumenDistrito(origen : String, destino :String, distrito : String){
+        val contenedorMapper = ContenedorMapper()
+        val residuosMapper = ResiduosMapper()
+        var contenedores: List<ContenedorDTO>
+        var residuos: List<ResiduosDto>
+
+
+        if (checkPath(origen) && checkPath(destino)) {
+            //primero busca csvs
+            val files = retrieveCsv(origen)
+            if (files.isNotEmpty()) {
+                for (f in files) {
+                    val file = File(origen + File.separator + f.path)
+                    val firstLine = file.readLines().first().replace("\uFEFF", "")
+                    if (firstLine == CABECERARESIDUOS) {
+                        residuos = residuosMapper.readCsvResiduo(file.path)!!
+                    } else if (firstLine == CABECERACONTENEDOR) {
+                        contenedores = contenedorMapper.readCSV(file.path)
+                    }
+                }
+                //TODO(CONSULTAS Y HTML AQUI)
+            }
+        }
+    }
     fun getOption(args: Array<String>): Int {
         var opt = -1
         if (args.size < 3) {

@@ -1,19 +1,23 @@
 package utils
 
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.util.*
+
 class HtmlTemplete(
     //Variables iguales
-    val distrito: String,
-    val fechaHora: String,
-    val numeroContenedoresTipoDistrito: Int,
-    val maxMinMediaDesv: String,
-    val tiempoGeneracion: Long,
+    private val distrito: String,
+    private val fechaHora: String,
+    private val numeroContenedoresTipoDistrito: String,
+    private val maxMinMediaDesv: String,
+    private val tiempoGeneracion: Long,
     //Variable Resumen Distrito
-    val totalToneladasResiduo: String,
+    private val totalToneladasResiduo: String ="",
     //Variable Resumen
-    val mediaContenedoresTipoDistrito: Int,
-    val mediaToneladasAnuales: String,
-    val sumaRecogidoDistrito: String,
-    val porDistritoTipoResiduoCantidad: String
+    private val mediaContenedoresTipoDistrito: String="",
+    private val mediaToneladasAnuales: String="",
+    private val sumaRecogidoDistrito: String="",
+    private val porDistritoTipoResiduoCantidad: String=""
 ) {
 
     /**
@@ -54,7 +58,7 @@ class HtmlTemplete(
 
                     <h4>Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
                     distrito:</h4>
-                    <p class="resultados">$mediaToneladasAnuales/p>
+                    <p class="resultados">$mediaToneladasAnuales</p>
 
                     <br>
 
@@ -85,7 +89,7 @@ class HtmlTemplete(
             </body>
             </html>
         """.trimIndent()
-
+    }
 
 
         /**
@@ -164,4 +168,3 @@ class HtmlTemplete(
         """.trimIndent()
         }
     }
-}

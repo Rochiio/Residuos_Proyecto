@@ -11,6 +11,12 @@ import models.Contenedor
 import models.Residuos
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.*
+import org.jetbrains.kotlinx.dataframe.io.DisplayConfiguration
+import org.jetbrains.kotlinx.dataframe.io.html
+import utils.Format
+import utils.HtmlTemplete
+import java.io.File
+import java.time.LocalDateTime
 import kotlin.system.measureTimeMillis
 
 /**
@@ -30,6 +36,7 @@ class DataframeController(
         residuosData.cast<Residuos>()
         contenedoresData = contenedores.toDataFrame()
         contenedoresData.cast<Contenedor>()
+        DisplayConfiguration.DEFAULT.rowsLimit=10000
     }
 
 
@@ -37,25 +44,30 @@ class DataframeController(
      * Consultas a realizar cuando se elige el comando resumen.
      */
     fun resumen(){
+        var numeroContenedoresTipoDistrito: String
+        var mediamContenedoresTipoDistrito: String
+        var mediaToneladasAnualesBasuraDistrito: String
+        var maxMinMedDesvToneladasAnualesBasuraDistrito: String
+        var sumaRecogidoDistrito: String
+        var cantidadResiduoDistrito: String
         var tiempo = measureTimeMillis {
-
-            var numeroContenedoresTipoDistrito: String = consultaNumContenedoresTipoDistrito()
-            var mediamContenedoresTipoDistrito: String = consultaMediaContenedoresTipoDistrito()
+            numeroContenedoresTipoDistrito = consultaNumContenedoresTipoDistrito()
+            mediamContenedoresTipoDistrito= consultaMediaContenedoresTipoDistrito()
             graficoContenedoresDistrito()
-            var mediaToneladasAnualesBasuraDistrito: String = consultaMediaToneladasAnuales()
+            mediaToneladasAnualesBasuraDistrito= consultaMediaToneladasAnuales()
             graficoMediaToneladasMensuales()
-            var maxMinMedDesvToneladasAnualesBasuraDistrito: String = consultaMaxMinMedDesvToneladasAnuales()
-            var sumaRecogidoDistrito: String = consultaSumaAñoDistrito()
-            var cantidadResiduoDistrito: String = consultaCantidadResiduoDistrito()
-            println(numeroContenedoresTipoDistrito)
-            println(mediamContenedoresTipoDistrito)
-            println(mediaToneladasAnualesBasuraDistrito)
-            println(maxMinMedDesvToneladasAnualesBasuraDistrito)
-            println(sumaRecogidoDistrito)
-            println(cantidadResiduoDistrito)
+            maxMinMedDesvToneladasAnualesBasuraDistrito= consultaMaxMinMedDesvToneladasAnuales()
+            sumaRecogidoDistrito= consultaSumaAñoDistrito()
+            cantidadResiduoDistrito= consultaCantidadResiduoDistrito()
         }
-
-        //Aqui creamos el html
+        //Aqui creamos el html de prueba
+        var templete = HtmlTemplete("Madrid", Format.formatDate(LocalDateTime.now()), numeroContenedoresTipoDistrito = numeroContenedoresTipoDistrito,
+        maxMinMediaDesv = maxMinMedDesvToneladasAnualesBasuraDistrito, tiempoGeneracion=tiempo,
+            mediaContenedoresTipoDistrito = mediamContenedoresTipoDistrito, mediaToneladasAnuales = mediaToneladasAnualesBasuraDistrito,
+        sumaRecogidoDistrito = sumaRecogidoDistrito, porDistritoTipoResiduoCantidad = cantidadResiduoDistrito)
+        var html = templete.generateHtmlResumen()
+        var fichero = File(System.getProperty("user.dir")+ File.separator +"datosPrueba"+File.separator +"prueba.html")
+        fichero.writeText(html)
     }
 
     /**
@@ -66,7 +78,7 @@ class DataframeController(
         return residuosData.groupBy("nombreDistrito","residuo")
             .aggregate {
                 sum("toneladas") into "total_recogido"
-            }.toString()
+            }.html()
     }
 
     /**
@@ -75,7 +87,7 @@ class DataframeController(
     private fun consultaSumaAñoDistrito(): String {
         return residuosData.groupBy("nombreDistrito","año").aggregate {
             sum("toneladas") into "suma"
-        }.toString()
+        }.html()
     }
 
 
@@ -91,7 +103,7 @@ class DataframeController(
                 min("toneladas") into "min"
                 mean("toneladas") into "media"
                 std("toneladas") into "desviacion"
-            }.toString()
+            }.html()
     }
 
 
@@ -131,7 +143,7 @@ class DataframeController(
          return residuosData.groupBy("año","residuo","nombreDistrito")
             .aggregate {
                 mean("toneladas") into "Media"
-            }.sortBy("nombreDistrito").toString()
+            }.sortBy("nombreDistrito").html()
     }
 
 
@@ -169,7 +181,7 @@ class DataframeController(
         return contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
                 mean("cantidad") into "media"
-            }.sortBy("distrito").toString()
+            }.sortBy("distrito").html()
     }
 
 
@@ -181,7 +193,7 @@ class DataframeController(
         return contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
             count() into "total"
-        }.sortBy("distrito").toString()
+        }.sortBy("distrito").html()
     }
 
 

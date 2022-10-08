@@ -13,7 +13,7 @@ class Bitacora(
     val path: String
 ) {
     val id:UUID = UUID.randomUUID()
-    val instante: LocalDateTime = LocalDateTime.now()
+    val instante: String = Format.formatDate(LocalDateTime.now())
 
     init {
         bitacoraXml()

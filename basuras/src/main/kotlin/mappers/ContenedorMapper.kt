@@ -136,8 +136,8 @@ object ContenedorMapper {
             destino += "contenedores-procesado.csv"
         if (File(destino).createNewFile()) {
             val file = File(destino)
-            file.writeText(cabecera)
-            contendores.forEach { file.appendText(it.toLine()) }
+            file.writeText(cabecera+"\n")
+            contendores.forEach { file.appendText(it.toLine()+"\n") }
         }
 
     }

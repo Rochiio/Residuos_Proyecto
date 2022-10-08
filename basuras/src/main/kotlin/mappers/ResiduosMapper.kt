@@ -99,7 +99,7 @@ object ResiduosMapper {
             destino += File.separator + "residuos-procesado.csv"
         if (File(destino).createNewFile()) {
             val file = File(destino)
-            file.writeText(CABECERA)
+            file.writeText(CABECERA+"\n")
             residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
         }
 

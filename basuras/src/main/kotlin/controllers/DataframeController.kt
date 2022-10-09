@@ -30,6 +30,8 @@ class DataframeController(
     private var residuosData: DataFrame<Residuos>
     private var contenedoresData : DataFrame<Contenedor>
 
+    private lateinit var dfNumeroContenedoresTipoDistrito: DataFrame<Contenedor>
+
 
     init {
         residuosData = residuos.toDataFrame()
@@ -44,12 +46,10 @@ class DataframeController(
      * Consultas a realizar cuando se elige el comando resumen.
      */
     fun resumen(){
-        var numeroContenedoresTipoDistrito: String
-        var mediamContenedoresTipoDistrito: String
-        var mediaToneladasAnualesBasuraDistrito: String
-        var maxMinMedDesvToneladasAnualesBasuraDistrito: String
-        var sumaRecogidoDistrito: String
-        var cantidadResiduoDistrito: String
+        var numeroContenedoresTipoDistrito: String ; var mediamContenedoresTipoDistrito: String
+        var mediaToneladasAnualesBasuraDistrito: String ; var maxMinMedDesvToneladasAnualesBasuraDistrito: String
+        var sumaRecogidoDistrito: String ; var cantidadResiduoDistrito: String
+
         var tiempo = measureTimeMillis {
             numeroContenedoresTipoDistrito = consultaNumContenedoresTipoDistrito()
             mediamContenedoresTipoDistrito= consultaMediaContenedoresTipoDistrito()
@@ -60,6 +60,7 @@ class DataframeController(
             sumaRecogidoDistrito= consultaSumaAñoDistrito()
             cantidadResiduoDistrito= consultaCantidadResiduoDistrito()
         }
+
         //Aqui creamos el html de prueba
         var templete = HtmlTemplete("Madrid", Format.formatDate(LocalDateTime.now()), numeroContenedoresTipoDistrito = numeroContenedoresTipoDistrito,
         maxMinMediaDesv = maxMinMedDesvToneladasAnualesBasuraDistrito, tiempoGeneracion=tiempo,
@@ -70,9 +71,9 @@ class DataframeController(
         fichero.writeText(html)
     }
 
+    
     /**
-     * Por cada distrito obtener para cada tipo de residuo la cantidad recogida.
-     * TODO no está correcto
+     * Consulta: Por cada distrito obtener para cada tipo de residuo la cantidad recogida.
      */
     private fun consultaCantidadResiduoDistrito(): String {
         return residuosData.groupBy("nombreDistrito","residuo")
@@ -82,7 +83,7 @@ class DataframeController(
     }
 
     /**
-     * Suma de todo lo recogido en un año por distrito.
+     * Consulta: Suma de tod0 lo recogido en un año por distrito.
      */
     private fun consultaSumaAñoDistrito(): String {
         return residuosData.groupBy("nombreDistrito","año").aggregate {
@@ -94,7 +95,7 @@ class DataframeController(
     /**
      * Consulta: Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
      * de basura agrupadas por distrito.
-     * TODO revisar
+     * TODO Creo que está bien
      */
     private fun consultaMaxMinMedDesvToneladasAnuales(): String {
         return residuosData.groupBy("residuo","nombreDistrito","año")
@@ -138,6 +139,7 @@ class DataframeController(
     /**
      * Consulta: Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
      * distrito.
+     * TODO resultado incorrecto
      */
     private fun consultaMediaToneladasAnuales(): String {
          return residuosData.groupBy("año","residuo","nombreDistrito")
@@ -175,13 +177,13 @@ class DataframeController(
 
     /**
      * Consulta: Media de contenedores de cada tipo que hay en cada distrito.
-     * TODO Revisar
+     * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
-            .aggregate {
-                mean("cantidad") into "media"
-            }.sortBy("distrito").html()
+       return dfNumeroContenedoresTipoDistrito.groupBy("distrito","tipoContenedor")
+           .aggregate {
+               mean("total") into "media"
+       }.html()
     }
 
 
@@ -190,10 +192,12 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaNumContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
+        dfNumeroContenedoresTipoDistrito = contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
-            count() into "total"
-        }.sortBy("distrito").html()
+            sum("cantidad") into "total"
+        }.sortBy("distrito")
+
+        return dfNumeroContenedoresTipoDistrito.html()
     }
 
 

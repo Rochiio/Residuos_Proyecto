@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 
 @Serializable
-data class ResiduosDto(
+data class ResiduosDTO(
     @XmlElement(true)
     val año: Short,
     @XmlElement(true)

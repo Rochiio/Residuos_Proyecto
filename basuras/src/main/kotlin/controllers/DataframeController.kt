@@ -86,6 +86,7 @@ class DataframeController(
             }.html()
     }
 
+
     /**
      * Consulta: Suma de tod0 lo recogido en un año por distrito.
      * @return String de resultado.

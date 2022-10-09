@@ -1,6 +1,6 @@
 package mappers
 
-import CSVFormatException
+import exceptions.CSVFormatException
 import dto.ContenedorDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString

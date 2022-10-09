@@ -34,7 +34,7 @@ object HtmlDirectory {
         return true
     }
 
-    
+
     /**
      * Añadiendo los ficheros necesarios para el html.
      * @param html html a escribir.

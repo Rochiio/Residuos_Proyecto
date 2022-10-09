@@ -18,6 +18,7 @@ class HtmlTemplete(
 
     /**
      * Generación html para la opción RESUMEN
+     * @return string con el html ya generado.
      */
     fun generateHtmlResumen():String {
         return """
@@ -89,7 +90,8 @@ class HtmlTemplete(
 
 
         /**
-         * Generación html para la opción RESUMEN DISTRITO
+         * Generación html para la opción RESUMEN DISTRITO.
+         * @return string con el html ya generado.
          */
         fun generateHtmlResumenDistrito(): String {
             return """

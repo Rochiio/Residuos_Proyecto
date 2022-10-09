@@ -1,8 +1,4 @@
-package utils
-
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
-import java.util.*
+package utils.html
 
 class HtmlTemplete(
     //Variables iguales
@@ -44,42 +40,42 @@ class HtmlTemplete(
                 
                 <div id="container">
                     <h4>Número de contenedores de cada tipo que hay en cada distrito: </h4>
-                    <p class="resultados">$numeroContenedoresTipoDistrito</p>
+                    <p>$numeroContenedoresTipoDistrito</p>
                     
                     <h4>Media de contenedores de cada tipo que hay en cada distrito: </h4>
-                    <p class="resultados">$mediaContenedoresTipoDistrito</p>
+                    <p>$mediaContenedoresTipoDistrito</p>
 
                     <br>
 
                     <h4>Gráfico con el total de contenedores por distrito:</h4>
-                    <img src="./img/01-totalContenedoresDistrito.png">
+                    <img class="images" src="./img/01-totalContenedoresDistrito.png">
 
                     <br>
 
                     <h4>Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
                     distrito:</h4>
-                    <p class="resultados">$mediaToneladasAnuales</p>
+                    <p>$mediaToneladasAnuales</p>
 
                     <br>
 
                     <h4>Gráfico de media de toneladas mensuales de recogida de basura por distrito:</h4>
-                    <img src="./img/02-mediaToneladasMensuales.png">
+                    <img class="images" src="./img/02-mediaToneladasMensuales.png">
 
                     <br>
 
                     <h4>Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
                     de basura agrupadas por distrito:</h4>
-                    <p class="resultados">$maxMinMediaDesv</p>
+                    <p>$maxMinMediaDesv</p>
 
                     <br>
 
                     <h4>Suma de todo lo recogido en un año por distrito:</h4>
-                    <p class="resultados">$sumaRecogidoDistrito</p>
+                    <p>$sumaRecogidoDistrito</p>
 
                     <br>
 
                     <h4>Por cada distrito obtener para cada tipo de residuo la cantidad recogida:</h4>
-                    <p class="resultados">$porDistritoTipoResiduoCantidad</p>
+                    <p>$porDistritoTipoResiduoCantidad</p>
 
                     <br>
 
@@ -117,48 +113,48 @@ class HtmlTemplete(
             <div id="container">
         
                 <h4>Número de contenedores de cada tipo que hay en cada distrito: </h4>
-                <p class="resultados">$numeroContenedoresTipoDistrito</p>
+                <p>$numeroContenedoresTipoDistrito</p>
         
                 <br>
                 
                 <h4>Media de contenedores de cada tipo que hay en cada distrito: </h4>
-                <p class="resultados">$mediaContenedoresTipoDistrito</p>
+                <p>$mediaContenedoresTipoDistrito</p>
         
                 <br>
         
                 <h4>Gráfico con el total de contenedores por distrito:</h4>
-                <img src="./img/01-totalContenedoresDistrito.png">
+                <img class="images" src="./img/01-totalContenedoresDistrito.png">
         
                 <br>
         
                 <h4>Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
                 distrito:</h4>
-                <p class="resultados">$mediaToneladasAnuales</p>
+                <p>$mediaToneladasAnuales</p>
         
                 <br>
         
                 <h4>Gráfico de media de toneladas mensuales de recogida de basura por distrito:</h4>
-                <img src="./img/02-mediaToneladasMensuales.png">
+                <img class="images" src="./img/02-mediaToneladasMensuales.png">
         
                 <br>
         
                 <h4>Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
                 de basura agrupadas por distrito:</h4>
-                <p class="resultados">$maxMinMediaDesv</p>
+                <p>$maxMinMediaDesv</p>
         
                 <br>
         
                 <h4>Suma de todo lo recogido en un año por distrito:</h4>
-                <p class="resultados">$sumaRecogidoDistrito</p>
+                <p>$sumaRecogidoDistrito</p>
         
                 <br>
         
                 <h4>Por cada distrito obtener para cada tipo de residuo la cantidad recogida:</h4>
-                <p class="resultados">$porDistritoTipoResiduoCantidad</p>
+                <p>$porDistritoTipoResiduoCantidad</p>
         
                 <br>
         
-                <p id="tiempo">Tiempo de generación del mismo en milisegundos: <b>$tiempoGeneracion</b></p>
+                <p>Tiempo de generación del mismo en milisegundos: <b>$tiempoGeneracion</b></p>
                 
         
             </div>

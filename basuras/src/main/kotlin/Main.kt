@@ -3,6 +3,8 @@ import jetbrains.datalore.plot.base.DataFrame
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
 import repositories.ListaResiduosDto
+import utils.html.HtmlDirectory
+import java.io.File
 
 /**
  * Práctica Acceso a Datos.
@@ -20,6 +22,6 @@ fun main(args: Array<String>) {
 
     //PROBANDO DATAFRAME
     var frame = DataframeController(listaC,listaR)
-    frame.resumen()
-
+    var html = frame.resumen()
+     HtmlDirectory.copyHtmlDataResumen(html,"C:\\Users\\rpala\\Desktop")
 }

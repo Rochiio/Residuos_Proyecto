@@ -1,8 +1,6 @@
 package mappers
 
-import CSVFormatException
-import com.fasterxml.jackson.core.type.TypeReference
-import com.fasterxml.jackson.databind.ObjectMapper
+import exceptions.CSVFormatException
 import dto.ResiduosDto
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -10,7 +8,6 @@ import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
 import nl.adaptivity.xmlutil.serialization.XML
-import repositories.ListaContenedorDTO
 import repositories.ListaResiduosDto
 import java.io.File
 import java.nio.file.Files

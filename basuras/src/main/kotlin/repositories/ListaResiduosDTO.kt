@@ -10,7 +10,7 @@ import kotlinx.serialization.Serializable
 @Serializable
 class ListaResiduosDTO(
     @JsonProperty("residuos")
-    val lista: List<ResiduosDTO>
+    val residuos: List<ResiduosDTO>
 ){
 
 }

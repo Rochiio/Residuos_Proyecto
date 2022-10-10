@@ -2,6 +2,7 @@ package mappers
 
 import exceptions.CSVFormatException
 import dto.ResiduosDTO
+import exceptions.FileFormatException
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -18,8 +19,8 @@ import java.nio.file.Path
  * TODO pobrarlo con csv de prueba
  * TODO toJson jsonTo toXML xmlTo
  */
-object ResiduosMapper {
-    const val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+class ResiduosMapper {
+    val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
 
 
 
@@ -97,7 +98,7 @@ object ResiduosMapper {
         if (File(destino).createNewFile()) {
             val file = File(destino)
             file.writeText(CABECERA+"\n")
-            residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
+            residuoLista.residuos.forEach { file.appendText(it.toLine()+"\n") }
         }
 
     }
@@ -200,14 +201,14 @@ object ResiduosMapper {
      * @param directorio directorio donde debemos coger el json
      * @return lista de residuos dto
      */
-    fun fromJson(directorio: String):ListaResiduosDTO?{
+    fun fromJson(directorio: String):ListaResiduosDTO{
         var fichero = File(directorio)
 
         if(fichero.exists() && fichero.endsWith(".json")){
             val json = Json { prettyPrint = true }
             return Json.decodeFromString<ListaResiduosDTO>(File(directorio).readText())
         }
-        return null
+        throw FileFormatException("El archivo JSON no es correcto")
     }
 
 

@@ -2,10 +2,12 @@ package mappers
 
 import exceptions.CSVFormatException
 import dto.ContenedorDTO
+import dto.ResiduosDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.Contenedor
+import models.Residuos
 import models.TipoContenedor
 import nl.adaptivity.xmlutil.serialization.XML
 import repositories.ListaContenedorDTO
@@ -178,5 +180,24 @@ class ContenedorMapper {
 
     fun checkRutaCSV(ruta: String): Boolean {
         return ruta.endsWith(".csv")
+    }
+
+    /**
+     * Mappear una lista de contenedores en una lista de contenedores DTO
+     * @param contenedores lista de contenedores a mappear.
+     * @return lista ya mappeada
+     */
+    fun mapListToDTO(contenedores: List<Contenedor>):List<ContenedorDTO>{
+        return contenedores.map { toDTO(it) }.toList()
+    }
+
+
+    /**
+     * Mappear una lista de contenedores DTO a una lista de contenedores
+     * @param contenedores lista de DTO a mappear.
+     * @return lista ya mappeada.
+     */
+    fun mapListFromDTO(contenedores: List<ContenedorDTO>):List<Contenedor>{
+        return contenedores.map { fromDto(it) }.toList()
     }
 }

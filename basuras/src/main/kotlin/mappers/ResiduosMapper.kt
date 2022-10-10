@@ -98,7 +98,7 @@ class ResiduosMapper {
         if (File(destino).createNewFile()) {
             val file = File(destino)
             file.writeText(CABECERA+"\n")
-            residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
+            residuoLista.residuos.forEach { file.appendText(it.toLine()+"\n") }
         }
 
     }

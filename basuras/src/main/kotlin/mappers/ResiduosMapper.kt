@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.JsonMappingException
 import com.fasterxml.jackson.databind.ObjectMapper
 import dto.ResiduosDto
+import exceptions.FileFormatException
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
@@ -92,11 +93,11 @@ class ResiduosMapper {
      */
     fun writeCsvResiduo(residuoLista: ListaResiduosDto, ruta: String) {
         var destino = ruta
-        File("$destino${File.separator}residuos_procesado.csv").createNewFile()
+        File(destino).createNewFile()
 
-        val file = File("$destino${File.separator}residuos_procesado.csv")
+        val file = File(destino)
         file.writeText(CABECERA+"\n")
-        residuoLista.lista.forEach { file.appendText(it.toLine()+"\n") }
+        residuoLista.residuos.forEach { file.appendText(it.toLine()+"\n") }
 
 
     }
@@ -155,7 +156,7 @@ class ResiduosMapper {
      */
     fun toXml(directorio: String, listaResiduosDto: ListaResiduosDto) {
         val xml = XML { indentString = "  " }
-        val fichero = File(directorio + "${File.separator}residuos_xml.xml")
+        val fichero = File(directorio)
         fichero.writeText(xml.encodeToString(listaResiduosDto))
     }
 
@@ -193,14 +194,14 @@ class ResiduosMapper {
      * @param directorio directorio donde debemos coger el json
      * @return lista de residuos dto
      */
-    fun fromJson(directorio: String): ListaResiduosDto? {
+    fun fromJson(directorio: String): ListaResiduosDto {
         val fichero = File(directorio)
 
         if (fichero.exists() && fichero.endsWith(".json")) {
             val json = Json { prettyPrint = true }
             return json.decodeFromString(fichero.readText())
         }
-        return null
+        throw FileFormatException("El archvo json no es correcto")
     }
 
 

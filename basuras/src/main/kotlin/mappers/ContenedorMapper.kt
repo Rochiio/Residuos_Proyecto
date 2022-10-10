@@ -1,6 +1,6 @@
 package mappers
 
-import CsvException
+import exceptions.CSVFormatException
 import dto.ContenedorDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -74,7 +74,7 @@ class ContenedorMapper {
 
         val file = File(ruta)
         if (!checkCSV(file))
-            throw CsvException("El formato del csv no es correcto")
+            throw CSVFormatException("El formato del csv no es correcto")
         else
             return file.readLines()
                 .drop(1)
@@ -101,7 +101,7 @@ class ContenedorMapper {
      */
     private fun mapContenedorDTO(it: List<String>): ContenedorDTO {
         if (it.size != 16)
-            throw CsvException("El formato del csv no es correcto")
+            throw CSVFormatException("El formato del csv no es correcto")
         else return ContenedorDTO(
             it[0],
             it[1],
@@ -131,9 +131,9 @@ class ContenedorMapper {
      */
     fun writeCsv(contendores: List<ContenedorDTO>, ruta: String) {
         var destino = ruta
-        File("$destino${File.separator}contenedores_procesado.csv").createNewFile()
+        File(ruta).createNewFile()
 
-        val file = File("$destino${File.separator}contenedores_procesado.csv")
+        val file = File(destino)
         file.writeText(cabecera+"\n")
         contendores.forEach { file.appendText(it.toLine()+"\n") }
 
@@ -165,15 +165,14 @@ class ContenedorMapper {
 
     fun toXML(ruta: String, contenedores: ListaContenedorDTO) {
         val xml = XML{indentString = " "}
-        val file = File(ruta + "${File.separator}contenedores.xml")
+        val file = File(ruta)
         file.writeText(xml.encodeToString(contenedores))
     }
 
     fun fromXML(ruta: String): ListaContenedorDTO {
         val file = File(ruta)
-        val xml= XML{indentString = " "}
-        val contenedores = XML.decodeFromString<ListaContenedorDTO>(file.readText())
-        return contenedores
+        val xml = XML { indentString = " " }
+        return XML.decodeFromString(file.readText())
     }
 
     fun checkRutaCSV(ruta: String): Boolean {

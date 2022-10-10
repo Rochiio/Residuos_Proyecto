@@ -4,7 +4,7 @@ import dto.ResiduosDto
 
 @kotlinx.serialization.Serializable
 class ListaResiduosDto(
-    val lista: List<ResiduosDto>
+    val residuos: List<ResiduosDto>
 ){
 
 }

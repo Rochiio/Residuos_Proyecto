@@ -1,13 +1,9 @@
-import com.sun.tools.javac.Main
-import com.twelvemonkeys.imageio.metadata.Directory
+
+import jetbrains.datalore.plot.base.DataFrame
 import mappers.ContenedorMapper
-import mappers.ListaContenedorDTO
 import mappers.ResiduosMapper
 import repositories.ListaResiduosDto
-import utils.Bitacora
-import utils.InputHandler
 import java.io.File
-import java.util.InputMismatchException
 
 /**
  * Práctica Acceso a Datos.
@@ -17,8 +13,9 @@ import java.util.InputMismatchException
  * TODO CSV CONTENEDORES CAMPO NUMERO CONTIENE VACIOS
  */
 fun main(args: Array<String>) {
-    val inputHandler = InputHandler()
-    val dir = System.getProperty("user.dir")
-    val origen = "datosPrueba"
-    val lista = BasuraController.parser("${System.getProperty("user.dir")}${File.separator}$origen","${System.getProperty("user.dir")}${File.separator}datosPrueba")
+
+    BasuraController.executeCommand(
+        arrayOf("resumen", "${System.getProperty("user.dir")}${File.separator}datosPrueba", "${System.getProperty("user.dir")}${File.separator}salidaPrueba"))
+   // BasuraController.parser("${System.getProperty("user.dir")}${File.separator}datosPrueba", "${System.getProperty("user.dir")}${File.separator}salidaPrueba")
+
 }

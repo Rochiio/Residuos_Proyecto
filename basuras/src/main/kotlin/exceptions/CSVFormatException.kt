@@ -1,5 +1,5 @@
 package exceptions
 
-class CSVFormatException(s: String) : Exception() {
+class CSVFormatException : Exception() {
 
 }

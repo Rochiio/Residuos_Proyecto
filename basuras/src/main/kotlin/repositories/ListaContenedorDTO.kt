@@ -1,12 +1,14 @@
 package repositories
 
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
+import kotlinx.serialization.Serializable
 import dto.ContenedorDTO
-@kotlinx.serialization.Serializable
+
+
+/**
+ * Clase que contiene una lista de contenedor dto, utilizado para el mappeo a JSON
+ */
+@Serializable
 data class ListaContenedorDTO(
     @JsonProperty("contenedores")
     val contenedores: List<ContenedorDTO>

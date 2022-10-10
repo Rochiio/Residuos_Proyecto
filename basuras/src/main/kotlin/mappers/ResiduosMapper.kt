@@ -212,6 +212,24 @@ class ResiduosMapper {
     }
 
 
+    /**
+     * Mappear una lista de residuos en una lista de residuos DTO
+     * @param residuos lista de residuos a mappear.
+     * @return lista ya mappeada
+     */
+    fun mapListToDTO(residuos: List<Residuos>):List<ResiduosDTO>{
+        return residuos.map { toDto(it) }.toList()
+    }
+
+
+    /**
+     * Mappear una lista de residuos DTO a una lista de residuos
+     * @param residuosDto lista de DTO a mappear.
+     * @return lista ya mappeada.
+     */
+    fun mapListFromDTO(residuosDto: List<ResiduosDTO>):List<Residuos>{
+        return residuosDto.map { fromDto(it) }.toList()
+    }
 }
 
 

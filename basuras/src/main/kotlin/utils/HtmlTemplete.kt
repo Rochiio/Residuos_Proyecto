@@ -1,5 +1,7 @@
 package utils
 
+import java.io.File
+
 class HtmlTemplete(
     //Variables iguales
     val distrito: String,
@@ -73,8 +75,14 @@ class HtmlTemplete(
             </html>
         """.trimIndent()
 
+    }
 
+    fun writeHTML(destino : String){
+        File("$destino${File.separator}resumen.html").createNewFile()
+        val file : File = File("$destino${File.separator}resumen.html")
+        file.writeText(generateHtmlResumen())
 
+    }
         /**
          * Generación html para la opción RESUMEN DISTRITO
          */
@@ -122,4 +130,3 @@ class HtmlTemplete(
         """.trimIndent()
         }
     }
-}

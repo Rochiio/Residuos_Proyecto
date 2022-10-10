@@ -1,6 +1,6 @@
 package mappers
 
-import CSVFormatException
+import exceptions.CSVFormatException
 import dto.ContenedorDTO
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
@@ -8,11 +8,10 @@ import kotlinx.serialization.json.Json
 import models.Contenedor
 import models.TipoContenedor
 import nl.adaptivity.xmlutil.serialization.XML
-import repositories.ListaContenedorDTO
 import java.io.File
 
-object ContenedorMapper {
-    val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
+class ContenedorMapper {
+    private val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
             "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" +
             "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"
 
@@ -75,7 +74,7 @@ object ContenedorMapper {
 
         val file = File(ruta)
         if (!checkCSV(file))
-            throw CSVFormatException()
+            throw CSVFormatException("El formato del csv no es correcto")
         else
             return file.readLines()
                 .drop(1)
@@ -102,7 +101,7 @@ object ContenedorMapper {
      */
     private fun mapContenedorDTO(it: List<String>): ContenedorDTO {
         if (it.size != 16)
-            throw CSVFormatException()
+            throw CSVFormatException("El formato del csv no es correcto")
         else return ContenedorDTO(
             it[0],
             it[1],
@@ -132,13 +131,11 @@ object ContenedorMapper {
      */
     fun writeCsv(contendores: List<ContenedorDTO>, ruta: String) {
         var destino = ruta
-        if (!ruta.endsWith(".csv"))
-            destino += "contenedores-procesado.csv"
-        if (File(destino).createNewFile()) {
-            val file = File(destino)
-            file.writeText(cabecera)
-            contendores.forEach { file.appendText(it.toLine()) }
-        }
+        File(ruta).createNewFile()
+
+        val file = File(destino)
+        file.writeText(cabecera+"\n")
+        contendores.forEach { file.appendText(it.toLine()+"\n") }
 
     }
 
@@ -149,7 +146,10 @@ object ContenedorMapper {
      */
     fun toJson(ruta: String, contenedores: ListaContenedorDTO) {
         val json = Json { prettyPrint = true }
-        File(ruta).writeText(json.encodeToString(contenedores))
+        val file = File(ruta)
+        if(!file.exists())
+            file.createNewFile()
+        file.writeText(json.encodeToString(contenedores))
     }
 
     /**
@@ -165,16 +165,14 @@ object ContenedorMapper {
 
     fun toXML(ruta: String, contenedores: ListaContenedorDTO) {
         val xml = XML{indentString = " "}
-
         val file = File(ruta)
         file.writeText(xml.encodeToString(contenedores))
     }
 
     fun fromXML(ruta: String): ListaContenedorDTO {
         val file = File(ruta)
-        val xml= XML{indentString = " "}
-        val contenedores = XML.decodeFromString<ListaContenedorDTO>(file.readText())
-        return contenedores
+        val xml = XML { indentString = " " }
+        return XML.decodeFromString(file.readText())
     }
 
     fun checkRutaCSV(ruta: String): Boolean {

@@ -11,7 +11,7 @@ import nl.adaptivity.xmlutil.serialization.XML
 import repositories.ListaContenedorDTO
 import java.io.File
 
-object ContenedorMapper {
+class ContenedorMapper {
     val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
             "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" +
             "COORDENADA Y;LONGITUD;LATITUD;DIRECCION"

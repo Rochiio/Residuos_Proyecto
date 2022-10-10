@@ -1,14 +1,14 @@
 import dto.ContenedorDTO
-import dto.ResiduosDto
+import dto.ResiduosDTO
 import exceptions.CSVFormatException
 import exceptions.FileFormatException
 import exceptions.InputFormatException
+import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
-import mappers.ListaContenedorDTO
 import mappers.ResiduosMapper
 import models.Contenedor
 import org.apache.xpath.operations.Bool
-import repositories.ListaResiduosDto
+import repositories.ListaContenedorDTO
 import java.io.File
 import java.util.StringJoiner
 
@@ -83,16 +83,16 @@ object BasuraController {
                                     println("Escribiendo XML...")
                                     residuosMapper.toXml(
                                         "$destino${File.separator}residuos_parsed.xml",
-                                        ListaResiduosDto(residuos)
+                                        ListaResiduosDTO(residuos)
                                     )
                                     println("Escribiendo JSON...")
                                     residuosMapper.toJson(
                                         "$destino${File.separator}residuos_parsed.json",
-                                        ListaResiduosDto(residuos)
+                                        ListaResiduosDTO(residuos)
                                     )
                                     println("Escribiendo CSV...")
                                     residuosMapper.writeCsvResiduo(
-                                        ListaResiduosDto(residuos),
+                                        ListaResiduosDTO(residuos),
                                         "$destino${File.separator}residuos_parsed.csv"
                                     )
                                 }else{
@@ -121,13 +121,13 @@ object BasuraController {
         return contenedorMapper.readCSV(file.path)
     }
 
-    fun readResiduosCsv(file: File): List<ResiduosDto> {
+    fun readResiduosCsv(file: File): List<ResiduosDTO> {
         return residuosMapper.readCsvResiduo(file.path)!!
     }
 
     fun resumen(origen: String, destino: String, distrito : String) {
         var contenedores: List<ContenedorDTO> = mutableListOf()
-        var residuos: List<ResiduosDto> = mutableListOf()
+        var residuos: List<ResiduosDTO> = mutableListOf()
 
         //Lectura de archivos
         if (checkPath(origen) && checkPath(destino)) {

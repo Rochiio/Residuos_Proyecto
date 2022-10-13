@@ -4,8 +4,8 @@ class HtmlTemplete(
     //Variables iguales
     private val distrito: String,
     private val fechaHora: String,
-    private val numeroContenedoresTipoDistrito: String,
-    private val maxMinMediaDesv: String,
+    private val numeroContenedoresTipoDistrito: String="",
+    private val maxMinMediaDesv: String="",
     private val tiempoGeneracion: Long,
     //Variable Resumen Distrito
     private val totalToneladasResiduo: String ="",
@@ -114,45 +114,29 @@ class HtmlTemplete(
         
             <div id="container">
         
-                <h4>Número de contenedores de cada tipo que hay en cada distrito: </h4>
+                <h4>Número de contenedores de cada tipo en el distrito de $distrito: </h4>
                 <p>$numeroContenedoresTipoDistrito</p>
         
                 <br>
                 
-                <h4>Media de contenedores de cada tipo que hay en cada distrito: </h4>
-                <p>$mediaContenedoresTipoDistrito</p>
+                <h4>Total de toneladas recogidas de cada tipo de residuo en el distrito de $distrito: </h4>
+                <p>$totalToneladasResiduo</p>
         
                 <br>
         
-                <h4>Gráfico con el total de contenedores por distrito:</h4>
-                <img class="images" src="./img/01-totalContenedoresDistrito.png">
+                <h4>Gráfico con el total de toneladas de cada residuo recogidas en el distrito de $distrito:</h4>
+                <img class="images" src="./img/03-totalToneladasResiduo$distrito.png">
         
                 <br>
         
-                <h4>Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
-                distrito:</h4>
-                <p>$mediaToneladasAnuales</p>
         
-                <br>
-        
-                <h4>Gráfico de media de toneladas mensuales de recogida de basura por distrito:</h4>
-                <img class="images" src="./img/02-mediaToneladasMensuales.png">
-        
-                <br>
-        
-                <h4>Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
-                de basura agrupadas por distrito:</h4>
+                <h4>Máximo, mínimo y media por mes por residuo recogidos en el distrito de $distrito:</h4>
                 <p>$maxMinMediaDesv</p>
         
                 <br>
         
-                <h4>Suma de todo lo recogido en un año por distrito:</h4>
-                <p>$sumaRecogidoDistrito</p>
-        
-                <br>
-        
-                <h4>Por cada distrito obtener para cada tipo de residuo la cantidad recogida:</h4>
-                <p>$porDistritoTipoResiduoCantidad</p>
+                <h4>Gráfica del máximo, minimo  media por meses en el distrito de $distrito:</h4>
+                <img class="images" src="./img/04-maxMinMediaPorMes$distrito.png">
         
                 <br>
         

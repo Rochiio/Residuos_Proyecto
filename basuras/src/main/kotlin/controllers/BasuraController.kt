@@ -1,16 +1,14 @@
+package controllers
+
 import dto.ContenedorDTO
 import dto.ResiduosDTO
-import exceptions.CSVFormatException
 import exceptions.FileFormatException
 import exceptions.InputFormatException
 import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
-import models.Contenedor
-import org.apache.xpath.operations.Bool
 import repositories.ListaContenedorDTO
 import java.io.File
-import java.util.StringJoiner
 
 object BasuraController {
     const val CABECERARESIDUOS = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
@@ -107,6 +105,9 @@ object BasuraController {
         }
     }
 
+    fun leerCsv(){
+
+    }
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)

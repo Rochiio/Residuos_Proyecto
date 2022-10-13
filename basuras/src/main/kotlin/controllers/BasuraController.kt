@@ -1,21 +1,16 @@
 package controllers
 
-import controllers.DataframeController
 import dto.ContenedorDTO
 import dto.ResiduosDTO
-import exceptions.CSVFormatException
 import exceptions.FileFormatException
 import exceptions.InputFormatException
 import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
-import models.Contenedor
-import org.apache.xpath.operations.Bool
 import repositories.ListaBitacora
 import repositories.ListaContenedorDTO
 import utils.html.HtmlDirectory
 import java.io.File
-import java.util.StringJoiner
 
 object BasuraController {
     const val CABECERARESIDUOS = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"

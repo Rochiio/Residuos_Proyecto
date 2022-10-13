@@ -1,8 +1,10 @@
 package utils.html
 
 import java.io.File
+import java.io.IOException
 import java.nio.file.Files
 import java.nio.file.Path
+import java.nio.file.Paths
 import java.nio.file.StandardCopyOption
 import kotlin.io.path.Path
 
@@ -24,12 +26,12 @@ object HtmlDirectory {
      */
     fun copyHtmlDataResumen(html:String,directory: String):Boolean{
         var fichero = File(directory+ File.separator +"resumen.html")
-        var cssDestino = directory+File.separator+"css"+File.separator
-        var imgDestino = directory+File.separator+"img"+File.separator
+        var cssDestino = File(directory+File.separator+"css"+File.separator)
+        var imgDestino = File(directory+File.separator+"img"+File.separator)
 
 
-            createDirectories(cssDestino, imgDestino)
-            addData(html, fichero, cssDestino, imgDestino)
+        createDirectories(cssDestino, imgDestino)
+        addData(html, fichero, cssDestino, imgDestino)
 
         return true
     }
@@ -41,20 +43,36 @@ object HtmlDirectory {
      * @param fichero fichero en el que se va a escirbir.
      * @param cssDestino fichero destino del css.
      * @param imgDestino fichero destino de las imágenes.
+     * TODO da problemas cuando existen las carpetas en el destino
      */
-    private fun addData(html:String,fichero: File, cssDestino: String, imgDestino: String) {
+    private fun addData(html:String,fichero: File, cssDestino: File, imgDestino: File) {
         fichero.writeText(html)
 
-        Files.walk(Path(css)).forEach {
-            Files.copy(it, Path(cssDestino).resolve(Path(css).relativize(it)),
-                StandardCopyOption.REPLACE_EXISTING)
-        }
+        Files.walk(Paths.get(css))
+            .forEach { source: Path ->
+                val destination: Path = Paths.get(
+                    cssDestino.toString(), source.toString()
+                        .substring(css.length-1)
+                )
+                try {
+                    Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING)
+                } catch (e: IOException) {
+                   println("Error: Debe elegir una carpeta vacía")
+                }
+            }
 
-        Files.walk(Path(img)).forEach {
-            Files.copy(it, Path(imgDestino).resolve(Path(img).relativize(it)),
-                StandardCopyOption.REPLACE_EXISTING)
-        }
-
+        Files.walk(Paths.get(img))
+            .forEach { source: Path ->
+                val destination: Path = Paths.get(
+                    imgDestino.toString(), source.toString()
+                        .substring(img.length-1)
+                )
+                try {
+                    Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING)
+                } catch (e: IOException) {
+                    println("Error: Debe elegir una carpeta vacía")
+                }
+            }
     }
 
 
@@ -63,14 +81,10 @@ object HtmlDirectory {
      * @param cssDestino carpeta destino del css.
      * @param imgDestino carpeta destino de las imágenes.
      */
-    private fun createDirectories(cssDestino:String, imgDestino:String){
-        if (Files.notExists(Path.of(cssDestino))){
-            Files.createDirectory(Path.of(cssDestino))
-        }
+    private fun createDirectories(cssDestino:File, imgDestino:File){
+        if (!cssDestino.exists()) { cssDestino.mkdir() }
+        if (!imgDestino.exists()) { imgDestino.mkdir() }
 
-        if (Files.exists(Path.of(imgDestino))){
-            Files.createDirectory(Path.of(imgDestino))
-        }
     }
 
 }

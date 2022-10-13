@@ -1,13 +1,15 @@
 package controllers
 
 import jetbrains.datalore.base.values.Color
-import jetbrains.letsPlot.Geom
+import jetbrains.letsPlot.*
 import jetbrains.letsPlot.Stat.identity
 import jetbrains.letsPlot.export.ggsave
 import jetbrains.letsPlot.geom.geomBar
+import jetbrains.letsPlot.geom.geomTile
 import jetbrains.letsPlot.intern.Plot
+import jetbrains.letsPlot.label.ggtitle
 import jetbrains.letsPlot.label.labs
-import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
 import org.jetbrains.kotlinx.dataframe.DataFrame
@@ -33,8 +35,6 @@ class DataframeController(
 
     private var residuosData: DataFrame<Residuos>
     private var contenedoresData : DataFrame<Contenedor>
-
-    private lateinit var dfNumeroContenedoresTipoDistrito: DataFrame<Contenedor>
 
 
     init {
@@ -189,10 +189,10 @@ class DataframeController(
      * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-       return dfNumeroContenedoresTipoDistrito.groupBy("distrito","tipoContenedor")
-           .aggregate {
-               mean("total") into "media"
-       }.html()
+        return contenedoresData.groupBy("distrito","tipoContenedor")
+            .aggregate {
+                meanOf { sum("cantidad") } into "media"
+            }.sortBy("distrito").html()
     }
 
 
@@ -201,12 +201,10 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaNumContenedoresTipoDistrito(): String {
-        dfNumeroContenedoresTipoDistrito = contenedoresData.groupBy("distrito","tipoContenedor")
+        return contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
             sum("cantidad") into "total"
-        }.sortBy("distrito")
-
-        return dfNumeroContenedoresTipoDistrito.html()
+        }.sortBy("distrito").html()
     }
 
 

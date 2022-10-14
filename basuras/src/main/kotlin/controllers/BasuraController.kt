@@ -9,7 +9,6 @@ import mappers.ContenedorMapper
 import mappers.ResiduosMapper
 import mu.KotlinLogging
 import repositories.ListaContenedorDTO
-import utils.html.HtmlDirectory
 import java.io.File
 
 object BasuraController {
@@ -19,6 +18,7 @@ object BasuraController {
 
     val contenedorMapper: ContenedorMapper = ContenedorMapper()
     val residuosMapper: ResiduosMapper = ResiduosMapper()
+
 
     private val logger = KotlinLogging.logger {}
 
@@ -116,6 +116,9 @@ object BasuraController {
         }
     }
 
+    fun leerCsv(){
+
+    }
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)
@@ -205,12 +208,8 @@ object BasuraController {
         }
 
         if(residuos.isNotEmpty() && contenedores.isNotEmpty()){
-            var residuosHtml = residuosMapper.mapListFromDTO(residuos)
-            var contenedoresHtml = contenedorMapper.mapListFromDTO(contenedores)
-            dataFrameController = DataframeController(contenedoresHtml,residuosHtml)
             if(distrito == ""){
-                var html = dataFrameController.resumen()
-                HtmlDirectory.copyHtmlDataResumen(html,destino)
+                TODO("Resumen sin distrito")
             }else{
                 TODO("Resumen con distrito")
             }

@@ -1,18 +1,17 @@
 package controllers
 
 import jetbrains.datalore.base.values.Color
-import jetbrains.letsPlot.LetsPlot
+import jetbrains.letsPlot.*
 import jetbrains.letsPlot.Stat.identity
 import jetbrains.letsPlot.export.ggsave
 import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.ggplot
+import jetbrains.letsPlot.geom.geomTile
 import jetbrains.letsPlot.intern.Plot
+import jetbrains.letsPlot.label.ggtitle
 import jetbrains.letsPlot.label.labs
-import jetbrains.letsPlot.letsPlot
+import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
-import models.distrito
-import models.nombreDistrito
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.*
 import org.jetbrains.kotlinx.dataframe.io.DisplayConfiguration
@@ -27,25 +26,24 @@ import kotlin.system.measureTimeMillis
  * Clase consultas dataframe y gráficos.
  */
 class DataframeController(
-    private val contenedores: List<Contenedor>,
-    private val residuos: List<Residuos>
-) {
+    private val contenedores:List<Contenedor>,
+    private val residuos:List<Residuos>
+    ) {
 
-    private val IMAGES = System.getProperty("user.dir") + "${File.separator}src${File.separator}" +
+    private val IMAGES = System.getProperty("user.dir")+"${File.separator}src${File.separator}" +
             "main${File.separator}resources${File.separator}resumenGenerator${File.separator}img${File.separator}"
 
     private var residuosData: DataFrame<Residuos>
-    private var contenedoresData: DataFrame<Contenedor>
+    private var contenedoresData : DataFrame<Contenedor>
 
-    private lateinit var dfNumeroContenedoresTipoDistrito: DataFrame<Contenedor>
-
+    private lateinit var contenedoresTipoDistrito: DataFrame<Contenedor>
 
     init {
         residuosData = residuos.toDataFrame()
         residuosData.cast<Residuos>()
         contenedoresData = contenedores.toDataFrame()
         contenedoresData.cast<Contenedor>()
-        DisplayConfiguration.DEFAULT.rowsLimit = 10000
+        DisplayConfiguration.DEFAULT.rowsLimit=10000
     }
 
 
@@ -208,7 +206,7 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaCantidadResiduoDistrito(): String {
-        return residuosData.groupBy("nombreDistrito", "residuo")
+        return residuosData.groupBy("nombreDistrito","residuo")
             .aggregate {
                 sum("toneladas") into "total_recogido"
             }.html()
@@ -220,7 +218,7 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaSumaAñoDistrito(): String {
-        return residuosData.groupBy("nombreDistrito", "año").aggregate {
+        return residuosData.groupBy("nombreDistrito","año").aggregate {
             sum("toneladas") into "suma"
         }.html()
     }
@@ -233,7 +231,7 @@ class DataframeController(
      * TODO Creo que está bien
      */
     private fun consultaMaxMinMedDesvToneladasAnuales(): String {
-        return residuosData.groupBy("residuo", "nombreDistrito", "año")
+        return residuosData.groupBy("residuo","nombreDistrito","año")
             .aggregate {
                 max("toneladas") into "max"
                 min("toneladas") into "min"
@@ -248,26 +246,26 @@ class DataframeController(
      * TODO No se si es correcto del todo
      */
     private fun graficoMediaToneladasMensuales() {
-        var agrupado = residuosData.groupBy("nombreDistrito", "mes")
+        var agrupado = residuosData.groupBy("nombreDistrito","mes")
             .aggregate {
                 mean("toneladas") into "media"
             }.toMap()
 
-        var fig: Plot = letsPlot(data = agrupado) + geomBar(
+        var fig: Plot = letsPlot(data=agrupado) + geomBar(
             stat = identity,
             alpha = 0.8,
             fill = Color.BLUE,
             color = Color.BLACK
-        ) {
-            x = "nombreDistrito"
-            y = "media"
+        ){
+            x="nombreDistrito"
+            y="media"
         } + labs(
-            x = "Distrito",
-            y = "Media",
+            x="Distrito",
+            y="Media",
             title = "Media de Toneladas Mensuales por Distrito"
         )
 
-        ggsave(fig, "02-mediaToneladasMensuales.png", path = IMAGES)
+        ggsave(fig,"02-mediaToneladasMensuales.png", path=IMAGES)
     }
 
 
@@ -278,7 +276,7 @@ class DataframeController(
      * TODO resultado incorrecto
      */
     private fun consultaMediaToneladasAnuales(): String {
-        return residuosData.groupBy("año", "residuo", "nombreDistrito")
+         return residuosData.groupBy("año","residuo","nombreDistrito")
             .aggregate {
                 mean("toneladas") into "Media"
             }.sortBy("nombreDistrito").html()
@@ -295,19 +293,19 @@ class DataframeController(
             }.toMap()
 
         var fig: Plot = letsPlot(data = agrupado) + geomBar(
-            stat = identity,
-            alpha = 0.8,
+            stat=identity,
+            alpha=0.8,
             fill = Color.BLUE
         ) {
             x = "distrito"
             y = "total"
         } + labs(
-            x = "Distritos",
-            y = "Total",
+            x="Distritos",
+            y ="Total",
             title = "Total de Contenedores por Distrito"
         )
 
-        ggsave(fig, "01-totalContenedoresDistrito.png", path = IMAGES)
+        ggsave(fig, "01-totalContenedoresDistrito.png", path=IMAGES)
     }
 
 
@@ -317,10 +315,10 @@ class DataframeController(
      * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-        return dfNumeroContenedoresTipoDistrito.groupBy("distrito", "tipoContenedor")
+        return contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
-                mean("total") into "media"
-            }.html()
+                meanOf { sum("cantidad") } into "media"
+            }.sortBy("distrito").html()
     }
 
 
@@ -329,15 +327,11 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaNumContenedoresTipoDistrito(): String {
-        dfNumeroContenedoresTipoDistrito = contenedoresData.groupBy("distrito", "tipoContenedor")
+        return contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
-                sum("cantidad") into "total"
-            }.sortBy("distrito")
-
-        return dfNumeroContenedoresTipoDistrito.html()
+            sum("cantidad") into "total"
+        }.sortBy("distrito").html()
     }
 
-    private fun contenedoresPorDistrito(distrito: String): String {
-        return contenedoresData.filter { "distrito" == distrito }.groupBy("tipoContenedor").toDataFrame().html()
-    }
+
 }

@@ -1,13 +1,12 @@
 package dto
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 
-
+/**
+ * Clase de Data Transfer Object de Contenedor
+ */
 @Serializable
-
 data class ContenedorDTO(
     @XmlElement(true)
     val codigoSituacion: String,

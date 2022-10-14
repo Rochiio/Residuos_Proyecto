@@ -12,6 +12,7 @@ import jetbrains.letsPlot.label.labs
 import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
+import mu.KotlinLogging
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.*
 import org.jetbrains.kotlinx.dataframe.io.DisplayConfiguration
@@ -30,7 +31,7 @@ class DataframeController(
     private val contenedores:List<Contenedor>,
     private val residuos:List<Residuos>
     ) {
-
+    private val logger = KotlinLogging.logger {}
     private val IMAGES = System.getProperty("user.dir")+"${File.separator}src${File.separator}" +
             "main${File.separator}resources${File.separator}resumenGenerator${File.separator}img${File.separator}"
 
@@ -58,6 +59,7 @@ class DataframeController(
         var sumaRecogidoDistrito: String ; var cantidadResiduoDistrito: String
 
         var tiempo = measureTimeMillis {
+            logger.info("Realizando Consultas RESUMEN")
             numeroContenedoresTipoDistrito = consultaNumContenedoresTipoDistrito()
             mediamContenedoresTipoDistrito= consultaMediaContenedoresTipoDistrito()
             graficoContenedoresDistrito()

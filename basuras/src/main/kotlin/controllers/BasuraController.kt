@@ -7,6 +7,7 @@ import exceptions.InputFormatException
 import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
+import mu.KotlinLogging
 import repositories.ListaContenedorDTO
 import java.io.File
 
@@ -18,6 +19,15 @@ object BasuraController {
     val contenedorMapper: ContenedorMapper = ContenedorMapper()
     val residuosMapper: ResiduosMapper = ResiduosMapper()
 
+
+    private val logger = KotlinLogging.logger {}
+
+    private lateinit var dataFrameController: DataframeController
+
+
+    /**
+     * Revisa cúal es el comando elegido.
+     */
     fun executeCommand(args: Array<String>) {
         when (getOption(args)) {
             1 -> parser(args[1], args[2])
@@ -29,6 +39,7 @@ object BasuraController {
             else -> println("Saliendo del programa")
         }
     }
+
 
     /**
      * Lee todos los csv en origen y los escribe en destino como csv, xml y json

@@ -20,6 +20,11 @@ repositories {
 }
 
 dependencies {
+    // Logger
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
+    implementation(group= "ch.qos.logback", name= "logback-classic", version= "1.2.6")
+
+
     //Dependencia para la reflexión
     implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.20")
 
@@ -31,7 +36,7 @@ dependencies {
     // Kotlin serialization JSON
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.3")
     // Para hacer logs
-    implementation("io.github.microutils:kotlin-logging-jvm:2.1.23")
+    implementation("io.github.microutils:kotlin-logging-jvm:3.0.0")
     implementation("ch.qos.logback:logback-classic:1.3.0-alpha16")
     // LetsPlot
     implementation("org.jetbrains.lets-plot:lets-plot-kotlin:3.2.0")

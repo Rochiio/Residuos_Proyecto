@@ -12,6 +12,7 @@ import jetbrains.letsPlot.label.labs
 import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
+import mu.KotlinLogging
 import models.distrito
 import models.nombreDistrito
 import org.jetbrains.kotlinx.dataframe.DataFrame
@@ -31,7 +32,7 @@ class DataframeController(
     private val contenedores:List<Contenedor>,
     private val residuos:List<Residuos>
     ) {
-
+    private val logger = KotlinLogging.logger {}
     private val IMAGES = System.getProperty("user.dir")+"${File.separator}src${File.separator}" +
             "main${File.separator}resources${File.separator}resumenGenerator${File.separator}img${File.separator}"
 
@@ -62,6 +63,7 @@ class DataframeController(
         var cantidadResiduoDistrito: String
 
         var tiempo = measureTimeMillis {
+            logger.info("Realizando Consultas RESUMEN")
             numeroContenedoresTipoDistrito = consultaNumContenedoresTipoDistrito()
             mediamContenedoresTipoDistrito = consultaMediaContenedoresTipoDistrito()
             graficoContenedoresDistrito()
@@ -88,12 +90,18 @@ class DataframeController(
     }
 
 
+
+    /**
+     * Consultas a realizar cuando se elige el comando RESUMEN DISTRITO.
+     * @return el html ya creado
+     */
     fun resumenDistrito(distrito: String): String {
         val numeroContenedoresTipoDistrito: String
         val totalToneladasResiduo: String
         val maxMinMediaDesv: String
 
         val tiempo = measureTimeMillis {
+            logger.info("Realizando Consultas RESUMEN DISTRITO")
             numeroContenedoresTipoDistrito = consultaNumeroContenedoresTipoDistrito(distrito)
             totalToneladasResiduo = consultaToneladasDistrito(distrito)
             graficoToneladasResiduoDistrito(distrito)
@@ -230,7 +238,6 @@ class DataframeController(
      * Consulta: Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
      * de basura agrupadas por distrito.
      * @return String de resultado.
-     * TODO Creo que está bien
      */
     private fun consultaMaxMinMedDesvToneladasAnuales(): String {
         return residuosData.groupBy("residuo","nombreDistrito","año")
@@ -245,7 +252,6 @@ class DataframeController(
 
     /**
      * Gráfico de media de toneladas mensuales de recogida de basura por distrito
-     * TODO No se si es correcto del todo
      */
     private fun graficoMediaToneladasMensuales() {
         var agrupado = residuosData.groupBy("nombreDistrito","mes")
@@ -266,7 +272,6 @@ class DataframeController(
             y="Media",
             title = "Media de Toneladas Mensuales por Distrito"
         )
-
         ggsave(fig,"02-mediaToneladasMensuales.png", path=IMAGES)
     }
 
@@ -317,9 +322,9 @@ class DataframeController(
      * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
+        return contenedoresTipoDistrito.groupBy("distrito","tipoContenedor")
             .aggregate {
-                meanOf { sum("cantidad") } into "media"
+                mean("total") into "media"
             }.sortBy("distrito").html()
     }
 
@@ -329,10 +334,11 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaNumContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
+        contenedoresTipoDistrito = contenedoresData.groupBy("distrito","tipoContenedor")
             .aggregate {
             sum("cantidad") into "total"
-        }.sortBy("distrito").html()
+        }.sortBy("distrito")
+        return contenedoresTipoDistrito.html()
     }
 
 

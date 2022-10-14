@@ -19,7 +19,7 @@ fun main(args: Array<String>) {
     //TODO como ponemos si ha sido un exito?
     var bitacora = Bitacora(args[0],true,tiempo)
     bitacora.bitacoraXml(args[args.size-1])
-    
+
 //    val contenedorMapper: ContenedorMapper = ContenedorMapper()
 //    val residuosMapper: ResiduosMapper = ResiduosMapper()
 //

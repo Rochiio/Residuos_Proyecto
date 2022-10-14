@@ -7,9 +7,7 @@ import exceptions.InputFormatException
 import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
-import repositories.ListaBitacora
 import repositories.ListaContenedorDTO
-import utils.html.HtmlDirectory
 import java.io.File
 
 object BasuraController {
@@ -19,11 +17,6 @@ object BasuraController {
 
     val contenedorMapper: ContenedorMapper = ContenedorMapper()
     val residuosMapper: ResiduosMapper = ResiduosMapper()
-    val listaBitacoras: ListaBitacora = ListaBitacora()
-
-
-    private lateinit var dataFrameController: DataframeController
-
 
     fun executeCommand(args: Array<String>) {
         when (getOption(args)) {
@@ -112,6 +105,9 @@ object BasuraController {
         }
     }
 
+    fun leerCsv(){
+
+    }
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)
@@ -201,12 +197,8 @@ object BasuraController {
         }
 
         if(residuos.isNotEmpty() && contenedores.isNotEmpty()){
-            var residuosHtml = residuosMapper.mapListFromDTO(residuos)
-            var contenedoresHtml = contenedorMapper.mapListFromDTO(contenedores)
-            dataFrameController = DataframeController(contenedoresHtml,residuosHtml)
             if(distrito == ""){
-                var html = dataFrameController.resumen()
-                HtmlDirectory.copyHtmlDataResumen(html,destino)
+                TODO("Resumen sin distrito")
             }else{
                 TODO("Resumen con distrito")
             }

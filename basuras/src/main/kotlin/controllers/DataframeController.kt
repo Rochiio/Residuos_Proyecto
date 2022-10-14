@@ -20,6 +20,7 @@ import utils.Format
 import utils.html.HtmlTemplete
 import java.io.File
 import java.time.LocalDateTime
+import java.util.logging.Logger
 import kotlin.system.measureTimeMillis
 
 /**
@@ -36,6 +37,7 @@ class DataframeController(
     private var residuosData: DataFrame<Residuos>
     private var contenedoresData : DataFrame<Contenedor>
 
+    private lateinit var contenedoresTipoDistrito: DataFrame<Contenedor>
 
     init {
         residuosData = residuos.toDataFrame()
@@ -189,9 +191,9 @@ class DataframeController(
      * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
+         return contenedoresTipoDistrito.groupBy("tipoContenedor","distrito")
             .aggregate {
-                meanOf { sum("cantidad") } into "media"
+                mean("total") into "media"
             }.sortBy("distrito").html()
     }
 
@@ -201,10 +203,12 @@ class DataframeController(
      * @return String de resultado.
      */
     private fun consultaNumContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
+        contenedoresTipoDistrito = contenedoresData.groupBy("tipoContenedor","distrito")
             .aggregate {
             sum("cantidad") into "total"
-        }.sortBy("distrito").html()
+        }.sortBy("distrito")
+
+        return contenedoresTipoDistrito.html()
     }
 
 

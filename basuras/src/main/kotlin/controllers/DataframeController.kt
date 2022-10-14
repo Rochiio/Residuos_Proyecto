@@ -12,6 +12,8 @@ import jetbrains.letsPlot.label.labs
 import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
+import models.distrito
+import models.nombreDistrito
 import org.jetbrains.kotlinx.dataframe.DataFrame
 import org.jetbrains.kotlinx.dataframe.api.*
 import org.jetbrains.kotlinx.dataframe.io.DisplayConfiguration

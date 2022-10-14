@@ -65,7 +65,7 @@ class ResiduosMapper {
      * @param file File
      * @return Boolean
      */
-    private fun checkCSV(file: File): Boolean {
+    fun checkCSV(file: File): Boolean {
         logger.info("Comprobando si el csv es correcto")
         val head = file.readLines().take(1).first().split(";").size == 7
         val lines = file.readLines().size > 1

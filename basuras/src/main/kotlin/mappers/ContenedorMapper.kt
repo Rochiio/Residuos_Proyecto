@@ -91,12 +91,13 @@ class ContenedorMapper {
 
     }
 
+
     /**
      * Comprueba si el archivo tiene la cabecera correcta y si tiene contenido
      * @param file File
      * @return Boolean
      */
-    private fun checkCSV(file: File): Boolean {
+    fun checkCSV(file: File): Boolean {
         logger.info("Comprobando si el csv es correcto")
         val head = file.readLines().take(1).first().split(";").size == 16
         val lines = file.readLines().size > 1

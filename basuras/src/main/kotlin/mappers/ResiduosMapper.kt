@@ -23,6 +23,7 @@ class ResiduosMapper {
 
     private val logger = KotlinLogging.logger {}
 
+
     /**
      * Pasar un residuoDto a residuo
      * @param residuoDto residuo en tipo dto
@@ -40,6 +41,7 @@ class ResiduosMapper {
             toneladas = residuoDto.toneladas
         )
     }
+
 
     /**
      * Pasar un residuo a residuoDto
@@ -183,7 +185,6 @@ class ResiduosMapper {
     }
 
 
-
     /**
      * Pasar residuoDto a un json
      * @param ruta ruta donde debemos crear el json
@@ -220,7 +221,7 @@ class ResiduosMapper {
             val json = Json { prettyPrint = true }
             return json.decodeFromString<ListaResiduosDTO>(File(directorio).readText())
         }
-        throw FileFormatException("El archivo JSON no es correcto")
+        throw FileFormatException()
     }
 
 

@@ -24,6 +24,11 @@ data class ResiduosDTO(
     val toneladas: Float
 ) {
 
+
+    /**
+     * Para añadirlo a un csv.
+     * @return residuo en forma csv.
+     */
     fun toLine() : String{
         return "$año;$mes;$lote;$residuo;$distrito;$nombreDistrito;$toneladas"
     }

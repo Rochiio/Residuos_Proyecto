@@ -26,7 +26,7 @@ import java.time.LocalDateTime
 import kotlin.system.measureTimeMillis
 
 /**
- * Clase consultas dataframe y gráficos.
+ * Controlador de consultas dataframe y gráficos.
  */
 class DataframeController(
     private val contenedores:List<Contenedor>,
@@ -74,7 +74,7 @@ class DataframeController(
             cantidadResiduoDistrito = consultaCantidadResiduoDistrito()
         }
 
-        //Aqui creamos el html de prueba
+
         var templete = HtmlTemplete(
             "Madrid",
             Format.formatDate(LocalDateTime.now()),
@@ -119,6 +119,11 @@ class DataframeController(
         return templete.generateHtmlResumenDistrito()
     }
 
+
+    /**
+     * Consulta: Numero de contenedores de cada tipo que hay en este distrito.
+     * @param distrito elegido.
+     */
     fun consultaNumeroContenedoresTipoDistrito(distrito: String): String {
 
         return contenedoresData.groupBy("distrito", "tipoContenedor")
@@ -127,6 +132,11 @@ class DataframeController(
             .html()
     }
 
+
+    /**
+     * Consulta: Total de toneladas recogidas en ese distrito por residuo.
+     * @param distrito distrito elegido.
+     */
     fun consultaToneladasDistrito(distrito: String): String {
         return residuosData.groupBy("nombreDistrito", "residuo")
             .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
@@ -134,6 +144,11 @@ class DataframeController(
             .html()
     }
 
+
+    /**
+     * Consulta: Máximo, mínimo, media y desviación por mes por residuo en el distrito.
+     * @param distrito distrito elegido.
+     */
     fun consultaEstadisticasDistrito(distrito: String): String {
         return residuosData.groupBy("nombreDistrito", "mes", "residuo")
             .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
@@ -221,6 +236,7 @@ class DataframeController(
         ggsave(fig, "04-maxMinMediaPorMes$distrito.png", path = IMAGES)
     }
 
+
     /**
      * Consulta: Por cada distrito obtener para cada tipo de residuo la cantidad recogida.
      * @return String de resultado.
@@ -290,7 +306,6 @@ class DataframeController(
      * Consulta: Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
      * distrito.
      * @return String de resultado.
-     * TODO resultado incorrecto
      */
     private fun consultaMediaToneladasAnuales(): String {
          return residuosData.groupBy("año","residuo","nombreDistrito")
@@ -329,7 +344,6 @@ class DataframeController(
     /**
      * Consulta: Media de contenedores de cada tipo que hay en cada distrito.
      * @return String de resultado.
-     * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
         return contenedoresTipoDistrito.groupBy("distrito","tipoContenedor")

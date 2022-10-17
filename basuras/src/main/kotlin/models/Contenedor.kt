@@ -1,12 +1,10 @@
-/*
-Autor: Mohamed Asidah Bchiri
-GitHub: loopedMoha
- */
-
 package models
 
 import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
 
+/**
+ * Clase para la creación de contenedores.
+ */
 @DataSchema
 data class Contenedor(
     val codigoSituacion: String,
@@ -24,6 +22,10 @@ data class Contenedor(
     val coordenadasGeo: Pair<Double, Double> //(Longitud, latitud)
 )
 
+
+/**
+ * Enum de tipos de contenedores.
+ */
 enum class TipoContenedor(val tipo: String) {
     ENVASES("ENVASES"),
     ORGANICA("ORGANICA"),

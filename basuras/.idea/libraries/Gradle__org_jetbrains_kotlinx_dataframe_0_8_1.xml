@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.kotlinx:dataframe:0.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/dataframe/0.8.1/81b8e855a7098b6320907bd2dea7805d23e3d42e/dataframe-0.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlinx/dataframe/0.8.1/1d0fc935ed329c115f8cc4d694acd780687fe45e/dataframe-0.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

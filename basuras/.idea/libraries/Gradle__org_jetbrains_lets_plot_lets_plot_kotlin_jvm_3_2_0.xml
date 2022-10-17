@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.lets-plot:lets-plot-kotlin-jvm:3.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.lets-plot/lets-plot-kotlin-jvm/3.2.0/89031f91c7f82807b5b1384d5f5914155c1320a2/plot-api-jvm-3.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.lets-plot/lets-plot-kotlin-jvm/3.2.0/e5b0e0ca267a3ea722861f236291049c4a90295/lets-plot-kotlin-jvm-3.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

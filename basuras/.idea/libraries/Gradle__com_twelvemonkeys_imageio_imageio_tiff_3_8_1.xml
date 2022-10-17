@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.twelvemonkeys.imageio:imageio-tiff:3.8.1">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-tiff/3.8.1/353b657e8ab65d9e8c6920f8a04ad78addce6224/imageio-tiff-3.8.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.twelvemonkeys.imageio/imageio-tiff/3.8.1/4aef4603e43b9e8f62ee2ea854e3f1d4cb801693/imageio-tiff-3.8.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

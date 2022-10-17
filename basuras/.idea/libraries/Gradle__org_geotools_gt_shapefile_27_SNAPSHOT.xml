@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.geotools:gt-shapefile:27-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.geotools/gt-shapefile/27-SNAPSHOT/b413f53503f7ee270836a3c183e26517639df842/gt-shapefile-27-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.geotools/gt-shapefile/27-SNAPSHOT/d90625c7b53f12e999c991b624fc2f22b073371c/gt-shapefile-27-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

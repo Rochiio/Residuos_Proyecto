@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.geotools:gt-http:27-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.geotools/gt-http/27-SNAPSHOT/fb6adb4e9f4c1ef799b8cd0432f3d13a5ec693ed/gt-http-27-SNAPSHOT.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.geotools/gt-http/27-SNAPSHOT/972762a5cc5ea6bb4bc0efe92227f705be610182/gt-http-27-SNAPSHOT-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

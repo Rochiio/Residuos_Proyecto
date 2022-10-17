@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.jetbrains.lets-plot:base-portable-jvm:2.3.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.lets-plot/base-portable-jvm/2.3.0/e25b9360c857c038db8bca1a725c334b5e9db0a1/base-portable-jvm-2.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.lets-plot/base-portable-jvm/2.3.0/c2fb19ec2cadc7fe3f7502211925fa666bfd537b/base-portable-jvm-2.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

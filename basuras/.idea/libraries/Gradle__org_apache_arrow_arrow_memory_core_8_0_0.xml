@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: org.apache.arrow:arrow-memory-core:8.0.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.arrow/arrow-memory-core/8.0.0/c9f6bda38f50d16b680afdaf5ea2682768ee985/arrow-memory-core-8.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.apache.arrow/arrow-memory-core/8.0.0/7e40ada185c6478eef3e10b0f9b5acae657a07c5/arrow-memory-core-8.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

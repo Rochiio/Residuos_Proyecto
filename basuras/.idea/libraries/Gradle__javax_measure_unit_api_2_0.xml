@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: javax.measure:unit-api:2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.measure/unit-api/2.0/fa16f415077b0d247a44b9a10d861cd26eb8dab8/unit-api-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/javax.measure/unit-api/2.0/83ec1590b4f85c3ed70c7a6d02ae125d078d5350/unit-api-2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

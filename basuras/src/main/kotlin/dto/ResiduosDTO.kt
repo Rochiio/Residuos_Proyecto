@@ -3,6 +3,9 @@ package dto
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 
+/**
+ * Clase de Data Transfer Object de Residuos
+ */
 @Serializable
 data class ResiduosDTO(
     @XmlElement(true)

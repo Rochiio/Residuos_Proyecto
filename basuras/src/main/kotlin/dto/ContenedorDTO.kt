@@ -41,6 +41,12 @@ data class ContenedorDTO(
     @XmlElement(true)
     val direccion: String
 ){
+
+
+    /**
+     * Para añadirlo a un csv.
+     * @return contenedor en forma csv.
+     */
     fun toLine() : String{
         return "$codigoSituacion;$tipoContenedor;$modeloContenedor;$descripcionModelo;" +
                 "$cantidad;" +

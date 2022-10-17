@@ -254,7 +254,9 @@ object BasuraController {
     fun getOption(args: Array<String>): Int {
         var opt = -1
         if (args.size < 3 || args.size > 7) {
+
             println("El formato del comando es el incorrecto")
+
         }
         if (args.size == 3) {
             opt = when (args[0]) {

@@ -5,11 +5,8 @@ import jetbrains.letsPlot.*
 import jetbrains.letsPlot.Stat.identity
 import jetbrains.letsPlot.export.ggsave
 import jetbrains.letsPlot.geom.geomBar
-import jetbrains.letsPlot.geom.geomTile
 import jetbrains.letsPlot.intern.Plot
-import jetbrains.letsPlot.label.ggtitle
 import jetbrains.letsPlot.label.labs
-import jetbrains.letsPlot.scale.scaleFillGradient
 import models.Contenedor
 import models.Residuos
 import models.distrito
@@ -29,15 +26,15 @@ import kotlin.system.measureTimeMillis
  * Clase consultas dataframe y gráficos.
  */
 class DataframeController(
-    private val contenedores:List<Contenedor>,
-    private val residuos:List<Residuos>
-    ) {
+    private val contenedores: List<Contenedor>,
+    private val residuos: List<Residuos>
+) {
 
-    private val IMAGES = System.getProperty("user.dir")+"${File.separator}src${File.separator}" +
+    private val IMAGES = System.getProperty("user.dir") + "${File.separator}src${File.separator}" +
             "main${File.separator}resources${File.separator}resumenGenerator${File.separator}img${File.separator}"
 
     private var residuosData: DataFrame<Residuos>
-    private var contenedoresData : DataFrame<Contenedor>
+    private var contenedoresData: DataFrame<Contenedor>
 
     private lateinit var contenedoresTipoDistrito: DataFrame<Contenedor>
 
@@ -46,7 +43,7 @@ class DataframeController(
         residuosData.cast<Residuos>()
         contenedoresData = contenedores.toDataFrame()
         contenedoresData.cast<Contenedor>()
-        DisplayConfiguration.DEFAULT.rowsLimit=10000
+        DisplayConfiguration.DEFAULT.rowsLimit = 10000
     }
 
 
@@ -63,6 +60,7 @@ class DataframeController(
         var cantidadResiduoDistrito: String
 
         var tiempo = measureTimeMillis {
+
             numeroContenedoresTipoDistrito = consultaNumContenedoresTipoDistrito()
             mediamContenedoresTipoDistrito = consultaMediaContenedoresTipoDistrito()
             graficoContenedoresDistrito()
@@ -88,7 +86,11 @@ class DataframeController(
         return templete.generateHtmlResumen()
     }
 
-
+    /**
+     * Realiza las consultas sobre residuos y contenedores especificamente para el distrito dado
+     * @param distrito String
+     * @return String
+     */
     fun resumenDistrito(distrito: String): String {
         val numeroContenedoresTipoDistrito: String
         val totalToneladasResiduo: String
@@ -112,35 +114,50 @@ class DataframeController(
         return templete.generateHtmlResumenDistrito()
     }
 
-    fun compareDistrito(distritoDF : String, distrito : String) : Boolean{
+    /**
+     * Compara dos distritos sin tener en cuenta las diferencias entre mayusculas, minusculas y acentos
+     * @param distritoDF String
+     * @param distrito String
+     * @return Boolean
+     */
+    fun compareDistrito(distritoDF: String, distrito: String): Boolean {
         val collator = Collator.getInstance()
         collator.strength = 0
         collator.decomposition = 2
-        val b =collator.compare(distrito, distritoDF) == 0
-        return b
+        return collator.compare(distrito, distritoDF) == 0
 
     }
+
+    /**
+     * Consulta el numero de contenedores de cada tipo que hay en el distrito
+     * @param distrito String
+     * @return String
+     */
     fun consultaNumeroContenedoresTipoDistrito(distrito: String): String {
 
-        val a = contenedoresData.groupBy("distrito", "tipoContenedor")
-        println(a)
-        val b = a.filter { compareDistrito(distrito, it.distrito) }
-        println(b)
-        val c = b.aggregate { sum("cantidad")  into "total"}
-        println(c.html())
         return contenedoresData.groupBy("distrito", "tipoContenedor")
-            .filter { it.distrito.uppercase() == distrito.uppercase() }
-            .aggregate { sum("cantidad") into "total" }
+            .filter { compareDistrito(distrito, it.distrito) }.aggregate { sum("cantidad") into "total" }
             .html()
     }
 
+    /**
+     * Consulta el total de toneladas de cada residuo que hay en el distrito
+     * @param distrito String
+     * @return String
+     */
     fun consultaToneladasDistrito(distrito: String): String {
+
         return residuosData.groupBy("nombreDistrito", "residuo")
             .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate { sum("toneladas") into "total" }
             .html()
     }
 
+    /**
+     * Calcula el máximo, minimo, media y desviación de cada tipo de residuo por mes
+     * @param distrito String
+     * @return String
+     */
     fun consultaEstadisticasDistrito(distrito: String): String {
         return residuosData.groupBy("nombreDistrito", "mes", "residuo")
             .filter { compareDistrito(distrito, it.nombreDistrito) }
@@ -150,9 +167,15 @@ class DataframeController(
                 mean("toneladas") into "Media"
             }.html()
 
-    }
+}
 
+
+    /**
+     * Genera la gráfica que representa el numero de toneladas de cada residuo en el distrito
+     * @param distrito String
+     */
     fun graficoToneladasResiduoDistrito(distrito: String) {
+
         val toneladas = residuosData.groupBy("nombreDistrito", "residuo")
             .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate { sum("toneladas") into "total" }.toMap()
@@ -174,10 +197,13 @@ class DataframeController(
 
         ggsave(fig, "03-totalToneladasResiduo$distrito.png", path = IMAGES)
 
-    }
+}
 
+    /**
+     * genera la gráfica que representa el máximo, minimo y media de residuos de cada mes
+     * @param distrito String
+     */
     fun graficoMaxMinMediaMesDistrito(distrito: String) {
-
         val consulta = residuosData.groupBy("nombreDistrito", "mes")
             .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate {
@@ -190,7 +216,7 @@ class DataframeController(
             alpha = 0.8,
             fill = Color.BLUE,
             color = Color.BLACK
-        ){
+        ) {
             x = "mes"
             y = "max"
         } + geomBar(
@@ -198,7 +224,7 @@ class DataframeController(
             alpha = 0.8,
             fill = Color.RED,
             color = Color.BLACK
-        ){
+        ) {
             x = "mes"
             y = "min"
         } + geomBar(
@@ -216,139 +242,140 @@ class DataframeController(
         )
 
         ggsave(fig, "04-maxMinMediaPorMes$distrito.png", path = IMAGES)
-    }
 
-    /**
-     * Consulta: Por cada distrito obtener para cada tipo de residuo la cantidad recogida.
-     * @return String de resultado.
-     */
-    private fun consultaCantidadResiduoDistrito(): String {
-        return residuosData.groupBy("nombreDistrito","residuo")
-            .aggregate {
-                sum("toneladas") into "total_recogido"
-            }.html()
-    }
+}
 
-
-    /**
-     * Consulta: Suma de tod0 lo recogido en un año por distrito.
-     * @return String de resultado.
-     */
-    private fun consultaSumaAñoDistrito(): String {
-        return residuosData.groupBy("nombreDistrito","año").aggregate {
-            sum("toneladas") into "suma"
+/**
+ * Consulta: Por cada distrito obtener para cada tipo de residuo la cantidad recogida.
+ * @return String de resultado.
+ */
+private fun consultaCantidadResiduoDistrito(): String {
+    return residuosData.groupBy("nombreDistrito", "residuo")
+        .aggregate {
+            sum("toneladas") into "total_recogido"
         }.html()
-    }
+}
 
 
-    /**
-     * Consulta: Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
-     * de basura agrupadas por distrito.
-     * @return String de resultado.
-     * TODO Creo que está bien
-     */
-    private fun consultaMaxMinMedDesvToneladasAnuales(): String {
-        return residuosData.groupBy("residuo","nombreDistrito","año")
-            .aggregate {
-                max("toneladas") into "max"
-                min("toneladas") into "min"
-                mean("toneladas") into "media"
-                std("toneladas") into "desviacion"
-            }.html()
-    }
+/**
+ * Consulta: Suma de tod0 lo recogido en un año por distrito.
+ * @return String de resultado.
+ */
+private fun consultaSumaAñoDistrito(): String {
+    return residuosData.groupBy("nombreDistrito", "año").aggregate {
+        sum("toneladas") into "suma"
+    }.html()
+}
 
 
-    /**
-     * Gráfico de media de toneladas mensuales de recogida de basura por distrito
-     * TODO No se si es correcto del todo
-     */
-    private fun graficoMediaToneladasMensuales() {
-        var agrupado = residuosData.groupBy("nombreDistrito","mes")
-            .aggregate {
-                mean("toneladas") into "media"
-            }.toMap()
-
-        var fig: Plot = letsPlot(data=agrupado) + geomBar(
-            stat = identity,
-            alpha = 0.8,
-            fill = Color.BLUE,
-            color = Color.BLACK
-        ){
-            x="nombreDistrito"
-            y="media"
-        } + labs(
-            x="Distrito",
-            y="Media",
-            title = "Media de Toneladas Mensuales por Distrito"
-        )
-
-        ggsave(fig,"02-mediaToneladasMensuales.png", path=IMAGES)
-    }
+/**
+ * Consulta: Máximo, mínimo , media y desviación de toneladas anuales de recogidas por cada tipo
+ * de basura agrupadas por distrito.
+ * @return String de resultado.
+ * TODO Creo que está bien
+ */
+private fun consultaMaxMinMedDesvToneladasAnuales(): String {
+    return residuosData.groupBy("residuo", "nombreDistrito", "año")
+        .aggregate {
+            max("toneladas") into "max"
+            min("toneladas") into "min"
+            mean("toneladas") into "media"
+            std("toneladas") into "desviacion"
+        }.html()
+}
 
 
-    /**
-     * Consulta: Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
-     * distrito.
-     * @return String de resultado.
-     * TODO resultado incorrecto
-     */
-    private fun consultaMediaToneladasAnuales(): String {
-         return residuosData.groupBy("año","residuo","nombreDistrito")
-            .aggregate {
-                mean("toneladas") into "Media"
-            }.sortBy("nombreDistrito").html()
-    }
+/**
+ * Gráfico de media de toneladas mensuales de recogida de basura por distrito
+ * TODO No se si es correcto del todo
+ */
+private fun graficoMediaToneladasMensuales() {
+    var agrupado = residuosData.groupBy("nombreDistrito", "mes")
+        .aggregate {
+            mean("toneladas") into "media"
+        }.toMap()
+
+    var fig: Plot = letsPlot(data = agrupado) + geomBar(
+        stat = identity,
+        alpha = 0.8,
+        fill = Color.BLUE,
+        color = Color.BLACK
+    ) {
+        x = "nombreDistrito"
+        y = "media"
+    } + labs(
+        x = "Distrito",
+        y = "Media",
+        title = "Media de Toneladas Mensuales por Distrito"
+    )
+
+    ggsave(fig, "02-mediaToneladasMensuales.png", path = IMAGES)
+}
 
 
-    /**
-     * Gráfico con el total de contenedores por distrito.
-     */
-    private fun graficoContenedoresDistrito() {
-        var agrupado = contenedoresData.groupBy("distrito")
-            .aggregate {
-                count() into "total"
-            }.toMap()
-
-        var fig: Plot = letsPlot(data = agrupado) + geomBar(
-            stat=identity,
-            alpha=0.8,
-            fill = Color.BLUE
-        ) {
-            x = "distrito"
-            y = "total"
-        } + labs(
-            x="Distritos",
-            y ="Total",
-            title = "Total de Contenedores por Distrito"
-        )
-
-        ggsave(fig, "01-totalContenedoresDistrito.png", path=IMAGES)
-    }
+/**
+ * Consulta: Media de toneladas anuales de recogidas por cada tipo de basura agrupadas por
+ * distrito.
+ * @return String de resultado.
+ * TODO resultado incorrecto
+ */
+private fun consultaMediaToneladasAnuales(): String {
+    return residuosData.groupBy("año", "residuo", "nombreDistrito")
+        .aggregate {
+            mean("toneladas") into "Media"
+        }.sortBy("nombreDistrito").html()
+}
 
 
-    /**
-     * Consulta: Media de contenedores de cada tipo que hay en cada distrito.
-     * @return String de resultado.
-     * TODO Este es imposible
-     */
-    private fun consultaMediaContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
-            .aggregate {
-                meanOf { sum("cantidad") } into "media"
-            }.sortBy("distrito").html()
-    }
+/**
+ * Gráfico con el total de contenedores por distrito.
+ */
+private fun graficoContenedoresDistrito() {
+    var agrupado = contenedoresData.groupBy("distrito")
+        .aggregate {
+            count() into "total"
+        }.toMap()
+
+    var fig: Plot = letsPlot(data = agrupado) + geomBar(
+        stat = identity,
+        alpha = 0.8,
+        fill = Color.BLUE
+    ) {
+        x = "distrito"
+        y = "total"
+    } + labs(
+        x = "Distritos",
+        y = "Total",
+        title = "Total de Contenedores por Distrito"
+    )
+
+    ggsave(fig, "01-totalContenedoresDistrito.png", path = IMAGES)
+}
 
 
-    /**
-     * Consulta: Número de contenedores de cada tipo que hay en cada distrito.
-     * @return String de resultado.
-     */
-    private fun consultaNumContenedoresTipoDistrito(): String {
-        return contenedoresData.groupBy("distrito","tipoContenedor")
-            .aggregate {
+/**
+ * Consulta: Media de contenedores de cada tipo que hay en cada distrito.
+ * @return String de resultado.
+ * TODO Este es imposible
+ */
+private fun consultaMediaContenedoresTipoDistrito(): String {
+    return contenedoresData.groupBy("distrito", "tipoContenedor")
+        .aggregate {
+            meanOf { sum("cantidad") } into "media"
+        }.sortBy("distrito").html()
+}
+
+
+/**
+ * Consulta: Número de contenedores de cada tipo que hay en cada distrito.
+ * @return String de resultado.
+ */
+private fun consultaNumContenedoresTipoDistrito(): String {
+    return contenedoresData.groupBy("distrito", "tipoContenedor")
+        .aggregate {
             sum("cantidad") into "total"
         }.sortBy("distrito").html()
-    }
+}
 
 
 }

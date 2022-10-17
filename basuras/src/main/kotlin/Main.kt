@@ -1,3 +1,4 @@
+import controllers.BasuraController
 import controllers.DataframeController
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
@@ -13,7 +14,9 @@ import utils.html.HtmlDirectory
  * TODO CSV CONTENEDORES CAMPO NUMERO CONTIENE VACIOS
  */
 fun main(args: Array<String>) {
-    var residuos = ResiduosMapper()
+
+    BasuraController.executeCommand(args)
+    /*var residuos = ResiduosMapper()
     //var residuos = ResiduosMapper.readCsvResiduo("C:\\Users\\rpala\\Documents\\Residuos_Proyecto\\basuras\\datosPrueba\\modelo_residuos_2021.csv")
     var contenedores = ContenedorMapper()
     var listaR = residuos.readCsvResiduo("D:\\PracticasDAM\\residuos-ad\\basuras\\datosPrueba\\modelo_residuos_2021.csv").map { residuos.fromDto(it) }.toList()
@@ -23,7 +26,7 @@ fun main(args: Array<String>) {
     var frame = DataframeController(listaC,listaR)
     frame.graficoMaxMinMediaMesDistrito("Usera")
     var html = frame.resumenDistrito("Usera")
-    HtmlDirectory.copyHtmlDataResumen(html,System.getProperty("user.dir"))
+    HtmlDirectory.copyHtmlDataResumen(html,System.getProperty("user.dir"))*/
 
 
    /* var bitacoras = ListaBitacora()

@@ -79,7 +79,7 @@ class ResiduosMapper {
     fun readCsvResiduo(directorio: String): List<ResiduosDTO> {
         val file = File(directorio)
         if (!checkCSV(file))
-            throw CSVFormatException()
+            throw FileFormatException("El archivo JSON no es correcto")
         else
             return Files.lines(Path.of(directorio))
                 .skip(1)
@@ -157,7 +157,7 @@ class ResiduosMapper {
      */
     fun toXml (directorio: String, listaResiduosDto: ListaResiduosDTO){
         val xml = XML { indentString = "  " }
-        val fichero = File(directorio + File.separator +  "intercambio.xml")
+        val fichero = File(directorio)
         fichero.writeText(xml.encodeToString(listaResiduosDto))
     }
 
@@ -180,19 +180,8 @@ class ResiduosMapper {
      * @param listaResiduosDto lista de residuos para pasar a json
      */
     fun toJson(ruta: String, listaResiduosDto: ListaResiduosDTO){
-        var fichero :File
-        if(ruta.endsWith(".json"))
-            fichero = File(ruta)
-        else
-            fichero = File(ruta + File.separator +"fichero.json")
-
-        if (!fichero.exists()) {
-            File("fichero.json").createNewFile()
-            fichero = File("fichero.json")
-        }
-
         val json = Json { prettyPrint = true }
-        fichero.writeText(json.encodeToString(listaResiduosDto))
+        File(ruta).writeText(json.encodeToString(listaResiduosDto))
     }
 
 

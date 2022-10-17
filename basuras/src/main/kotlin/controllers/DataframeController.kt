@@ -21,6 +21,7 @@ import org.jetbrains.kotlinx.dataframe.io.html
 import utils.Format
 import utils.html.HtmlTemplete
 import java.io.File
+import java.text.Collator
 import java.time.LocalDateTime
 import kotlin.system.measureTimeMillis
 
@@ -111,8 +112,22 @@ class DataframeController(
         return templete.generateHtmlResumenDistrito()
     }
 
+    fun compareDistrito(distritoDF : String, distrito : String) : Boolean{
+        val collator = Collator.getInstance()
+        collator.strength = 0
+        collator.decomposition = 2
+        val b =collator.compare(distrito, distritoDF) == 0
+        return b
+
+    }
     fun consultaNumeroContenedoresTipoDistrito(distrito: String): String {
 
+        val a = contenedoresData.groupBy("distrito", "tipoContenedor")
+        println(a)
+        val b = a.filter { compareDistrito(distrito, it.distrito) }
+        println(b)
+        val c = b.aggregate { sum("cantidad")  into "total"}
+        println(c.html())
         return contenedoresData.groupBy("distrito", "tipoContenedor")
             .filter { it.distrito.uppercase() == distrito.uppercase() }
             .aggregate { sum("cantidad") into "total" }
@@ -121,14 +136,14 @@ class DataframeController(
 
     fun consultaToneladasDistrito(distrito: String): String {
         return residuosData.groupBy("nombreDistrito", "residuo")
-            .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
+            .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate { sum("toneladas") into "total" }
             .html()
     }
 
     fun consultaEstadisticasDistrito(distrito: String): String {
         return residuosData.groupBy("nombreDistrito", "mes", "residuo")
-            .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
+            .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate {
                 max("toneladas") into "Maximo"
                 min("toneladas") into "Minimo"
@@ -139,7 +154,7 @@ class DataframeController(
 
     fun graficoToneladasResiduoDistrito(distrito: String) {
         val toneladas = residuosData.groupBy("nombreDistrito", "residuo")
-            .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
+            .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate { sum("toneladas") into "total" }.toMap()
 
 
@@ -164,7 +179,7 @@ class DataframeController(
     fun graficoMaxMinMediaMesDistrito(distrito: String) {
 
         val consulta = residuosData.groupBy("nombreDistrito", "mes")
-            .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
+            .filter { compareDistrito(distrito, it.nombreDistrito) }
             .aggregate {
                 max("toneladas") into "max"
                 min("toneladas") into "min"

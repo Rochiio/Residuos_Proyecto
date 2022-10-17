@@ -9,7 +9,12 @@ import mappers.ContenedorMapper
 import mappers.ResiduosMapper
 import mu.KotlinLogging
 import repositories.ListaContenedorDTO
+import utils.html.HtmlDirectory
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.Path
+import java.nio.file.Paths
+import java.text.Collator
 
 object BasuraController {
     const val CABECERARESIDUOS = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
@@ -28,16 +33,22 @@ object BasuraController {
     /**
      * Revisa cúal es el comando elegido.
      */
-    fun executeCommand(args: Array<String>) {
+    fun executeCommand(args: Array<String>) : Boolean{
+        var salida : Boolean
         when (getOption(args)) {
-            1 -> parser(args[1], args[2])
-            2 -> resumen(args[1], args[2], "")
+            1 -> salida = parser(args[1], args[2])
+            2 -> salida = resumen(args[1], args[2], "")
             3 -> {
-                val distritoPartes = args.dropLast(2) + args.drop(1)
-                resumen(args[1], args[2],distritoPartes.joinToString())
+                val distritoPartes = args.dropLast(2).drop(1)
+                val distrito = distritoPartes.joinToString("").replace("[", "").replace("]","")
+                salida = resumen(args.takeLast(2)[0],args.takeLast(2)[1], distrito)
             }
-            else -> println("Saliendo del programa")
+            else -> {
+                println("Saliendo del programa")
+                return false
+            }
         }
+    return salida
     }
 
 
@@ -46,10 +57,11 @@ object BasuraController {
      * @param origen String
      * @param destino String
      */
-    fun parser(origen: String, destino: String) {
+    fun parser(origen: String, destino: String): Boolean {
 
         if (!checkPath(origen) || !checkPath(destino)) {
             println("Ruta destino o origen incorrectas. Por favor revisa que el directorio exista y esté bien escrito")
+            return false
         } else {
             val list = File(origen).listFiles()
             if (list != null) {
@@ -104,21 +116,23 @@ object BasuraController {
                                         ListaResiduosDTO(residuos),
                                         "$destino${File.separator}residuos_parsed.csv"
                                     )
-                                }else{
+                                } else {
                                     println("La cabecera no coincide con residuos o con contenedores.")
+                                    return false
                                 }
+                                return true
                             }
                         }
-                    }
-                }
-            }
+                    } else
+                        return false
+                } else
+                    return false
+            }else return false
 
         }
+        return true
     }
 
-    fun leerCsv(){
-
-    }
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)
@@ -137,13 +151,14 @@ object BasuraController {
         return residuosMapper.readCsvResiduo(file.path)!!
     }
 
-    fun resumen(origen: String, destino: String, distrito : String) {
+    fun resumen(origen: String, destino: String, distrito: String): Boolean {
         var contenedores: List<ContenedorDTO> = mutableListOf()
         var residuos: List<ResiduosDTO> = mutableListOf()
 
         //Lectura de archivos
-        if (checkPath(origen) && checkPath(destino)) {
-
+        if (checkPath(origen)) {
+            if(!File(destino).exists())
+                Files.createDirectories(Path.of(destino))
             //primero busca csvs
             val csvs = retrieveCsv(origen)
             if (csvs.isNotEmpty()) {
@@ -159,24 +174,24 @@ object BasuraController {
             }
 
             //ahora busca jsons
-            if(contenedores.isEmpty()){
+            if (contenedores.isEmpty()) {
                 val json = retrieveJson(origen)
                 if (json.isNotEmpty()) {
                     for (f in json) {
-                        if(f.readLines().drop(1).contains("contenedores")){
+                        if (f.readLines().drop(1).contains("contenedores")) {
                             contenedores = contenedorMapper.fromJson(f.path).contenedores
                         }
                     }
                 }
             }
-            if(residuos.isEmpty()){
+            if (residuos.isEmpty()) {
                 val json = retrieveJson(origen)
                 if (json.isNotEmpty()) {
                     for (f in json) {
-                        if(f.readLines().drop(1).contains("residuos")){
-                            try{
-                            residuos = residuosMapper.fromJson(f.path).residuos
-                            }catch (e : FileFormatException){
+                        if (f.readLines().drop(1).contains("residuos")) {
+                            try {
+                                residuos = residuosMapper.fromJson(f.path).residuos
+                            } catch (e: FileFormatException) {
                                 println(e.message)
                             }
                         }
@@ -185,36 +200,55 @@ object BasuraController {
             }
 
             //ahora busca XML
-            if(contenedores.isEmpty()){
+            if (contenedores.isEmpty()) {
                 val xml = retrieveXml(origen)
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
-                        if(f.readLines().first().contains("ListaContenedorDTO")){
+                        if (f.readLines().first().contains("ListaContenedorDTO")) {
                             contenedores = contenedorMapper.fromXML(f.path).contenedores
                         }
                     }
                 }
             }
-            if(residuos.isEmpty()){
+            if (residuos.isEmpty()) {
                 val xml = retrieveXml(origen)
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
-                        if(f.readLines().first().contains("ListaResiduosDto")){
+                        if (f.readLines().first().contains("ListaResiduosDto")) {
                             residuos = residuosMapper.fromXml(f.path)
                         }
                     }
                 }
             }
+        } else {
+            println("La ruta de destino o de origen no son correctas")
+            return false
         }
 
-        if(residuos.isNotEmpty() && contenedores.isNotEmpty()){
-            if(distrito == ""){
-                TODO("Resumen sin distrito")
-            }else{
-                TODO("Resumen con distrito")
+        if (residuos.isNotEmpty() && contenedores.isNotEmpty()) {
+
+            val collator = Collator.getInstance()
+            collator.strength = 0
+            val listContenedores = contenedorMapper.mapListFromDTO(contenedores)
+            val listResiduos = residuosMapper.mapListFromDTO(residuos)
+            dataFrameController = DataframeController(
+                listContenedores, listResiduos
+            )
+            if (distrito == "") {
+                HtmlDirectory.copyHtmlDataResumen(dataFrameController.resumen(), destino)
+            } else {
+                if (listResiduos.any { collator.compare(distrito, it.nombreDistrito) == 0 }
+                    && listContenedores.any { collator.compare(distrito, it.distrito) == 0 }
+                ) {
+                    HtmlDirectory.copyHtmlDataResumen(dataFrameController.resumenDistrito(distrito), destino)
+                } else {
+                    println("No existe el distrito $distrito")
+                    return false
+                }
             }
-
+            return true
         }
+        return false
     }
 
     fun getOption(args: Array<String>): Int {

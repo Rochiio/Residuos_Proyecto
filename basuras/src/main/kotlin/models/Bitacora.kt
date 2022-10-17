@@ -26,18 +26,6 @@ class Bitacora(
     @XmlElement(true)
     private val instante: String = LocalDateTime.now().toString()
 
-    private val logger = KotlinLogging.logger {}
-
-    /**
-     * Crear el xml de bitacora
-     * @param path directorio destino de la bitacora
-     */
-    fun bitacoraXml(path:String){
-        logger.info("Creando bitacora")
-        val xml = XML { indentString = "  " }
-        val fichero = File(path+ File.separator+"bitacora.xml")
-        fichero.writeText(xml.encodeToString(this))
-    }
 }
 
 

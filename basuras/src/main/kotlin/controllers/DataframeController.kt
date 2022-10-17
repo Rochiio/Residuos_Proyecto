@@ -145,6 +145,11 @@ class DataframeController(
 
     }
 
+
+    /**
+     * Gráfica de las toneladas por residuo en el distrito.
+     * @param distrito distrito elegido para realizar las consultas.
+     */
     fun graficoToneladasResiduoDistrito(distrito: String) {
         val toneladas = residuosData.groupBy("nombreDistrito", "residuo")
             .filter { it.nombreDistrito.uppercase() == distrito.uppercase() }
@@ -169,6 +174,11 @@ class DataframeController(
 
     }
 
+
+    /**
+     * Gráfico de máximo, mínimo, media por mes y distrito.
+     * @param distrito distrito elegido para realizar las consultas.
+     */
     fun graficoMaxMinMediaMesDistrito(distrito: String) {
 
         val consulta = residuosData.groupBy("nombreDistrito", "mes")

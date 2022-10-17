@@ -2,6 +2,9 @@ package utils.html
 
 import mu.KotlinLogging
 
+/**
+ * Clase para la generación del html.
+ */
 class HtmlTemplete(
     //Variables iguales
     private val distrito: String,

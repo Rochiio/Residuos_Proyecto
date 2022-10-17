@@ -1,4 +1,7 @@
 package exceptions
 
-class FileFormatException(var s : String) : Exception() {
+/**
+ * Excepción formato de fichero.
+ */
+class FileFormatException : Exception() {
 }

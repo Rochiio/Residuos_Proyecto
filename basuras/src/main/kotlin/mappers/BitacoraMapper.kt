@@ -10,10 +10,13 @@ import java.io.File
 import java.nio.file.Files
 import java.nio.file.Path
 
+/**
+ * Clase de mapeo de bitacora
+ */
 class BitacoraMapper {
     private val DIR = System.getProperty("user.dir")+"${File.separator}bitacoras"
     private val FICHERO = DIR+"${File.separator}bitacora.xml"
-    private lateinit var listaBitacoras: ListaBitacora
+    private var listaBitacoras: ListaBitacora
     private val logger = KotlinLogging.logger {}
 
 
@@ -27,7 +30,7 @@ class BitacoraMapper {
     /**
      * Pasar listaBitacoras bitacora a un xml
      * @param directorio directorio donde debemos crear el xml
-     * @param listaResiduosDto listaBitacoras de residuos para pasar a xml
+     * @param lista listaBitacoras de residuos para pasar a xml
      */
     fun toXml (directorio: String, lista: ListaBitacora){
         logger.info("Creando xml de bitacora")
@@ -35,6 +38,7 @@ class BitacoraMapper {
         val fichero = File(directorio + File.separator +  "bitacora.xml")
         fichero.writeText(xml.encodeToString(lista))
     }
+
 
     /**
      * Pasar xml a listaBitacoras bitacora

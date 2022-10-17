@@ -1,0 +1,2139 @@
+Año;Mes;Residuo;Distrito;Nombre Distrito
+2021;enero;RESTO;1;Centro
+2021;enero;RESTO;6;Tetuán
+2021;enero;RESTO;7;Chamberí
+2021;enero;RESTO;8;Fuencarral - El Pardo
+2021;enero;RESTO;9;Moncloa - Aravaca
+2021;enero;RESTO;10;Latina
+2021;enero;ENVASES;1;Centro
+2021;enero;ENVASES;6;Tetuán
+2021;enero;ENVASES;7;Chamberí
+2021;enero;ENVASES;8;Fuencarral - El Pardo
+2021;enero;ENVASES;9;Moncloa - Aravaca
+2021;enero;ENVASES;10;Latina
+2021;enero;VIDRIO;1;Centro
+2021;enero;VIDRIO;6;Tetuán
+2021;enero;VIDRIO;7;Chamberí
+2021;enero;VIDRIO;8;Fuencarral - El Pardo
+2021;enero;VIDRIO;9;Moncloa - Aravaca
+2021;enero;VIDRIO;10;Latina
+2021;enero;VIDRIO COMERCIAL;1;Centro
+2021;enero;CLINICOS;1;Centro
+2021;enero;CLINICOS;6;Tetuán
+2021;enero;CLINICOS;8;Fuencarral - El Pardo
+2021;enero;CLINICOS;9;Moncloa - Aravaca
+2021;enero;CLINICOS;10;Latina
+2021;enero;ORGANICA;1;Centro
+2021;enero;ORGANICA;6;Tetuán
+2021;enero;ORGANICA;7;Chamberí
+2021;enero;ORGANICA;8;Fuencarral - El Pardo
+2021;enero;ORGANICA;9;Moncloa - Aravaca
+2021;enero;ORGANICA;10;Latina
+2021;enero;PAPEL-CARTON;1;Centro
+2021;enero;PAPEL-CARTON;6;Tetuán
+2021;enero;PAPEL-CARTON;7;Chamberí
+2021;enero;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;enero;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;enero;PAPEL-CARTON;10;Latina
+2021;enero;CARTON COMERCIAL;1;Centro
+2021;enero;CARTON COMERCIAL;6;Tetuán
+2021;enero;CARTON COMERCIAL;7;Chamberí
+2021;enero;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;enero;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;enero;CARTON COMERCIAL;10;Latina
+2021;enero;RCD;1;Centro
+2021;enero;RCD;6;Tetuán
+2021;enero;RCD;7;Chamberí
+2021;enero;RCD;8;Fuencarral - El Pardo
+2021;enero;RCD;9;Moncloa - Aravaca
+2021;enero;RCD;10;Latina
+2021;enero;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;enero;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;enero;PUNTOS LIMPIOS;10;Latina
+2021;enero;CONTENEDORES DE ROPA;10;Latina
+2021;enero;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;enero;RESTO;3;Retiro
+2021;enero;RESTO;4;Salamanca
+2021;enero;RESTO;5;Chamartín
+2021;enero;RESTO;14;Moratalaz
+2021;enero;RESTO;15;Ciudad Lineal
+2021;enero;RESTO;16;Hortaleza
+2021;enero;RESTO;19;Vicálvaro
+2021;enero;RESTO;20;San Blas - Canillejas
+2021;enero;RESTO;21;Barajas
+2021;enero;ENVASES;3;Retiro
+2021;enero;ENVASES;4;Salamanca
+2021;enero;ENVASES;5;Chamartín
+2021;enero;ENVASES;14;Moratalaz
+2021;enero;ENVASES;15;Ciudad Lineal
+2021;enero;ENVASES;16;Hortaleza
+2021;enero;ENVASES;19;Vicálvaro
+2021;enero;ENVASES;20;San Blas - Canillejas
+2021;enero;ENVASES;21;Barajas
+2021;enero;VIDRIO;3;Retiro
+2021;enero;VIDRIO;4;Salamanca
+2021;enero;VIDRIO;5;Chamartín
+2021;enero;VIDRIO;14;Moratalaz
+2021;enero;VIDRIO;15;Ciudad Lineal
+2021;enero;VIDRIO;16;Hortaleza
+2021;enero;VIDRIO;19;Vicálvaro
+2021;enero;VIDRIO;20;San Blas - Canillejas
+2021;enero;VIDRIO;21;Barajas
+2021;enero;VIDRIO COMERCIAL;4;Salamanca
+2021;enero;CLINICOS;3;Retiro
+2021;enero;CLINICOS;4;Salamanca
+2021;enero;CLINICOS;15;Ciudad Lineal
+2021;enero;ORGANICA;3;Retiro
+2021;enero;ORGANICA;4;Salamanca
+2021;enero;ORGANICA;5;Chamartín
+2021;enero;ORGANICA;14;Moratalaz
+2021;enero;ORGANICA;15;Ciudad Lineal
+2021;enero;ORGANICA;16;Hortaleza
+2021;enero;ORGANICA;19;Vicálvaro
+2021;enero;ORGANICA;20;San Blas - Canillejas
+2021;enero;ORGANICA;21;Barajas
+2021;enero;PAPEL-CARTON;3;Retiro
+2021;enero;PAPEL-CARTON;4;Salamanca
+2021;enero;PAPEL-CARTON;5;Chamartín
+2021;enero;PAPEL-CARTON;14;Moratalaz
+2021;enero;PAPEL-CARTON;15;Ciudad Lineal
+2021;enero;PAPEL-CARTON;16;Hortaleza
+2021;enero;PAPEL-CARTON;19;Vicálvaro
+2021;enero;PAPEL-CARTON;20;San Blas - Canillejas
+2021;enero;PAPEL-CARTON;21;Barajas
+2021;enero;CARTON COMERCIAL;3;Retiro
+2021;enero;CARTON COMERCIAL;4;Salamanca
+2021;enero;CARTON COMERCIAL;5;Chamartín
+2021;enero;CARTON COMERCIAL;15;Ciudad Lineal
+2021;enero;CARTON COMERCIAL;16;Hortaleza
+2021;enero;CARTON COMERCIAL;19;Vicálvaro
+2021;enero;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;enero;RCD;3;Retiro
+2021;enero;RCD;4;Salamanca
+2021;enero;RCD;5;Chamartín
+2021;enero;RCD;14;Moratalaz
+2021;enero;RCD;15;Ciudad Lineal
+2021;enero;RCD;16;Hortaleza
+2021;enero;RCD;19;Vicálvaro
+2021;enero;RCD;20;San Blas - Canillejas
+2021;enero;RCD;21;Barajas
+2021;enero;PUNTOS LIMPIOS;3;Retiro
+2021;enero;PUNTOS LIMPIOS;5;Chamartín
+2021;enero;PUNTOS LIMPIOS;14;Moratalaz
+2021;enero;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;enero;PUNTOS LIMPIOS;16;Hortaleza
+2021;enero;PUNTOS LIMPIOS;19;Vicálvaro
+2021;enero;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;enero;PUNTOS LIMPIOS;21;Barajas
+2021;enero;CONTENEDORES DE ROPA;14;Moratalaz
+2021;enero;CONTENEDORES DE ROPA;19;Vicálvaro
+2021;enero;RESTO;2;Arganzuela
+2021;enero;RESTO;11;Carabanchel
+2021;enero;RESTO;12;Usera
+2021;enero;RESTO;13;Puente de Vallecas
+2021;enero;RESTO;17;Villaverde
+2021;enero;RESTO;18;Villa de Vallecas
+2021;enero;ENVASES;2;Arganzuela
+2021;enero;ENVASES;11;Carabanchel
+2021;enero;ENVASES;12;Usera
+2021;enero;ENVASES;13;Puente de Vallecas
+2021;enero;ENVASES;17;Villaverde
+2021;enero;ENVASES;18;Villa de Vallecas
+2021;enero;VIDRIO;2;Arganzuela
+2021;enero;VIDRIO;11;Carabanchel
+2021;enero;VIDRIO;12;Usera
+2021;enero;VIDRIO;13;Puente de Vallecas
+2021;enero;VIDRIO;17;Villaverde
+2021;enero;VIDRIO;18;Villa de Vallecas
+2021;enero;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;enero;CLINICOS;12;Usera
+2021;enero;CLINICOS;13;Puente de Vallecas
+2021;enero;ORGANICA;2;Arganzuela
+2021;enero;ORGANICA;11;Carabanchel
+2021;enero;ORGANICA;12;Usera
+2021;enero;ORGANICA;13;Puente de Vallecas
+2021;enero;ORGANICA;17;Villaverde
+2021;enero;ORGANICA;18;Villa de Vallecas
+2021;enero;PAPEL-CARTON;2;Arganzuela
+2021;enero;PAPEL-CARTON;11;Carabanchel
+2021;enero;PAPEL-CARTON;12;Usera
+2021;enero;PAPEL-CARTON;13;Puente de Vallecas
+2021;enero;PAPEL-CARTON;17;Villaverde
+2021;enero;PAPEL-CARTON;18;Villa de Vallecas
+2021;enero;CARTON COMERCIAL;2;Arganzuela
+2021;enero;CARTON COMERCIAL;11;Carabanchel
+2021;enero;CARTON COMERCIAL;12;Usera
+2021;enero;CARTON COMERCIAL;13;Puente de Vallecas
+2021;enero;CARTON COMERCIAL;17;Villaverde
+2021;enero;RCD;2;Arganzuela
+2021;enero;RCD;11;Carabanchel
+2021;enero;RCD;12;Usera
+2021;enero;RCD;13;Puente de Vallecas
+2021;enero;RCD;17;Villaverde
+2021;enero;RCD;18;Villa de Vallecas
+2021;enero;PUNTOS LIMPIOS;2;Arganzuela
+2021;enero;PUNTOS LIMPIOS;11;Carabanchel
+2021;enero;PUNTOS LIMPIOS;12;Usera
+2021;enero;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;enero;PUNTOS LIMPIOS;17;Villaverde
+2021;enero;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;enero;ANIMALES MUERTOS;99;Sin Distrito
+2021;febrero;RESTO;1;Centro
+2021;febrero;RESTO;6;Tetuán
+2021;febrero;RESTO;7;Chamberí
+2021;febrero;RESTO;8;Fuencarral - El Pardo
+2021;febrero;RESTO;9;Moncloa - Aravaca
+2021;febrero;RESTO;10;Latina
+2021;febrero;ENVASES;1;Centro
+2021;febrero;ENVASES;6;Tetuán
+2021;febrero;ENVASES;7;Chamberí
+2021;febrero;ENVASES;8;Fuencarral - El Pardo
+2021;febrero;ENVASES;9;Moncloa - Aravaca
+2021;febrero;ENVASES;10;Latina
+2021;febrero;VIDRIO;1;Centro
+2021;febrero;VIDRIO;6;Tetuán
+2021;febrero;VIDRIO;7;Chamberí
+2021;febrero;VIDRIO;8;Fuencarral - El Pardo
+2021;febrero;VIDRIO;9;Moncloa - Aravaca
+2021;febrero;VIDRIO;10;Latina
+2021;febrero;VIDRIO COMERCIAL;1;Centro
+2021;febrero;CLINICOS;1;Centro
+2021;febrero;CLINICOS;6;Tetuán
+2021;febrero;CLINICOS;8;Fuencarral - El Pardo
+2021;febrero;CLINICOS;9;Moncloa - Aravaca
+2021;febrero;CLINICOS;10;Latina
+2021;febrero;ORGANICA;1;Centro
+2021;febrero;ORGANICA;6;Tetuán
+2021;febrero;ORGANICA;7;Chamberí
+2021;febrero;ORGANICA;8;Fuencarral - El Pardo
+2021;febrero;ORGANICA;9;Moncloa - Aravaca
+2021;febrero;ORGANICA;10;Latina
+2021;febrero;PAPEL-CARTON;1;Centro
+2021;febrero;PAPEL-CARTON;6;Tetuán
+2021;febrero;PAPEL-CARTON;7;Chamberí
+2021;febrero;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;febrero;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;febrero;PAPEL-CARTON;10;Latina
+2021;febrero;CARTON COMERCIAL;1;Centro
+2021;febrero;CARTON COMERCIAL;6;Tetuán
+2021;febrero;CARTON COMERCIAL;7;Chamberí
+2021;febrero;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;febrero;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;febrero;CARTON COMERCIAL;10;Latina
+2021;febrero;RCD;1;Centro
+2021;febrero;RCD;6;Tetuán
+2021;febrero;RCD;8;Fuencarral - El Pardo
+2021;febrero;RCD;9;Moncloa - Aravaca
+2021;febrero;RCD;10;Latina
+2021;febrero;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;febrero;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;febrero;PUNTOS LIMPIOS;10;Latina
+2021;febrero;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;febrero;RESTO;3;Retiro
+2021;febrero;RESTO;4;Salamanca
+2021;febrero;RESTO;5;Chamartín
+2021;febrero;RESTO;14;Moratalaz
+2021;febrero;RESTO;15;Ciudad Lineal
+2021;febrero;RESTO;16;Hortaleza
+2021;febrero;RESTO;19;Vicálvaro
+2021;febrero;RESTO;20;San Blas - Canillejas
+2021;febrero;RESTO;21;Barajas
+2021;febrero;ENVASES;3;Retiro
+2021;febrero;ENVASES;4;Salamanca
+2021;febrero;ENVASES;5;Chamartín
+2021;febrero;ENVASES;14;Moratalaz
+2021;febrero;ENVASES;15;Ciudad Lineal
+2021;febrero;ENVASES;16;Hortaleza
+2021;febrero;ENVASES;19;Vicálvaro
+2021;febrero;ENVASES;20;San Blas - Canillejas
+2021;febrero;ENVASES;21;Barajas
+2021;febrero;VIDRIO;3;Retiro
+2021;febrero;VIDRIO;4;Salamanca
+2021;febrero;VIDRIO;5;Chamartín
+2021;febrero;VIDRIO;14;Moratalaz
+2021;febrero;VIDRIO;15;Ciudad Lineal
+2021;febrero;VIDRIO;16;Hortaleza
+2021;febrero;VIDRIO;19;Vicálvaro
+2021;febrero;VIDRIO;20;San Blas - Canillejas
+2021;febrero;VIDRIO;21;Barajas
+2021;febrero;VIDRIO COMERCIAL;4;Salamanca
+2021;febrero;CLINICOS;3;Retiro
+2021;febrero;CLINICOS;4;Salamanca
+2021;febrero;CLINICOS;15;Ciudad Lineal
+2021;febrero;ORGANICA;3;Retiro
+2021;febrero;ORGANICA;4;Salamanca
+2021;febrero;ORGANICA;5;Chamartín
+2021;febrero;ORGANICA;14;Moratalaz
+2021;febrero;ORGANICA;15;Ciudad Lineal
+2021;febrero;ORGANICA;16;Hortaleza
+2021;febrero;ORGANICA;19;Vicálvaro
+2021;febrero;ORGANICA;20;San Blas - Canillejas
+2021;febrero;ORGANICA;21;Barajas
+2021;febrero;PAPEL-CARTON;3;Retiro
+2021;febrero;PAPEL-CARTON;4;Salamanca
+2021;febrero;PAPEL-CARTON;5;Chamartín
+2021;febrero;PAPEL-CARTON;14;Moratalaz
+2021;febrero;PAPEL-CARTON;15;Ciudad Lineal
+2021;febrero;PAPEL-CARTON;16;Hortaleza
+2021;febrero;PAPEL-CARTON;19;Vicálvaro
+2021;febrero;PAPEL-CARTON;20;San Blas - Canillejas
+2021;febrero;PAPEL-CARTON;21;Barajas
+2021;febrero;CARTON COMERCIAL;3;Retiro
+2021;febrero;CARTON COMERCIAL;4;Salamanca
+2021;febrero;CARTON COMERCIAL;5;Chamartín
+2021;febrero;CARTON COMERCIAL;14;Moratalaz
+2021;febrero;CARTON COMERCIAL;15;Ciudad Lineal
+2021;febrero;CARTON COMERCIAL;16;Hortaleza
+2021;febrero;CARTON COMERCIAL;19;Vicálvaro
+2021;febrero;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;febrero;CARTON COMERCIAL;21;Barajas
+2021;febrero;RCD;3;Retiro
+2021;febrero;RCD;4;Salamanca
+2021;febrero;RCD;5;Chamartín
+2021;febrero;RCD;14;Moratalaz
+2021;febrero;RCD;15;Ciudad Lineal
+2021;febrero;RCD;16;Hortaleza
+2021;febrero;RCD;19;Vicálvaro
+2021;febrero;RCD;20;San Blas - Canillejas
+2021;febrero;RCD;21;Barajas
+2021;febrero;PUNTOS LIMPIOS;3;Retiro
+2021;febrero;PUNTOS LIMPIOS;5;Chamartín
+2021;febrero;PUNTOS LIMPIOS;14;Moratalaz
+2021;febrero;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;febrero;PUNTOS LIMPIOS;16;Hortaleza
+2021;febrero;PUNTOS LIMPIOS;19;Vicálvaro
+2021;febrero;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;febrero;PUNTOS LIMPIOS;21;Barajas
+2021;febrero;RESTO;2;Arganzuela
+2021;febrero;RESTO;11;Carabanchel
+2021;febrero;RESTO;12;Usera
+2021;febrero;RESTO;13;Puente de Vallecas
+2021;febrero;RESTO;17;Villaverde
+2021;febrero;RESTO;18;Villa de Vallecas
+2021;febrero;ENVASES;2;Arganzuela
+2021;febrero;ENVASES;11;Carabanchel
+2021;febrero;ENVASES;12;Usera
+2021;febrero;ENVASES;13;Puente de Vallecas
+2021;febrero;ENVASES;17;Villaverde
+2021;febrero;ENVASES;18;Villa de Vallecas
+2021;febrero;VIDRIO;2;Arganzuela
+2021;febrero;VIDRIO;11;Carabanchel
+2021;febrero;VIDRIO;12;Usera
+2021;febrero;VIDRIO;13;Puente de Vallecas
+2021;febrero;VIDRIO;17;Villaverde
+2021;febrero;VIDRIO;18;Villa de Vallecas
+2021;febrero;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;febrero;CLINICOS;12;Usera
+2021;febrero;CLINICOS;13;Puente de Vallecas
+2021;febrero;ORGANICA;2;Arganzuela
+2021;febrero;ORGANICA;11;Carabanchel
+2021;febrero;ORGANICA;12;Usera
+2021;febrero;ORGANICA;13;Puente de Vallecas
+2021;febrero;ORGANICA;17;Villaverde
+2021;febrero;ORGANICA;18;Villa de Vallecas
+2021;febrero;PAPEL-CARTON;2;Arganzuela
+2021;febrero;PAPEL-CARTON;11;Carabanchel
+2021;febrero;PAPEL-CARTON;12;Usera
+2021;febrero;PAPEL-CARTON;13;Puente de Vallecas
+2021;febrero;PAPEL-CARTON;17;Villaverde
+2021;febrero;PAPEL-CARTON;18;Villa de Vallecas
+2021;febrero;CARTON COMERCIAL;2;Arganzuela
+2021;febrero;CARTON COMERCIAL;11;Carabanchel
+2021;febrero;CARTON COMERCIAL;12;Usera
+2021;febrero;CARTON COMERCIAL;13;Puente de Vallecas
+2021;febrero;CARTON COMERCIAL;17;Villaverde
+2021;febrero;RCD;2;Arganzuela
+2021;febrero;RCD;11;Carabanchel
+2021;febrero;RCD;12;Usera
+2021;febrero;RCD;13;Puente de Vallecas
+2021;febrero;RCD;17;Villaverde
+2021;febrero;RCD;18;Villa de Vallecas
+2021;febrero;PUNTOS LIMPIOS;2;Arganzuela
+2021;febrero;PUNTOS LIMPIOS;11;Carabanchel
+2021;febrero;PUNTOS LIMPIOS;12;Usera
+2021;febrero;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;febrero;PUNTOS LIMPIOS;17;Villaverde
+2021;febrero;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;febrero;ANIMALES MUERTOS;99;Sin Distrito
+2021;febrero;PILAS;99;Sin Distrito
+2021;febrero;CONTENEDORES DE ROPA;2;Arganzuela
+2021;marzo;RESTO;1;Centro
+2021;marzo;RESTO;6;Tetuán
+2021;marzo;RESTO;7;Chamberí
+2021;marzo;RESTO;8;Fuencarral - El Pardo
+2021;marzo;RESTO;9;Moncloa - Aravaca
+2021;marzo;RESTO;10;Latina
+2021;marzo;ENVASES;1;Centro
+2021;marzo;ENVASES;6;Tetuán
+2021;marzo;ENVASES;7;Chamberí
+2021;marzo;ENVASES;8;Fuencarral - El Pardo
+2021;marzo;ENVASES;9;Moncloa - Aravaca
+2021;marzo;ENVASES;10;Latina
+2021;marzo;VIDRIO;1;Centro
+2021;marzo;VIDRIO;6;Tetuán
+2021;marzo;VIDRIO;7;Chamberí
+2021;marzo;VIDRIO;8;Fuencarral - El Pardo
+2021;marzo;VIDRIO;9;Moncloa - Aravaca
+2021;marzo;VIDRIO;10;Latina
+2021;marzo;VIDRIO COMERCIAL;1;Centro
+2021;marzo;CLINICOS;1;Centro
+2021;marzo;CLINICOS;6;Tetuán
+2021;marzo;CLINICOS;8;Fuencarral - El Pardo
+2021;marzo;CLINICOS;9;Moncloa - Aravaca
+2021;marzo;CLINICOS;10;Latina
+2021;marzo;ORGANICA;1;Centro
+2021;marzo;ORGANICA;6;Tetuán
+2021;marzo;ORGANICA;7;Chamberí
+2021;marzo;ORGANICA;8;Fuencarral - El Pardo
+2021;marzo;ORGANICA;9;Moncloa - Aravaca
+2021;marzo;ORGANICA;10;Latina
+2021;marzo;PAPEL-CARTON;1;Centro
+2021;marzo;PAPEL-CARTON;6;Tetuán
+2021;marzo;PAPEL-CARTON;7;Chamberí
+2021;marzo;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;marzo;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;marzo;PAPEL-CARTON;10;Latina
+2021;marzo;CARTON COMERCIAL;1;Centro
+2021;marzo;CARTON COMERCIAL;6;Tetuán
+2021;marzo;CARTON COMERCIAL;7;Chamberí
+2021;marzo;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;marzo;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;marzo;CARTON COMERCIAL;10;Latina
+2021;marzo;RCD;1;Centro
+2021;marzo;RCD;6;Tetuán
+2021;marzo;RCD;7;Chamberí
+2021;marzo;RCD;8;Fuencarral - El Pardo
+2021;marzo;RCD;9;Moncloa - Aravaca
+2021;marzo;RCD;10;Latina
+2021;marzo;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;marzo;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;marzo;PUNTOS LIMPIOS;10;Latina
+2021;marzo;CONTENEDORES DE ROPA;8;Fuencarral - El Pardo
+2021;marzo;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;marzo;RESTO;3;Retiro
+2021;marzo;RESTO;4;Salamanca
+2021;marzo;RESTO;5;Chamartín
+2021;marzo;RESTO;14;Moratalaz
+2021;marzo;RESTO;15;Ciudad Lineal
+2021;marzo;RESTO;16;Hortaleza
+2021;marzo;RESTO;19;Vicálvaro
+2021;marzo;RESTO;20;San Blas - Canillejas
+2021;marzo;RESTO;21;Barajas
+2021;marzo;ENVASES;3;Retiro
+2021;marzo;ENVASES;4;Salamanca
+2021;marzo;ENVASES;5;Chamartín
+2021;marzo;ENVASES;14;Moratalaz
+2021;marzo;ENVASES;15;Ciudad Lineal
+2021;marzo;ENVASES;16;Hortaleza
+2021;marzo;ENVASES;19;Vicálvaro
+2021;marzo;ENVASES;20;San Blas - Canillejas
+2021;marzo;ENVASES;21;Barajas
+2021;marzo;VIDRIO;3;Retiro
+2021;marzo;VIDRIO;4;Salamanca
+2021;marzo;VIDRIO;5;Chamartín
+2021;marzo;VIDRIO;14;Moratalaz
+2021;marzo;VIDRIO;15;Ciudad Lineal
+2021;marzo;VIDRIO;16;Hortaleza
+2021;marzo;VIDRIO;19;Vicálvaro
+2021;marzo;VIDRIO;20;San Blas - Canillejas
+2021;marzo;VIDRIO;21;Barajas
+2021;marzo;VIDRIO COMERCIAL;4;Salamanca
+2021;marzo;CLINICOS;3;Retiro
+2021;marzo;CLINICOS;4;Salamanca
+2021;marzo;CLINICOS;15;Ciudad Lineal
+2021;marzo;ORGANICA;3;Retiro
+2021;marzo;ORGANICA;4;Salamanca
+2021;marzo;ORGANICA;5;Chamartín
+2021;marzo;ORGANICA;14;Moratalaz
+2021;marzo;ORGANICA;15;Ciudad Lineal
+2021;marzo;ORGANICA;16;Hortaleza
+2021;marzo;ORGANICA;19;Vicálvaro
+2021;marzo;ORGANICA;20;San Blas - Canillejas
+2021;marzo;ORGANICA;21;Barajas
+2021;marzo;PAPEL-CARTON;3;Retiro
+2021;marzo;PAPEL-CARTON;4;Salamanca
+2021;marzo;PAPEL-CARTON;5;Chamartín
+2021;marzo;PAPEL-CARTON;14;Moratalaz
+2021;marzo;PAPEL-CARTON;15;Ciudad Lineal
+2021;marzo;PAPEL-CARTON;16;Hortaleza
+2021;marzo;PAPEL-CARTON;19;Vicálvaro
+2021;marzo;PAPEL-CARTON;20;San Blas - Canillejas
+2021;marzo;PAPEL-CARTON;21;Barajas
+2021;marzo;CARTON COMERCIAL;3;Retiro
+2021;marzo;CARTON COMERCIAL;4;Salamanca
+2021;marzo;CARTON COMERCIAL;5;Chamartín
+2021;marzo;CARTON COMERCIAL;14;Moratalaz
+2021;marzo;CARTON COMERCIAL;15;Ciudad Lineal
+2021;marzo;CARTON COMERCIAL;16;Hortaleza
+2021;marzo;CARTON COMERCIAL;19;Vicálvaro
+2021;marzo;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;marzo;CARTON COMERCIAL;21;Barajas
+2021;marzo;RCD;3;Retiro
+2021;marzo;RCD;5;Chamartín
+2021;marzo;RCD;14;Moratalaz
+2021;marzo;RCD;15;Ciudad Lineal
+2021;marzo;RCD;16;Hortaleza
+2021;marzo;RCD;19;Vicálvaro
+2021;marzo;RCD;20;San Blas - Canillejas
+2021;marzo;RCD;21;Barajas
+2021;marzo;PUNTOS LIMPIOS;3;Retiro
+2021;marzo;PUNTOS LIMPIOS;5;Chamartín
+2021;marzo;PUNTOS LIMPIOS;14;Moratalaz
+2021;marzo;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;marzo;PUNTOS LIMPIOS;16;Hortaleza
+2021;marzo;PUNTOS LIMPIOS;19;Vicálvaro
+2021;marzo;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;marzo;PUNTOS LIMPIOS;21;Barajas
+2021;marzo;RESTO;2;Arganzuela
+2021;marzo;RESTO;11;Carabanchel
+2021;marzo;RESTO;12;Usera
+2021;marzo;RESTO;13;Puente de Vallecas
+2021;marzo;RESTO;17;Villaverde
+2021;marzo;RESTO;18;Villa de Vallecas
+2021;marzo;ENVASES;2;Arganzuela
+2021;marzo;ENVASES;11;Carabanchel
+2021;marzo;ENVASES;12;Usera
+2021;marzo;ENVASES;13;Puente de Vallecas
+2021;marzo;ENVASES;17;Villaverde
+2021;marzo;ENVASES;18;Villa de Vallecas
+2021;marzo;VIDRIO;2;Arganzuela
+2021;marzo;VIDRIO;11;Carabanchel
+2021;marzo;VIDRIO;12;Usera
+2021;marzo;VIDRIO;13;Puente de Vallecas
+2021;marzo;VIDRIO;17;Villaverde
+2021;marzo;VIDRIO;18;Villa de Vallecas
+2021;marzo;CLINICOS;12;Usera
+2021;marzo;CLINICOS;13;Puente de Vallecas
+2021;marzo;ORGANICA;2;Arganzuela
+2021;marzo;ORGANICA;11;Carabanchel
+2021;marzo;ORGANICA;12;Usera
+2021;marzo;ORGANICA;13;Puente de Vallecas
+2021;marzo;ORGANICA;17;Villaverde
+2021;marzo;ORGANICA;18;Villa de Vallecas
+2021;marzo;PAPEL-CARTON;2;Arganzuela
+2021;marzo;PAPEL-CARTON;11;Carabanchel
+2021;marzo;PAPEL-CARTON;12;Usera
+2021;marzo;PAPEL-CARTON;13;Puente de Vallecas
+2021;marzo;PAPEL-CARTON;17;Villaverde
+2021;marzo;PAPEL-CARTON;18;Villa de Vallecas
+2021;marzo;CARTON COMERCIAL;2;Arganzuela
+2021;marzo;CARTON COMERCIAL;11;Carabanchel
+2021;marzo;CARTON COMERCIAL;12;Usera
+2021;marzo;CARTON COMERCIAL;13;Puente de Vallecas
+2021;marzo;CARTON COMERCIAL;17;Villaverde
+2021;marzo;RCD;2;Arganzuela
+2021;marzo;RCD;11;Carabanchel
+2021;marzo;RCD;12;Usera
+2021;marzo;RCD;13;Puente de Vallecas
+2021;marzo;RCD;17;Villaverde
+2021;marzo;RCD;18;Villa de Vallecas
+2021;marzo;PUNTOS LIMPIOS;2;Arganzuela
+2021;marzo;PUNTOS LIMPIOS;11;Carabanchel
+2021;marzo;PUNTOS LIMPIOS;12;Usera
+2021;marzo;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;marzo;PUNTOS LIMPIOS;17;Villaverde
+2021;marzo;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;marzo;ANIMALES MUERTOS;99;Sin Distrito
+2021;marzo;PILAS;99;Sin Distrito
+2021;marzo;CONTENEDORES DE ROPA;2;Arganzuela
+2021;abril;RESTO;1;Centro
+2021;abril;RESTO;6;Tetuán
+2021;abril;RESTO;7;Chamberí
+2021;abril;RESTO;8;Fuencarral - El Pardo
+2021;abril;RESTO;9;Moncloa - Aravaca
+2021;abril;RESTO;10;Latina
+2021;abril;ENVASES;1;Centro
+2021;abril;ENVASES;6;Tetuán
+2021;abril;ENVASES;7;Chamberí
+2021;abril;ENVASES;8;Fuencarral - El Pardo
+2021;abril;ENVASES;9;Moncloa - Aravaca
+2021;abril;ENVASES;10;Latina
+2021;abril;VIDRIO;1;Centro
+2021;abril;VIDRIO;6;Tetuán
+2021;abril;VIDRIO;7;Chamberí
+2021;abril;VIDRIO;8;Fuencarral - El Pardo
+2021;abril;VIDRIO;9;Moncloa - Aravaca
+2021;abril;VIDRIO;10;Latina
+2021;abril;VIDRIO COMERCIAL;1;Centro
+2021;abril;CLINICOS;1;Centro
+2021;abril;CLINICOS;6;Tetuán
+2021;abril;CLINICOS;8;Fuencarral - El Pardo
+2021;abril;CLINICOS;9;Moncloa - Aravaca
+2021;abril;CLINICOS;10;Latina
+2021;abril;ORGANICA;1;Centro
+2021;abril;ORGANICA;6;Tetuán
+2021;abril;ORGANICA;7;Chamberí
+2021;abril;ORGANICA;8;Fuencarral - El Pardo
+2021;abril;ORGANICA;9;Moncloa - Aravaca
+2021;abril;ORGANICA;10;Latina
+2021;abril;PAPEL-CARTON;1;Centro
+2021;abril;PAPEL-CARTON;6;Tetuán
+2021;abril;PAPEL-CARTON;7;Chamberí
+2021;abril;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;abril;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;abril;PAPEL-CARTON;10;Latina
+2021;abril;CARTON COMERCIAL;1;Centro
+2021;abril;CARTON COMERCIAL;6;Tetuán
+2021;abril;CARTON COMERCIAL;7;Chamberí
+2021;abril;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;abril;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;abril;CARTON COMERCIAL;10;Latina
+2021;abril;RCD;1;Centro
+2021;abril;RCD;6;Tetuán
+2021;abril;RCD;7;Chamberí
+2021;abril;RCD;8;Fuencarral - El Pardo
+2021;abril;RCD;9;Moncloa - Aravaca
+2021;abril;RCD;10;Latina
+2021;abril;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;abril;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;abril;PUNTOS LIMPIOS;10;Latina
+2021;abril;CONTENEDORES DE ROPA;6;Tetuán
+2021;abril;CONTENEDORES DE ROPA;8;Fuencarral - El Pardo
+2021;abril;CONTENEDORES DE ROPA;10;Latina
+2021;abril;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;abril;RESTO;3;Retiro
+2021;abril;RESTO;4;Salamanca
+2021;abril;RESTO;5;Chamartín
+2021;abril;RESTO;14;Moratalaz
+2021;abril;RESTO;15;Ciudad Lineal
+2021;abril;RESTO;16;Hortaleza
+2021;abril;RESTO;19;Vicálvaro
+2021;abril;RESTO;20;San Blas - Canillejas
+2021;abril;RESTO;21;Barajas
+2021;abril;ENVASES;3;Retiro
+2021;abril;ENVASES;4;Salamanca
+2021;abril;ENVASES;5;Chamartín
+2021;abril;ENVASES;14;Moratalaz
+2021;abril;ENVASES;15;Ciudad Lineal
+2021;abril;ENVASES;16;Hortaleza
+2021;abril;ENVASES;19;Vicálvaro
+2021;abril;ENVASES;20;San Blas - Canillejas
+2021;abril;ENVASES;21;Barajas
+2021;abril;VIDRIO;3;Retiro
+2021;abril;VIDRIO;4;Salamanca
+2021;abril;VIDRIO;5;Chamartín
+2021;abril;VIDRIO;14;Moratalaz
+2021;abril;VIDRIO;15;Ciudad Lineal
+2021;abril;VIDRIO;16;Hortaleza
+2021;abril;VIDRIO;19;Vicálvaro
+2021;abril;VIDRIO;20;San Blas - Canillejas
+2021;abril;VIDRIO;21;Barajas
+2021;abril;VIDRIO COMERCIAL;4;Salamanca
+2021;abril;CLINICOS;3;Retiro
+2021;abril;CLINICOS;4;Salamanca
+2021;abril;CLINICOS;15;Ciudad Lineal
+2021;abril;ORGANICA;3;Retiro
+2021;abril;ORGANICA;4;Salamanca
+2021;abril;ORGANICA;5;Chamartín
+2021;abril;ORGANICA;14;Moratalaz
+2021;abril;ORGANICA;15;Ciudad Lineal
+2021;abril;ORGANICA;16;Hortaleza
+2021;abril;ORGANICA;19;Vicálvaro
+2021;abril;ORGANICA;20;San Blas - Canillejas
+2021;abril;ORGANICA;21;Barajas
+2021;abril;PAPEL-CARTON;3;Retiro
+2021;abril;PAPEL-CARTON;4;Salamanca
+2021;abril;PAPEL-CARTON;5;Chamartín
+2021;abril;PAPEL-CARTON;14;Moratalaz
+2021;abril;PAPEL-CARTON;15;Ciudad Lineal
+2021;abril;PAPEL-CARTON;16;Hortaleza
+2021;abril;PAPEL-CARTON;19;Vicálvaro
+2021;abril;PAPEL-CARTON;20;San Blas - Canillejas
+2021;abril;PAPEL-CARTON;21;Barajas
+2021;abril;CARTON COMERCIAL;3;Retiro
+2021;abril;CARTON COMERCIAL;4;Salamanca
+2021;abril;CARTON COMERCIAL;5;Chamartín
+2021;abril;CARTON COMERCIAL;14;Moratalaz
+2021;abril;CARTON COMERCIAL;15;Ciudad Lineal
+2021;abril;CARTON COMERCIAL;16;Hortaleza
+2021;abril;CARTON COMERCIAL;19;Vicálvaro
+2021;abril;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;abril;CARTON COMERCIAL;21;Barajas
+2021;abril;RCD;3;Retiro
+2021;abril;RCD;4;Salamanca
+2021;abril;RCD;5;Chamartín
+2021;abril;RCD;14;Moratalaz
+2021;abril;RCD;15;Ciudad Lineal
+2021;abril;RCD;16;Hortaleza
+2021;abril;RCD;19;Vicálvaro
+2021;abril;RCD;20;San Blas - Canillejas
+2021;abril;RCD;21;Barajas
+2021;abril;PUNTOS LIMPIOS;3;Retiro
+2021;abril;PUNTOS LIMPIOS;5;Chamartín
+2021;abril;PUNTOS LIMPIOS;14;Moratalaz
+2021;abril;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;abril;PUNTOS LIMPIOS;16;Hortaleza
+2021;abril;PUNTOS LIMPIOS;19;Vicálvaro
+2021;abril;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;abril;PUNTOS LIMPIOS;21;Barajas
+2021;abril;RESTO;2;Arganzuela
+2021;abril;RESTO;11;Carabanchel
+2021;abril;RESTO;12;Usera
+2021;abril;RESTO;13;Puente de Vallecas
+2021;abril;RESTO;17;Villaverde
+2021;abril;RESTO;18;Villa de Vallecas
+2021;abril;ENVASES;2;Arganzuela
+2021;abril;ENVASES;11;Carabanchel
+2021;abril;ENVASES;12;Usera
+2021;abril;ENVASES;13;Puente de Vallecas
+2021;abril;ENVASES;17;Villaverde
+2021;abril;ENVASES;18;Villa de Vallecas
+2021;abril;VIDRIO;2;Arganzuela
+2021;abril;VIDRIO;11;Carabanchel
+2021;abril;VIDRIO;12;Usera
+2021;abril;VIDRIO;13;Puente de Vallecas
+2021;abril;VIDRIO;17;Villaverde
+2021;abril;VIDRIO;18;Villa de Vallecas
+2021;abril;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;abril;CLINICOS;12;Usera
+2021;abril;CLINICOS;13;Puente de Vallecas
+2021;abril;ORGANICA;2;Arganzuela
+2021;abril;ORGANICA;11;Carabanchel
+2021;abril;ORGANICA;12;Usera
+2021;abril;ORGANICA;13;Puente de Vallecas
+2021;abril;ORGANICA;17;Villaverde
+2021;abril;ORGANICA;18;Villa de Vallecas
+2021;abril;PAPEL-CARTON;2;Arganzuela
+2021;abril;PAPEL-CARTON;11;Carabanchel
+2021;abril;PAPEL-CARTON;12;Usera
+2021;abril;PAPEL-CARTON;13;Puente de Vallecas
+2021;abril;PAPEL-CARTON;17;Villaverde
+2021;abril;PAPEL-CARTON;18;Villa de Vallecas
+2021;abril;CARTON COMERCIAL;2;Arganzuela
+2021;abril;CARTON COMERCIAL;11;Carabanchel
+2021;abril;CARTON COMERCIAL;12;Usera
+2021;abril;CARTON COMERCIAL;13;Puente de Vallecas
+2021;abril;CARTON COMERCIAL;17;Villaverde
+2021;abril;RCD;2;Arganzuela
+2021;abril;RCD;11;Carabanchel
+2021;abril;RCD;12;Usera
+2021;abril;RCD;13;Puente de Vallecas
+2021;abril;RCD;17;Villaverde
+2021;abril;RCD;18;Villa de Vallecas
+2021;abril;PUNTOS LIMPIOS;2;Arganzuela
+2021;abril;PUNTOS LIMPIOS;11;Carabanchel
+2021;abril;PUNTOS LIMPIOS;12;Usera
+2021;abril;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;abril;PUNTOS LIMPIOS;17;Villaverde
+2021;abril;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;abril;ANIMALES MUERTOS;99;Sin Distrito
+2021;mayo;RESTO;1;Centro
+2021;mayo;RESTO;6;Tetuán
+2021;mayo;RESTO;7;Chamberí
+2021;mayo;RESTO;8;Fuencarral - El Pardo
+2021;mayo;RESTO;9;Moncloa - Aravaca
+2021;mayo;RESTO;10;Latina
+2021;mayo;ENVASES;1;Centro
+2021;mayo;ENVASES;6;Tetuán
+2021;mayo;ENVASES;7;Chamberí
+2021;mayo;ENVASES;8;Fuencarral - El Pardo
+2021;mayo;ENVASES;9;Moncloa - Aravaca
+2021;mayo;ENVASES;10;Latina
+2021;mayo;VIDRIO;1;Centro
+2021;mayo;VIDRIO;6;Tetuán
+2021;mayo;VIDRIO;7;Chamberí
+2021;mayo;VIDRIO;8;Fuencarral - El Pardo
+2021;mayo;VIDRIO;9;Moncloa - Aravaca
+2021;mayo;VIDRIO;10;Latina
+2021;mayo;VIDRIO COMERCIAL;1;Centro
+2021;mayo;CLINICOS;1;Centro
+2021;mayo;CLINICOS;6;Tetuán
+2021;mayo;CLINICOS;8;Fuencarral - El Pardo
+2021;mayo;CLINICOS;9;Moncloa - Aravaca
+2021;mayo;CLINICOS;10;Latina
+2021;mayo;ORGANICA;1;Centro
+2021;mayo;ORGANICA;6;Tetuán
+2021;mayo;ORGANICA;7;Chamberí
+2021;mayo;ORGANICA;8;Fuencarral - El Pardo
+2021;mayo;ORGANICA;9;Moncloa - Aravaca
+2021;mayo;ORGANICA;10;Latina
+2021;mayo;PAPEL-CARTON;1;Centro
+2021;mayo;PAPEL-CARTON;6;Tetuán
+2021;mayo;PAPEL-CARTON;7;Chamberí
+2021;mayo;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;mayo;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;mayo;PAPEL-CARTON;10;Latina
+2021;mayo;CARTON COMERCIAL;1;Centro
+2021;mayo;CARTON COMERCIAL;6;Tetuán
+2021;mayo;CARTON COMERCIAL;7;Chamberí
+2021;mayo;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;mayo;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;mayo;CARTON COMERCIAL;10;Latina
+2021;mayo;RCD;1;Centro
+2021;mayo;RCD;6;Tetuán
+2021;mayo;RCD;7;Chamberí
+2021;mayo;RCD;8;Fuencarral - El Pardo
+2021;mayo;RCD;9;Moncloa - Aravaca
+2021;mayo;RCD;10;Latina
+2021;mayo;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;mayo;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;mayo;PUNTOS LIMPIOS;10;Latina
+2021;mayo;CONTENEDORES DE ROPA;8;Fuencarral - El Pardo
+2021;mayo;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;mayo;RESTO;3;Retiro
+2021;mayo;RESTO;4;Salamanca
+2021;mayo;RESTO;5;Chamartín
+2021;mayo;RESTO;14;Moratalaz
+2021;mayo;RESTO;15;Ciudad Lineal
+2021;mayo;RESTO;16;Hortaleza
+2021;mayo;RESTO;19;Vicálvaro
+2021;mayo;RESTO;20;San Blas - Canillejas
+2021;mayo;RESTO;21;Barajas
+2021;mayo;ENVASES;3;Retiro
+2021;mayo;ENVASES;4;Salamanca
+2021;mayo;ENVASES;5;Chamartín
+2021;mayo;ENVASES;14;Moratalaz
+2021;mayo;ENVASES;15;Ciudad Lineal
+2021;mayo;ENVASES;16;Hortaleza
+2021;mayo;ENVASES;19;Vicálvaro
+2021;mayo;ENVASES;20;San Blas - Canillejas
+2021;mayo;ENVASES;21;Barajas
+2021;mayo;VIDRIO;3;Retiro
+2021;mayo;VIDRIO;4;Salamanca
+2021;mayo;VIDRIO;5;Chamartín
+2021;mayo;VIDRIO;14;Moratalaz
+2021;mayo;VIDRIO;15;Ciudad Lineal
+2021;mayo;VIDRIO;16;Hortaleza
+2021;mayo;VIDRIO;19;Vicálvaro
+2021;mayo;VIDRIO;20;San Blas - Canillejas
+2021;mayo;VIDRIO;21;Barajas
+2021;mayo;VIDRIO COMERCIAL;4;Salamanca
+2021;mayo;CLINICOS;3;Retiro
+2021;mayo;CLINICOS;4;Salamanca
+2021;mayo;CLINICOS;15;Ciudad Lineal
+2021;mayo;ORGANICA;3;Retiro
+2021;mayo;ORGANICA;4;Salamanca
+2021;mayo;ORGANICA;5;Chamartín
+2021;mayo;ORGANICA;14;Moratalaz
+2021;mayo;ORGANICA;15;Ciudad Lineal
+2021;mayo;ORGANICA;16;Hortaleza
+2021;mayo;ORGANICA;19;Vicálvaro
+2021;mayo;ORGANICA;20;San Blas - Canillejas
+2021;mayo;ORGANICA;21;Barajas
+2021;mayo;PAPEL-CARTON;3;Retiro
+2021;mayo;PAPEL-CARTON;4;Salamanca
+2021;mayo;PAPEL-CARTON;5;Chamartín
+2021;mayo;PAPEL-CARTON;14;Moratalaz
+2021;mayo;PAPEL-CARTON;15;Ciudad Lineal
+2021;mayo;PAPEL-CARTON;16;Hortaleza
+2021;mayo;PAPEL-CARTON;19;Vicálvaro
+2021;mayo;PAPEL-CARTON;20;San Blas - Canillejas
+2021;mayo;PAPEL-CARTON;21;Barajas
+2021;mayo;CARTON COMERCIAL;3;Retiro
+2021;mayo;CARTON COMERCIAL;4;Salamanca
+2021;mayo;CARTON COMERCIAL;5;Chamartín
+2021;mayo;CARTON COMERCIAL;14;Moratalaz
+2021;mayo;CARTON COMERCIAL;15;Ciudad Lineal
+2021;mayo;CARTON COMERCIAL;16;Hortaleza
+2021;mayo;CARTON COMERCIAL;19;Vicálvaro
+2021;mayo;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;mayo;CARTON COMERCIAL;21;Barajas
+2021;mayo;RCD;3;Retiro
+2021;mayo;RCD;5;Chamartín
+2021;mayo;RCD;14;Moratalaz
+2021;mayo;RCD;15;Ciudad Lineal
+2021;mayo;RCD;16;Hortaleza
+2021;mayo;RCD;20;San Blas - Canillejas
+2021;mayo;RCD;21;Barajas
+2021;mayo;PUNTOS LIMPIOS;3;Retiro
+2021;mayo;PUNTOS LIMPIOS;5;Chamartín
+2021;mayo;PUNTOS LIMPIOS;14;Moratalaz
+2021;mayo;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;mayo;PUNTOS LIMPIOS;16;Hortaleza
+2021;mayo;PUNTOS LIMPIOS;19;Vicálvaro
+2021;mayo;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;mayo;PUNTOS LIMPIOS;21;Barajas
+2021;mayo;RESTO;2;Arganzuela
+2021;mayo;RESTO;11;Carabanchel
+2021;mayo;RESTO;12;Usera
+2021;mayo;RESTO;13;Puente de Vallecas
+2021;mayo;RESTO;17;Villaverde
+2021;mayo;RESTO;18;Villa de Vallecas
+2021;mayo;ENVASES;2;Arganzuela
+2021;mayo;ENVASES;11;Carabanchel
+2021;mayo;ENVASES;12;Usera
+2021;mayo;ENVASES;13;Puente de Vallecas
+2021;mayo;ENVASES;17;Villaverde
+2021;mayo;ENVASES;18;Villa de Vallecas
+2021;mayo;VIDRIO;2;Arganzuela
+2021;mayo;VIDRIO;11;Carabanchel
+2021;mayo;VIDRIO;12;Usera
+2021;mayo;VIDRIO;13;Puente de Vallecas
+2021;mayo;VIDRIO;17;Villaverde
+2021;mayo;VIDRIO;18;Villa de Vallecas
+2021;mayo;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;mayo;CLINICOS;12;Usera
+2021;mayo;CLINICOS;13;Puente de Vallecas
+2021;mayo;ORGANICA;2;Arganzuela
+2021;mayo;ORGANICA;11;Carabanchel
+2021;mayo;ORGANICA;12;Usera
+2021;mayo;ORGANICA;13;Puente de Vallecas
+2021;mayo;ORGANICA;17;Villaverde
+2021;mayo;ORGANICA;18;Villa de Vallecas
+2021;mayo;PAPEL-CARTON;2;Arganzuela
+2021;mayo;PAPEL-CARTON;11;Carabanchel
+2021;mayo;PAPEL-CARTON;12;Usera
+2021;mayo;PAPEL-CARTON;13;Puente de Vallecas
+2021;mayo;PAPEL-CARTON;17;Villaverde
+2021;mayo;PAPEL-CARTON;18;Villa de Vallecas
+2021;mayo;CARTON COMERCIAL;2;Arganzuela
+2021;mayo;CARTON COMERCIAL;11;Carabanchel
+2021;mayo;CARTON COMERCIAL;12;Usera
+2021;mayo;CARTON COMERCIAL;13;Puente de Vallecas
+2021;mayo;CARTON COMERCIAL;17;Villaverde
+2021;mayo;RCD;2;Arganzuela
+2021;mayo;RCD;11;Carabanchel
+2021;mayo;RCD;12;Usera
+2021;mayo;RCD;13;Puente de Vallecas
+2021;mayo;RCD;17;Villaverde
+2021;mayo;RCD;18;Villa de Vallecas
+2021;mayo;PUNTOS LIMPIOS;2;Arganzuela
+2021;mayo;PUNTOS LIMPIOS;11;Carabanchel
+2021;mayo;PUNTOS LIMPIOS;12;Usera
+2021;mayo;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;mayo;PUNTOS LIMPIOS;17;Villaverde
+2021;mayo;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;mayo;ANIMALES MUERTOS;99;Sin Distrito
+2021;mayo;PILAS;99;Sin Distrito
+2021;junio;RESTO;1;Centro
+2021;junio;RESTO;6;Tetuán
+2021;junio;RESTO;7;Chamberí
+2021;junio;RESTO;8;Fuencarral - El Pardo
+2021;junio;RESTO;9;Moncloa - Aravaca
+2021;junio;RESTO;10;Latina
+2021;junio;ENVASES;1;Centro
+2021;junio;ENVASES;6;Tetuán
+2021;junio;ENVASES;7;Chamberí
+2021;junio;ENVASES;8;Fuencarral - El Pardo
+2021;junio;ENVASES;9;Moncloa - Aravaca
+2021;junio;ENVASES;10;Latina
+2021;junio;VIDRIO;1;Centro
+2021;junio;VIDRIO;6;Tetuán
+2021;junio;VIDRIO;7;Chamberí
+2021;junio;VIDRIO;8;Fuencarral - El Pardo
+2021;junio;VIDRIO;9;Moncloa - Aravaca
+2021;junio;VIDRIO;10;Latina
+2021;junio;VIDRIO COMERCIAL;1;Centro
+2021;junio;CLINICOS;1;Centro
+2021;junio;CLINICOS;6;Tetuán
+2021;junio;CLINICOS;8;Fuencarral - El Pardo
+2021;junio;CLINICOS;9;Moncloa - Aravaca
+2021;junio;CLINICOS;10;Latina
+2021;junio;ORGANICA;1;Centro
+2021;junio;ORGANICA;6;Tetuán
+2021;junio;ORGANICA;7;Chamberí
+2021;junio;ORGANICA;8;Fuencarral - El Pardo
+2021;junio;ORGANICA;9;Moncloa - Aravaca
+2021;junio;ORGANICA;10;Latina
+2021;junio;PAPEL-CARTON;1;Centro
+2021;junio;PAPEL-CARTON;6;Tetuán
+2021;junio;PAPEL-CARTON;7;Chamberí
+2021;junio;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;junio;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;junio;PAPEL-CARTON;10;Latina
+2021;junio;CARTON COMERCIAL;1;Centro
+2021;junio;CARTON COMERCIAL;6;Tetuán
+2021;junio;CARTON COMERCIAL;7;Chamberí
+2021;junio;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;junio;CARTON COMERCIAL;10;Latina
+2021;junio;RCD;1;Centro
+2021;junio;RCD;6;Tetuán
+2021;junio;RCD;7;Chamberí
+2021;junio;RCD;8;Fuencarral - El Pardo
+2021;junio;RCD;9;Moncloa - Aravaca
+2021;junio;RCD;10;Latina
+2021;junio;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;junio;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;junio;PUNTOS LIMPIOS;10;Latina
+2021;junio;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;junio;RESTO;3;Retiro
+2021;junio;RESTO;4;Salamanca
+2021;junio;RESTO;5;Chamartín
+2021;junio;RESTO;14;Moratalaz
+2021;junio;RESTO;15;Ciudad Lineal
+2021;junio;RESTO;16;Hortaleza
+2021;junio;RESTO;19;Vicálvaro
+2021;junio;RESTO;20;San Blas - Canillejas
+2021;junio;RESTO;21;Barajas
+2021;junio;ENVASES;3;Retiro
+2021;junio;ENVASES;4;Salamanca
+2021;junio;ENVASES;5;Chamartín
+2021;junio;ENVASES;14;Moratalaz
+2021;junio;ENVASES;15;Ciudad Lineal
+2021;junio;ENVASES;16;Hortaleza
+2021;junio;ENVASES;19;Vicálvaro
+2021;junio;ENVASES;20;San Blas - Canillejas
+2021;junio;ENVASES;21;Barajas
+2021;junio;VIDRIO;3;Retiro
+2021;junio;VIDRIO;4;Salamanca
+2021;junio;VIDRIO;5;Chamartín
+2021;junio;VIDRIO;14;Moratalaz
+2021;junio;VIDRIO;15;Ciudad Lineal
+2021;junio;VIDRIO;16;Hortaleza
+2021;junio;VIDRIO;19;Vicálvaro
+2021;junio;VIDRIO;20;San Blas - Canillejas
+2021;junio;VIDRIO;21;Barajas
+2021;junio;VIDRIO COMERCIAL;4;Salamanca
+2021;junio;CLINICOS;3;Retiro
+2021;junio;CLINICOS;4;Salamanca
+2021;junio;CLINICOS;15;Ciudad Lineal
+2021;junio;ORGANICA;3;Retiro
+2021;junio;ORGANICA;4;Salamanca
+2021;junio;ORGANICA;5;Chamartín
+2021;junio;ORGANICA;14;Moratalaz
+2021;junio;ORGANICA;15;Ciudad Lineal
+2021;junio;ORGANICA;16;Hortaleza
+2021;junio;ORGANICA;19;Vicálvaro
+2021;junio;ORGANICA;20;San Blas - Canillejas
+2021;junio;ORGANICA;21;Barajas
+2021;junio;PAPEL-CARTON;3;Retiro
+2021;junio;PAPEL-CARTON;4;Salamanca
+2021;junio;PAPEL-CARTON;5;Chamartín
+2021;junio;PAPEL-CARTON;14;Moratalaz
+2021;junio;PAPEL-CARTON;15;Ciudad Lineal
+2021;junio;PAPEL-CARTON;16;Hortaleza
+2021;junio;PAPEL-CARTON;19;Vicálvaro
+2021;junio;PAPEL-CARTON;20;San Blas - Canillejas
+2021;junio;PAPEL-CARTON;21;Barajas
+2021;junio;CARTON COMERCIAL;3;Retiro
+2021;junio;CARTON COMERCIAL;4;Salamanca
+2021;junio;CARTON COMERCIAL;5;Chamartín
+2021;junio;CARTON COMERCIAL;14;Moratalaz
+2021;junio;CARTON COMERCIAL;15;Ciudad Lineal
+2021;junio;CARTON COMERCIAL;16;Hortaleza
+2021;junio;CARTON COMERCIAL;19;Vicálvaro
+2021;junio;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;junio;CARTON COMERCIAL;21;Barajas
+2021;junio;RCD;3;Retiro
+2021;junio;RCD;4;Salamanca
+2021;junio;RCD;5;Chamartín
+2021;junio;RCD;14;Moratalaz
+2021;junio;RCD;15;Ciudad Lineal
+2021;junio;RCD;16;Hortaleza
+2021;junio;RCD;19;Vicálvaro
+2021;junio;RCD;20;San Blas - Canillejas
+2021;junio;RCD;21;Barajas
+2021;junio;PUNTOS LIMPIOS;3;Retiro
+2021;junio;PUNTOS LIMPIOS;5;Chamartín
+2021;junio;PUNTOS LIMPIOS;14;Moratalaz
+2021;junio;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;junio;PUNTOS LIMPIOS;16;Hortaleza
+2021;junio;PUNTOS LIMPIOS;19;Vicálvaro
+2021;junio;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;junio;PUNTOS LIMPIOS;21;Barajas
+2021;junio;RESTO;2;Arganzuela
+2021;junio;RESTO;11;Carabanchel
+2021;junio;RESTO;12;Usera
+2021;junio;RESTO;13;Puente de Vallecas
+2021;junio;RESTO;17;Villaverde
+2021;junio;RESTO;18;Villa de Vallecas
+2021;junio;ENVASES;2;Arganzuela
+2021;junio;ENVASES;11;Carabanchel
+2021;junio;ENVASES;12;Usera
+2021;junio;ENVASES;13;Puente de Vallecas
+2021;junio;ENVASES;17;Villaverde
+2021;junio;ENVASES;18;Villa de Vallecas
+2021;junio;VIDRIO;2;Arganzuela
+2021;junio;VIDRIO;11;Carabanchel
+2021;junio;VIDRIO;12;Usera
+2021;junio;VIDRIO;13;Puente de Vallecas
+2021;junio;VIDRIO;17;Villaverde
+2021;junio;VIDRIO;18;Villa de Vallecas
+2021;junio;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;junio;CLINICOS;12;Usera
+2021;junio;CLINICOS;13;Puente de Vallecas
+2021;junio;ORGANICA;2;Arganzuela
+2021;junio;ORGANICA;11;Carabanchel
+2021;junio;ORGANICA;12;Usera
+2021;junio;ORGANICA;13;Puente de Vallecas
+2021;junio;ORGANICA;17;Villaverde
+2021;junio;ORGANICA;18;Villa de Vallecas
+2021;junio;PAPEL-CARTON;2;Arganzuela
+2021;junio;PAPEL-CARTON;11;Carabanchel
+2021;junio;PAPEL-CARTON;12;Usera
+2021;junio;PAPEL-CARTON;13;Puente de Vallecas
+2021;junio;PAPEL-CARTON;17;Villaverde
+2021;junio;PAPEL-CARTON;18;Villa de Vallecas
+2021;junio;CARTON COMERCIAL;2;Arganzuela
+2021;junio;CARTON COMERCIAL;11;Carabanchel
+2021;junio;CARTON COMERCIAL;12;Usera
+2021;junio;CARTON COMERCIAL;13;Puente de Vallecas
+2021;junio;CARTON COMERCIAL;17;Villaverde
+2021;junio;RCD;2;Arganzuela
+2021;junio;RCD;11;Carabanchel
+2021;junio;RCD;12;Usera
+2021;junio;RCD;13;Puente de Vallecas
+2021;junio;RCD;17;Villaverde
+2021;junio;RCD;18;Villa de Vallecas
+2021;junio;PUNTOS LIMPIOS;2;Arganzuela
+2021;junio;PUNTOS LIMPIOS;11;Carabanchel
+2021;junio;PUNTOS LIMPIOS;12;Usera
+2021;junio;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;junio;PUNTOS LIMPIOS;17;Villaverde
+2021;junio;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;junio;ANIMALES MUERTOS;99;Sin Distrito
+2021;junio;PILAS;99;Sin Distrito
+2021;julio;RESTO;1;Centro
+2021;julio;RESTO;6;Tetuán
+2021;julio;RESTO;7;Chamberí
+2021;julio;RESTO;8;Fuencarral - El Pardo
+2021;julio;RESTO;9;Moncloa - Aravaca
+2021;julio;RESTO;10;Latina
+2021;julio;ENVASES;1;Centro
+2021;julio;ENVASES;6;Tetuán
+2021;julio;ENVASES;7;Chamberí
+2021;julio;ENVASES;8;Fuencarral - El Pardo
+2021;julio;ENVASES;9;Moncloa - Aravaca
+2021;julio;ENVASES;10;Latina
+2021;julio;VIDRIO;1;Centro
+2021;julio;VIDRIO;6;Tetuán
+2021;julio;VIDRIO;7;Chamberí
+2021;julio;VIDRIO;8;Fuencarral - El Pardo
+2021;julio;VIDRIO;9;Moncloa - Aravaca
+2021;julio;VIDRIO;10;Latina
+2021;julio;VIDRIO COMERCIAL;1;Centro
+2021;julio;CLINICOS;1;Centro
+2021;julio;CLINICOS;6;Tetuán
+2021;julio;CLINICOS;8;Fuencarral - El Pardo
+2021;julio;CLINICOS;9;Moncloa - Aravaca
+2021;julio;CLINICOS;10;Latina
+2021;julio;ORGANICA;1;Centro
+2021;julio;ORGANICA;6;Tetuán
+2021;julio;ORGANICA;7;Chamberí
+2021;julio;ORGANICA;8;Fuencarral - El Pardo
+2021;julio;ORGANICA;9;Moncloa - Aravaca
+2021;julio;ORGANICA;10;Latina
+2021;julio;PAPEL-CARTON;1;Centro
+2021;julio;PAPEL-CARTON;6;Tetuán
+2021;julio;PAPEL-CARTON;7;Chamberí
+2021;julio;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;julio;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;julio;PAPEL-CARTON;10;Latina
+2021;julio;CARTON COMERCIAL;1;Centro
+2021;julio;CARTON COMERCIAL;6;Tetuán
+2021;julio;CARTON COMERCIAL;7;Chamberí
+2021;julio;RCD;1;Centro
+2021;julio;RCD;6;Tetuán
+2021;julio;RCD;7;Chamberí
+2021;julio;RCD;8;Fuencarral - El Pardo
+2021;julio;RCD;9;Moncloa - Aravaca
+2021;julio;RCD;10;Latina
+2021;julio;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;julio;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;julio;PUNTOS LIMPIOS;10;Latina
+2021;julio;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;julio;RESTO;3;Retiro
+2021;julio;RESTO;4;Salamanca
+2021;julio;RESTO;5;Chamartín
+2021;julio;RESTO;14;Moratalaz
+2021;julio;RESTO;15;Ciudad Lineal
+2021;julio;RESTO;16;Hortaleza
+2021;julio;RESTO;19;Vicálvaro
+2021;julio;RESTO;20;San Blas - Canillejas
+2021;julio;RESTO;21;Barajas
+2021;julio;ENVASES;3;Retiro
+2021;julio;ENVASES;4;Salamanca
+2021;julio;ENVASES;5;Chamartín
+2021;julio;ENVASES;14;Moratalaz
+2021;julio;ENVASES;15;Ciudad Lineal
+2021;julio;ENVASES;16;Hortaleza
+2021;julio;ENVASES;19;Vicálvaro
+2021;julio;ENVASES;20;San Blas - Canillejas
+2021;julio;ENVASES;21;Barajas
+2021;julio;VIDRIO;3;Retiro
+2021;julio;VIDRIO;4;Salamanca
+2021;julio;VIDRIO;5;Chamartín
+2021;julio;VIDRIO;14;Moratalaz
+2021;julio;VIDRIO;15;Ciudad Lineal
+2021;julio;VIDRIO;16;Hortaleza
+2021;julio;VIDRIO;19;Vicálvaro
+2021;julio;VIDRIO;20;San Blas - Canillejas
+2021;julio;VIDRIO;21;Barajas
+2021;julio;VIDRIO COMERCIAL;4;Salamanca
+2021;julio;CLINICOS;3;Retiro
+2021;julio;CLINICOS;4;Salamanca
+2021;julio;CLINICOS;15;Ciudad Lineal
+2021;julio;ORGANICA;3;Retiro
+2021;julio;ORGANICA;4;Salamanca
+2021;julio;ORGANICA;5;Chamartín
+2021;julio;ORGANICA;14;Moratalaz
+2021;julio;ORGANICA;15;Ciudad Lineal
+2021;julio;ORGANICA;16;Hortaleza
+2021;julio;ORGANICA;19;Vicálvaro
+2021;julio;ORGANICA;20;San Blas - Canillejas
+2021;julio;ORGANICA;21;Barajas
+2021;julio;PAPEL-CARTON;3;Retiro
+2021;julio;PAPEL-CARTON;4;Salamanca
+2021;julio;PAPEL-CARTON;5;Chamartín
+2021;julio;PAPEL-CARTON;14;Moratalaz
+2021;julio;PAPEL-CARTON;15;Ciudad Lineal
+2021;julio;PAPEL-CARTON;16;Hortaleza
+2021;julio;PAPEL-CARTON;19;Vicálvaro
+2021;julio;PAPEL-CARTON;20;San Blas - Canillejas
+2021;julio;PAPEL-CARTON;21;Barajas
+2021;julio;CARTON COMERCIAL;3;Retiro
+2021;julio;CARTON COMERCIAL;4;Salamanca
+2021;julio;CARTON COMERCIAL;5;Chamartín
+2021;julio;CARTON COMERCIAL;14;Moratalaz
+2021;julio;CARTON COMERCIAL;15;Ciudad Lineal
+2021;julio;CARTON COMERCIAL;16;Hortaleza
+2021;julio;CARTON COMERCIAL;19;Vicálvaro
+2021;julio;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;julio;CARTON COMERCIAL;21;Barajas
+2021;julio;RCD;5;Chamartín
+2021;julio;RCD;14;Moratalaz
+2021;julio;RCD;15;Ciudad Lineal
+2021;julio;RCD;16;Hortaleza
+2021;julio;RCD;19;Vicálvaro
+2021;julio;RCD;20;San Blas - Canillejas
+2021;julio;RCD;21;Barajas
+2021;julio;PUNTOS LIMPIOS;3;Retiro
+2021;julio;PUNTOS LIMPIOS;5;Chamartín
+2021;julio;PUNTOS LIMPIOS;14;Moratalaz
+2021;julio;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;julio;PUNTOS LIMPIOS;16;Hortaleza
+2021;julio;PUNTOS LIMPIOS;19;Vicálvaro
+2021;julio;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;julio;PUNTOS LIMPIOS;21;Barajas
+2021;julio;RESTO;2;Arganzuela
+2021;julio;RESTO;11;Carabanchel
+2021;julio;RESTO;12;Usera
+2021;julio;RESTO;13;Puente de Vallecas
+2021;julio;RESTO;17;Villaverde
+2021;julio;RESTO;18;Villa de Vallecas
+2021;julio;ENVASES;2;Arganzuela
+2021;julio;ENVASES;11;Carabanchel
+2021;julio;ENVASES;12;Usera
+2021;julio;ENVASES;13;Puente de Vallecas
+2021;julio;ENVASES;17;Villaverde
+2021;julio;ENVASES;18;Villa de Vallecas
+2021;julio;VIDRIO;2;Arganzuela
+2021;julio;VIDRIO;11;Carabanchel
+2021;julio;VIDRIO;12;Usera
+2021;julio;VIDRIO;13;Puente de Vallecas
+2021;julio;VIDRIO;17;Villaverde
+2021;julio;VIDRIO;18;Villa de Vallecas
+2021;julio;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;julio;CLINICOS;12;Usera
+2021;julio;CLINICOS;13;Puente de Vallecas
+2021;julio;ORGANICA;2;Arganzuela
+2021;julio;ORGANICA;11;Carabanchel
+2021;julio;ORGANICA;12;Usera
+2021;julio;ORGANICA;13;Puente de Vallecas
+2021;julio;ORGANICA;17;Villaverde
+2021;julio;ORGANICA;18;Villa de Vallecas
+2021;julio;PAPEL-CARTON;2;Arganzuela
+2021;julio;PAPEL-CARTON;11;Carabanchel
+2021;julio;PAPEL-CARTON;12;Usera
+2021;julio;PAPEL-CARTON;13;Puente de Vallecas
+2021;julio;PAPEL-CARTON;17;Villaverde
+2021;julio;PAPEL-CARTON;18;Villa de Vallecas
+2021;julio;CARTON COMERCIAL;2;Arganzuela
+2021;julio;CARTON COMERCIAL;11;Carabanchel
+2021;julio;CARTON COMERCIAL;12;Usera
+2021;julio;CARTON COMERCIAL;13;Puente de Vallecas
+2021;julio;CARTON COMERCIAL;17;Villaverde
+2021;julio;PUNTOS LIMPIOS;2;Arganzuela
+2021;julio;PUNTOS LIMPIOS;11;Carabanchel
+2021;julio;PUNTOS LIMPIOS;12;Usera
+2021;julio;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;julio;PUNTOS LIMPIOS;17;Villaverde
+2021;julio;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;julio;ANIMALES MUERTOS;99;Sin Distrito
+2021;agosto;RESTO;1;Centro
+2021;agosto;RESTO;6;Tetuán
+2021;agosto;RESTO;7;Chamberí
+2021;agosto;RESTO;8;Fuencarral - El Pardo
+2021;agosto;RESTO;9;Moncloa - Aravaca
+2021;agosto;RESTO;10;Latina
+2021;agosto;ENVASES;1;Centro
+2021;agosto;ENVASES;6;Tetuán
+2021;agosto;ENVASES;7;Chamberí
+2021;agosto;ENVASES;8;Fuencarral - El Pardo
+2021;agosto;ENVASES;9;Moncloa - Aravaca
+2021;agosto;ENVASES;10;Latina
+2021;agosto;VIDRIO;1;Centro
+2021;agosto;VIDRIO;6;Tetuán
+2021;agosto;VIDRIO;7;Chamberí
+2021;agosto;VIDRIO;8;Fuencarral - El Pardo
+2021;agosto;VIDRIO;9;Moncloa - Aravaca
+2021;agosto;VIDRIO;10;Latina
+2021;agosto;VIDRIO COMERCIAL;1;Centro
+2021;agosto;CLINICOS;1;Centro
+2021;agosto;CLINICOS;6;Tetuán
+2021;agosto;CLINICOS;8;Fuencarral - El Pardo
+2021;agosto;CLINICOS;9;Moncloa - Aravaca
+2021;agosto;CLINICOS;10;Latina
+2021;agosto;ORGANICA;1;Centro
+2021;agosto;ORGANICA;6;Tetuán
+2021;agosto;ORGANICA;7;Chamberí
+2021;agosto;ORGANICA;8;Fuencarral - El Pardo
+2021;agosto;ORGANICA;9;Moncloa - Aravaca
+2021;agosto;ORGANICA;10;Latina
+2021;agosto;PAPEL-CARTON;1;Centro
+2021;agosto;PAPEL-CARTON;6;Tetuán
+2021;agosto;PAPEL-CARTON;7;Chamberí
+2021;agosto;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;agosto;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;agosto;PAPEL-CARTON;10;Latina
+2021;agosto;CARTON COMERCIAL;1;Centro
+2021;agosto;CARTON COMERCIAL;6;Tetuán
+2021;agosto;CARTON COMERCIAL;7;Chamberí
+2021;agosto;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;agosto;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;agosto;CARTON COMERCIAL;10;Latina
+2021;agosto;RCD;1;Centro
+2021;agosto;RCD;6;Tetuán
+2021;agosto;RCD;7;Chamberí
+2021;agosto;RCD;8;Fuencarral - El Pardo
+2021;agosto;RCD;9;Moncloa - Aravaca
+2021;agosto;RCD;10;Latina
+2021;agosto;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;agosto;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;agosto;PUNTOS LIMPIOS;10;Latina
+2021;agosto;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;agosto;RESTO;3;Retiro
+2021;agosto;RESTO;4;Salamanca
+2021;agosto;RESTO;5;Chamartín
+2021;agosto;RESTO;14;Moratalaz
+2021;agosto;RESTO;15;Ciudad Lineal
+2021;agosto;RESTO;16;Hortaleza
+2021;agosto;RESTO;19;Vicálvaro
+2021;agosto;RESTO;20;San Blas - Canillejas
+2021;agosto;RESTO;21;Barajas
+2021;agosto;ENVASES;3;Retiro
+2021;agosto;ENVASES;4;Salamanca
+2021;agosto;ENVASES;5;Chamartín
+2021;agosto;ENVASES;14;Moratalaz
+2021;agosto;ENVASES;15;Ciudad Lineal
+2021;agosto;ENVASES;16;Hortaleza
+2021;agosto;ENVASES;19;Vicálvaro
+2021;agosto;ENVASES;20;San Blas - Canillejas
+2021;agosto;ENVASES;21;Barajas
+2021;agosto;VIDRIO;3;Retiro
+2021;agosto;VIDRIO;4;Salamanca
+2021;agosto;VIDRIO;5;Chamartín
+2021;agosto;VIDRIO;14;Moratalaz
+2021;agosto;VIDRIO;15;Ciudad Lineal
+2021;agosto;VIDRIO;16;Hortaleza
+2021;agosto;VIDRIO;19;Vicálvaro
+2021;agosto;VIDRIO;20;San Blas - Canillejas
+2021;agosto;VIDRIO;21;Barajas
+2021;agosto;VIDRIO COMERCIAL;4;Salamanca
+2021;agosto;CLINICOS;3;Retiro
+2021;agosto;CLINICOS;4;Salamanca
+2021;agosto;CLINICOS;15;Ciudad Lineal
+2021;agosto;ORGANICA;3;Retiro
+2021;agosto;ORGANICA;4;Salamanca
+2021;agosto;ORGANICA;5;Chamartín
+2021;agosto;ORGANICA;14;Moratalaz
+2021;agosto;ORGANICA;15;Ciudad Lineal
+2021;agosto;ORGANICA;16;Hortaleza
+2021;agosto;ORGANICA;19;Vicálvaro
+2021;agosto;ORGANICA;20;San Blas - Canillejas
+2021;agosto;ORGANICA;21;Barajas
+2021;agosto;PAPEL-CARTON;3;Retiro
+2021;agosto;PAPEL-CARTON;4;Salamanca
+2021;agosto;PAPEL-CARTON;5;Chamartín
+2021;agosto;PAPEL-CARTON;14;Moratalaz
+2021;agosto;PAPEL-CARTON;15;Ciudad Lineal
+2021;agosto;PAPEL-CARTON;16;Hortaleza
+2021;agosto;PAPEL-CARTON;19;Vicálvaro
+2021;agosto;PAPEL-CARTON;20;San Blas - Canillejas
+2021;agosto;PAPEL-CARTON;21;Barajas
+2021;agosto;CARTON COMERCIAL;3;Retiro
+2021;agosto;CARTON COMERCIAL;4;Salamanca
+2021;agosto;CARTON COMERCIAL;5;Chamartín
+2021;agosto;CARTON COMERCIAL;14;Moratalaz
+2021;agosto;CARTON COMERCIAL;15;Ciudad Lineal
+2021;agosto;CARTON COMERCIAL;16;Hortaleza
+2021;agosto;CARTON COMERCIAL;19;Vicálvaro
+2021;agosto;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;agosto;CARTON COMERCIAL;21;Barajas
+2021;agosto;RCD;3;Retiro
+2021;agosto;RCD;4;Salamanca
+2021;agosto;RCD;5;Chamartín
+2021;agosto;RCD;14;Moratalaz
+2021;agosto;RCD;15;Ciudad Lineal
+2021;agosto;RCD;16;Hortaleza
+2021;agosto;RCD;19;Vicálvaro
+2021;agosto;RCD;20;San Blas - Canillejas
+2021;agosto;RCD;21;Barajas
+2021;agosto;PUNTOS LIMPIOS;3;Retiro
+2021;agosto;PUNTOS LIMPIOS;5;Chamartín
+2021;agosto;PUNTOS LIMPIOS;14;Moratalaz
+2021;agosto;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;agosto;PUNTOS LIMPIOS;16;Hortaleza
+2021;agosto;PUNTOS LIMPIOS;19;Vicálvaro
+2021;agosto;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;agosto;PUNTOS LIMPIOS;21;Barajas
+2021;agosto;RESTO;2;Arganzuela
+2021;agosto;RESTO;11;Carabanchel
+2021;agosto;RESTO;12;Usera
+2021;agosto;RESTO;13;Puente de Vallecas
+2021;agosto;RESTO;17;Villaverde
+2021;agosto;RESTO;18;Villa de Vallecas
+2021;agosto;ENVASES;2;Arganzuela
+2021;agosto;ENVASES;11;Carabanchel
+2021;agosto;ENVASES;12;Usera
+2021;agosto;ENVASES;13;Puente de Vallecas
+2021;agosto;ENVASES;17;Villaverde
+2021;agosto;ENVASES;18;Villa de Vallecas
+2021;agosto;VIDRIO;2;Arganzuela
+2021;agosto;VIDRIO;11;Carabanchel
+2021;agosto;VIDRIO;12;Usera
+2021;agosto;VIDRIO;13;Puente de Vallecas
+2021;agosto;VIDRIO;17;Villaverde
+2021;agosto;VIDRIO;18;Villa de Vallecas
+2021;agosto;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;agosto;CLINICOS;12;Usera
+2021;agosto;CLINICOS;13;Puente de Vallecas
+2021;agosto;ORGANICA;2;Arganzuela
+2021;agosto;ORGANICA;11;Carabanchel
+2021;agosto;ORGANICA;12;Usera
+2021;agosto;ORGANICA;13;Puente de Vallecas
+2021;agosto;ORGANICA;17;Villaverde
+2021;agosto;ORGANICA;18;Villa de Vallecas
+2021;agosto;PAPEL-CARTON;2;Arganzuela
+2021;agosto;PAPEL-CARTON;11;Carabanchel
+2021;agosto;PAPEL-CARTON;12;Usera
+2021;agosto;PAPEL-CARTON;13;Puente de Vallecas
+2021;agosto;PAPEL-CARTON;17;Villaverde
+2021;agosto;PAPEL-CARTON;18;Villa de Vallecas
+2021;agosto;CARTON COMERCIAL;2;Arganzuela
+2021;agosto;CARTON COMERCIAL;11;Carabanchel
+2021;agosto;CARTON COMERCIAL;12;Usera
+2021;agosto;CARTON COMERCIAL;13;Puente de Vallecas
+2021;agosto;CARTON COMERCIAL;17;Villaverde
+2021;agosto;RCD;2;Arganzuela
+2021;agosto;RCD;11;Carabanchel
+2021;agosto;RCD;12;Usera
+2021;agosto;RCD;13;Puente de Vallecas
+2021;agosto;RCD;17;Villaverde
+2021;agosto;RCD;18;Villa de Vallecas
+2021;agosto;PUNTOS LIMPIOS;2;Arganzuela
+2021;agosto;PUNTOS LIMPIOS;11;Carabanchel
+2021;agosto;PUNTOS LIMPIOS;12;Usera
+2021;agosto;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;agosto;PUNTOS LIMPIOS;17;Villaverde
+2021;agosto;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;agosto;ANIMALES MUERTOS;99;Sin Distrito
+2021;agosto;PILAS;99;Sin Distrito
+2021;septiembre;RESTO;1;Centro
+2021;septiembre;RESTO;6;Tetuán
+2021;septiembre;RESTO;7;Chamberí
+2021;septiembre;RESTO;8;Fuencarral - El Pardo
+2021;septiembre;RESTO;9;Moncloa - Aravaca
+2021;septiembre;RESTO;10;Latina
+2021;septiembre;ENVASES;1;Centro
+2021;septiembre;ENVASES;6;Tetuán
+2021;septiembre;ENVASES;7;Chamberí
+2021;septiembre;ENVASES;8;Fuencarral - El Pardo
+2021;septiembre;ENVASES;9;Moncloa - Aravaca
+2021;septiembre;ENVASES;10;Latina
+2021;septiembre;VIDRIO;1;Centro
+2021;septiembre;VIDRIO;6;Tetuán
+2021;septiembre;VIDRIO;7;Chamberí
+2021;septiembre;VIDRIO;8;Fuencarral - El Pardo
+2021;septiembre;VIDRIO;9;Moncloa - Aravaca
+2021;septiembre;VIDRIO;10;Latina
+2021;septiembre;VIDRIO COMERCIAL;1;Centro
+2021;septiembre;CLINICOS;1;Centro
+2021;septiembre;CLINICOS;6;Tetuán
+2021;septiembre;CLINICOS;8;Fuencarral - El Pardo
+2021;septiembre;CLINICOS;9;Moncloa - Aravaca
+2021;septiembre;CLINICOS;10;Latina
+2021;septiembre;ORGANICA;1;Centro
+2021;septiembre;ORGANICA;6;Tetuán
+2021;septiembre;ORGANICA;7;Chamberí
+2021;septiembre;ORGANICA;8;Fuencarral - El Pardo
+2021;septiembre;ORGANICA;9;Moncloa - Aravaca
+2021;septiembre;ORGANICA;10;Latina
+2021;septiembre;PAPEL-CARTON;1;Centro
+2021;septiembre;PAPEL-CARTON;6;Tetuán
+2021;septiembre;PAPEL-CARTON;7;Chamberí
+2021;septiembre;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;septiembre;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;septiembre;PAPEL-CARTON;10;Latina
+2021;septiembre;CARTON COMERCIAL;1;Centro
+2021;septiembre;CARTON COMERCIAL;6;Tetuán
+2021;septiembre;CARTON COMERCIAL;7;Chamberí
+2021;septiembre;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;septiembre;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;septiembre;CARTON COMERCIAL;10;Latina
+2021;septiembre;RCD;1;Centro
+2021;septiembre;RCD;6;Tetuán
+2021;septiembre;RCD;7;Chamberí
+2021;septiembre;RCD;8;Fuencarral - El Pardo
+2021;septiembre;RCD;9;Moncloa - Aravaca
+2021;septiembre;RCD;10;Latina
+2021;septiembre;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;septiembre;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;septiembre;PUNTOS LIMPIOS;10;Latina
+2021;septiembre;CONTENEDORES DE ROPA;8;Fuencarral - El Pardo
+2021;septiembre;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;septiembre;RESTO;3;Retiro
+2021;septiembre;RESTO;4;Salamanca
+2021;septiembre;RESTO;5;Chamartín
+2021;septiembre;RESTO;14;Moratalaz
+2021;septiembre;RESTO;15;Ciudad Lineal
+2021;septiembre;RESTO;16;Hortaleza
+2021;septiembre;RESTO;19;Vicálvaro
+2021;septiembre;RESTO;20;San Blas - Canillejas
+2021;septiembre;RESTO;21;Barajas
+2021;septiembre;ENVASES;3;Retiro
+2021;septiembre;ENVASES;4;Salamanca
+2021;septiembre;ENVASES;5;Chamartín
+2021;septiembre;ENVASES;14;Moratalaz
+2021;septiembre;ENVASES;15;Ciudad Lineal
+2021;septiembre;ENVASES;16;Hortaleza
+2021;septiembre;ENVASES;19;Vicálvaro
+2021;septiembre;ENVASES;20;San Blas - Canillejas
+2021;septiembre;ENVASES;21;Barajas
+2021;septiembre;VIDRIO;3;Retiro
+2021;septiembre;VIDRIO;4;Salamanca
+2021;septiembre;VIDRIO;5;Chamartín
+2021;septiembre;VIDRIO;14;Moratalaz
+2021;septiembre;VIDRIO;15;Ciudad Lineal
+2021;septiembre;VIDRIO;16;Hortaleza
+2021;septiembre;VIDRIO;19;Vicálvaro
+2021;septiembre;VIDRIO;20;San Blas - Canillejas
+2021;septiembre;VIDRIO;21;Barajas
+2021;septiembre;VIDRIO COMERCIAL;4;Salamanca
+2021;septiembre;CLINICOS;3;Retiro
+2021;septiembre;CLINICOS;4;Salamanca
+2021;septiembre;CLINICOS;15;Ciudad Lineal
+2021;septiembre;ORGANICA;3;Retiro
+2021;septiembre;ORGANICA;4;Salamanca
+2021;septiembre;ORGANICA;5;Chamartín
+2021;septiembre;ORGANICA;14;Moratalaz
+2021;septiembre;ORGANICA;15;Ciudad Lineal
+2021;septiembre;ORGANICA;16;Hortaleza
+2021;septiembre;ORGANICA;19;Vicálvaro
+2021;septiembre;ORGANICA;20;San Blas - Canillejas
+2021;septiembre;ORGANICA;21;Barajas
+2021;septiembre;PAPEL-CARTON;3;Retiro
+2021;septiembre;PAPEL-CARTON;4;Salamanca
+2021;septiembre;PAPEL-CARTON;5;Chamartín
+2021;septiembre;PAPEL-CARTON;14;Moratalaz
+2021;septiembre;PAPEL-CARTON;15;Ciudad Lineal
+2021;septiembre;PAPEL-CARTON;16;Hortaleza
+2021;septiembre;PAPEL-CARTON;19;Vicálvaro
+2021;septiembre;PAPEL-CARTON;20;San Blas - Canillejas
+2021;septiembre;PAPEL-CARTON;21;Barajas
+2021;septiembre;CARTON COMERCIAL;3;Retiro
+2021;septiembre;CARTON COMERCIAL;4;Salamanca
+2021;septiembre;CARTON COMERCIAL;5;Chamartín
+2021;septiembre;CARTON COMERCIAL;15;Ciudad Lineal
+2021;septiembre;CARTON COMERCIAL;16;Hortaleza
+2021;septiembre;CARTON COMERCIAL;19;Vicálvaro
+2021;septiembre;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;septiembre;CARTON COMERCIAL;21;Barajas
+2021;septiembre;RCD;3;Retiro
+2021;septiembre;RCD;4;Salamanca
+2021;septiembre;RCD;5;Chamartín
+2021;septiembre;RCD;14;Moratalaz
+2021;septiembre;RCD;15;Ciudad Lineal
+2021;septiembre;RCD;16;Hortaleza
+2021;septiembre;RCD;19;Vicálvaro
+2021;septiembre;RCD;20;San Blas - Canillejas
+2021;septiembre;RCD;21;Barajas
+2021;septiembre;PUNTOS LIMPIOS;3;Retiro
+2021;septiembre;PUNTOS LIMPIOS;5;Chamartín
+2021;septiembre;PUNTOS LIMPIOS;14;Moratalaz
+2021;septiembre;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;septiembre;PUNTOS LIMPIOS;16;Hortaleza
+2021;septiembre;PUNTOS LIMPIOS;19;Vicálvaro
+2021;septiembre;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;septiembre;PUNTOS LIMPIOS;21;Barajas
+2021;septiembre;RESTO;2;Arganzuela
+2021;septiembre;RESTO;11;Carabanchel
+2021;septiembre;RESTO;12;Usera
+2021;septiembre;RESTO;13;Puente de Vallecas
+2021;septiembre;RESTO;17;Villaverde
+2021;septiembre;RESTO;18;Villa de Vallecas
+2021;septiembre;ENVASES;2;Arganzuela
+2021;septiembre;ENVASES;11;Carabanchel
+2021;septiembre;ENVASES;12;Usera
+2021;septiembre;ENVASES;13;Puente de Vallecas
+2021;septiembre;ENVASES;17;Villaverde
+2021;septiembre;ENVASES;18;Villa de Vallecas
+2021;septiembre;VIDRIO;2;Arganzuela
+2021;septiembre;VIDRIO;11;Carabanchel
+2021;septiembre;VIDRIO;12;Usera
+2021;septiembre;VIDRIO;13;Puente de Vallecas
+2021;septiembre;VIDRIO;17;Villaverde
+2021;septiembre;VIDRIO;18;Villa de Vallecas
+2021;septiembre;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;septiembre;CLINICOS;12;Usera
+2021;septiembre;CLINICOS;13;Puente de Vallecas
+2021;septiembre;ORGANICA;2;Arganzuela
+2021;septiembre;ORGANICA;11;Carabanchel
+2021;septiembre;ORGANICA;12;Usera
+2021;septiembre;ORGANICA;13;Puente de Vallecas
+2021;septiembre;ORGANICA;17;Villaverde
+2021;septiembre;ORGANICA;18;Villa de Vallecas
+2021;septiembre;PAPEL-CARTON;2;Arganzuela
+2021;septiembre;PAPEL-CARTON;11;Carabanchel
+2021;septiembre;PAPEL-CARTON;12;Usera
+2021;septiembre;PAPEL-CARTON;13;Puente de Vallecas
+2021;septiembre;PAPEL-CARTON;17;Villaverde
+2021;septiembre;PAPEL-CARTON;18;Villa de Vallecas
+2021;septiembre;CARTON COMERCIAL;2;Arganzuela
+2021;septiembre;CARTON COMERCIAL;11;Carabanchel
+2021;septiembre;CARTON COMERCIAL;12;Usera
+2021;septiembre;CARTON COMERCIAL;13;Puente de Vallecas
+2021;septiembre;CARTON COMERCIAL;17;Villaverde
+2021;septiembre;RCD;2;Arganzuela
+2021;septiembre;RCD;11;Carabanchel
+2021;septiembre;RCD;12;Usera
+2021;septiembre;RCD;13;Puente de Vallecas
+2021;septiembre;RCD;17;Villaverde
+2021;septiembre;RCD;18;Villa de Vallecas
+2021;septiembre;PUNTOS LIMPIOS;2;Arganzuela
+2021;septiembre;PUNTOS LIMPIOS;11;Carabanchel
+2021;septiembre;PUNTOS LIMPIOS;12;Usera
+2021;septiembre;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;septiembre;PUNTOS LIMPIOS;17;Villaverde
+2021;septiembre;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;septiembre;ANIMALES MUERTOS;99;Sin Distrito
+2021;septiembre;PILAS;99;Sin Distrito
+2021;septiembre;CONTENEDORES DE ROPA;18;Villa de Vallecas
+2021;octubre;RESTO;1;Centro
+2021;octubre;RESTO;6;Tetuán
+2021;octubre;RESTO;7;Chamberí
+2021;octubre;RESTO;8;Fuencarral - El Pardo
+2021;octubre;RESTO;9;Moncloa - Aravaca
+2021;octubre;RESTO;10;Latina
+2021;octubre;ENVASES;1;Centro
+2021;octubre;ENVASES;6;Tetuán
+2021;octubre;ENVASES;7;Chamberí
+2021;octubre;ENVASES;8;Fuencarral - El Pardo
+2021;octubre;ENVASES;9;Moncloa - Aravaca
+2021;octubre;ENVASES;10;Latina
+2021;octubre;VIDRIO;1;Centro
+2021;octubre;VIDRIO;6;Tetuán
+2021;octubre;VIDRIO;7;Chamberí
+2021;octubre;VIDRIO;8;Fuencarral - El Pardo
+2021;octubre;VIDRIO;9;Moncloa - Aravaca
+2021;octubre;VIDRIO;10;Latina
+2021;octubre;VIDRIO COMERCIAL;1;Centro
+2021;octubre;CLINICOS;1;Centro
+2021;octubre;CLINICOS;6;Tetuán
+2021;octubre;CLINICOS;8;Fuencarral - El Pardo
+2021;octubre;CLINICOS;9;Moncloa - Aravaca
+2021;octubre;CLINICOS;10;Latina
+2021;octubre;ORGANICA;1;Centro
+2021;octubre;ORGANICA;6;Tetuán
+2021;octubre;ORGANICA;7;Chamberí
+2021;octubre;ORGANICA;8;Fuencarral - El Pardo
+2021;octubre;ORGANICA;9;Moncloa - Aravaca
+2021;octubre;ORGANICA;10;Latina
+2021;octubre;PAPEL-CARTON;1;Centro
+2021;octubre;PAPEL-CARTON;6;Tetuán
+2021;octubre;PAPEL-CARTON;7;Chamberí
+2021;octubre;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;octubre;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;octubre;PAPEL-CARTON;10;Latina
+2021;octubre;CARTON COMERCIAL;1;Centro
+2021;octubre;CARTON COMERCIAL;6;Tetuán
+2021;octubre;CARTON COMERCIAL;7;Chamberí
+2021;octubre;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;octubre;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;octubre;CARTON COMERCIAL;10;Latina
+2021;octubre;RCD;1;Centro
+2021;octubre;RCD;6;Tetuán
+2021;octubre;RCD;7;Chamberí
+2021;octubre;RCD;8;Fuencarral - El Pardo
+2021;octubre;RCD;9;Moncloa - Aravaca
+2021;octubre;RCD;10;Latina
+2021;octubre;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;octubre;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;octubre;PUNTOS LIMPIOS;10;Latina
+2021;octubre;CONTENEDORES DE ROPA;8;Fuencarral - El Pardo
+2021;octubre;CONTENEDORES DE ROPA;10;Latina
+2021;octubre;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;octubre;RESTO;3;Retiro
+2021;octubre;RESTO;4;Salamanca
+2021;octubre;RESTO;5;Chamartín
+2021;octubre;RESTO;14;Moratalaz
+2021;octubre;RESTO;15;Ciudad Lineal
+2021;octubre;RESTO;16;Hortaleza
+2021;octubre;RESTO;19;Vicálvaro
+2021;octubre;RESTO;20;San Blas - Canillejas
+2021;octubre;RESTO;21;Barajas
+2021;octubre;ENVASES;3;Retiro
+2021;octubre;ENVASES;4;Salamanca
+2021;octubre;ENVASES;5;Chamartín
+2021;octubre;ENVASES;14;Moratalaz
+2021;octubre;ENVASES;15;Ciudad Lineal
+2021;octubre;ENVASES;16;Hortaleza
+2021;octubre;ENVASES;19;Vicálvaro
+2021;octubre;ENVASES;20;San Blas - Canillejas
+2021;octubre;ENVASES;21;Barajas
+2021;octubre;VIDRIO;3;Retiro
+2021;octubre;VIDRIO;4;Salamanca
+2021;octubre;VIDRIO;5;Chamartín
+2021;octubre;VIDRIO;14;Moratalaz
+2021;octubre;VIDRIO;15;Ciudad Lineal
+2021;octubre;VIDRIO;16;Hortaleza
+2021;octubre;VIDRIO;19;Vicálvaro
+2021;octubre;VIDRIO;20;San Blas - Canillejas
+2021;octubre;VIDRIO;21;Barajas
+2021;octubre;VIDRIO COMERCIAL;4;Salamanca
+2021;octubre;CLINICOS;3;Retiro
+2021;octubre;CLINICOS;4;Salamanca
+2021;octubre;CLINICOS;15;Ciudad Lineal
+2021;octubre;ORGANICA;3;Retiro
+2021;octubre;ORGANICA;4;Salamanca
+2021;octubre;ORGANICA;5;Chamartín
+2021;octubre;ORGANICA;14;Moratalaz
+2021;octubre;ORGANICA;15;Ciudad Lineal
+2021;octubre;ORGANICA;16;Hortaleza
+2021;octubre;ORGANICA;19;Vicálvaro
+2021;octubre;ORGANICA;20;San Blas - Canillejas
+2021;octubre;ORGANICA;21;Barajas
+2021;octubre;PAPEL-CARTON;3;Retiro
+2021;octubre;PAPEL-CARTON;4;Salamanca
+2021;octubre;PAPEL-CARTON;5;Chamartín
+2021;octubre;PAPEL-CARTON;14;Moratalaz
+2021;octubre;PAPEL-CARTON;15;Ciudad Lineal
+2021;octubre;PAPEL-CARTON;16;Hortaleza
+2021;octubre;PAPEL-CARTON;19;Vicálvaro
+2021;octubre;PAPEL-CARTON;20;San Blas - Canillejas
+2021;octubre;PAPEL-CARTON;21;Barajas
+2021;octubre;CARTON COMERCIAL;3;Retiro
+2021;octubre;CARTON COMERCIAL;4;Salamanca
+2021;octubre;CARTON COMERCIAL;5;Chamartín
+2021;octubre;CARTON COMERCIAL;14;Moratalaz
+2021;octubre;CARTON COMERCIAL;15;Ciudad Lineal
+2021;octubre;CARTON COMERCIAL;16;Hortaleza
+2021;octubre;CARTON COMERCIAL;19;Vicálvaro
+2021;octubre;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;octubre;CARTON COMERCIAL;21;Barajas
+2021;octubre;RCD;3;Retiro
+2021;octubre;RCD;4;Salamanca
+2021;octubre;RCD;5;Chamartín
+2021;octubre;RCD;14;Moratalaz
+2021;octubre;RCD;15;Ciudad Lineal
+2021;octubre;RCD;16;Hortaleza
+2021;octubre;RCD;19;Vicálvaro
+2021;octubre;RCD;20;San Blas - Canillejas
+2021;octubre;RCD;21;Barajas
+2021;octubre;PUNTOS LIMPIOS;3;Retiro
+2021;octubre;PUNTOS LIMPIOS;5;Chamartín
+2021;octubre;PUNTOS LIMPIOS;14;Moratalaz
+2021;octubre;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;octubre;PUNTOS LIMPIOS;16;Hortaleza
+2021;octubre;PUNTOS LIMPIOS;19;Vicálvaro
+2021;octubre;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;octubre;PUNTOS LIMPIOS;21;Barajas
+2021;octubre;RESTO;2;Arganzuela
+2021;octubre;RESTO;11;Carabanchel
+2021;octubre;RESTO;12;Usera
+2021;octubre;RESTO;13;Puente de Vallecas
+2021;octubre;RESTO;17;Villaverde
+2021;octubre;RESTO;18;Villa de Vallecas
+2021;octubre;ENVASES;2;Arganzuela
+2021;octubre;ENVASES;11;Carabanchel
+2021;octubre;ENVASES;12;Usera
+2021;octubre;ENVASES;13;Puente de Vallecas
+2021;octubre;ENVASES;17;Villaverde
+2021;octubre;ENVASES;18;Villa de Vallecas
+2021;octubre;VIDRIO;2;Arganzuela
+2021;octubre;VIDRIO;11;Carabanchel
+2021;octubre;VIDRIO;12;Usera
+2021;octubre;VIDRIO;13;Puente de Vallecas
+2021;octubre;VIDRIO;17;Villaverde
+2021;octubre;VIDRIO;18;Villa de Vallecas
+2021;octubre;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;octubre;CLINICOS;12;Usera
+2021;octubre;CLINICOS;13;Puente de Vallecas
+2021;octubre;ORGANICA;2;Arganzuela
+2021;octubre;ORGANICA;11;Carabanchel
+2021;octubre;ORGANICA;12;Usera
+2021;octubre;ORGANICA;13;Puente de Vallecas
+2021;octubre;ORGANICA;17;Villaverde
+2021;octubre;ORGANICA;18;Villa de Vallecas
+2021;octubre;PAPEL-CARTON;2;Arganzuela
+2021;octubre;PAPEL-CARTON;11;Carabanchel
+2021;octubre;PAPEL-CARTON;12;Usera
+2021;octubre;PAPEL-CARTON;13;Puente de Vallecas
+2021;octubre;PAPEL-CARTON;17;Villaverde
+2021;octubre;PAPEL-CARTON;18;Villa de Vallecas
+2021;octubre;CARTON COMERCIAL;2;Arganzuela
+2021;octubre;CARTON COMERCIAL;11;Carabanchel
+2021;octubre;CARTON COMERCIAL;12;Usera
+2021;octubre;CARTON COMERCIAL;13;Puente de Vallecas
+2021;octubre;CARTON COMERCIAL;17;Villaverde
+2021;octubre;RCD;2;Arganzuela
+2021;octubre;RCD;11;Carabanchel
+2021;octubre;RCD;12;Usera
+2021;octubre;RCD;13;Puente de Vallecas
+2021;octubre;RCD;17;Villaverde
+2021;octubre;RCD;18;Villa de Vallecas
+2021;octubre;PUNTOS LIMPIOS;2;Arganzuela
+2021;octubre;PUNTOS LIMPIOS;11;Carabanchel
+2021;octubre;PUNTOS LIMPIOS;12;Usera
+2021;octubre;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;octubre;PUNTOS LIMPIOS;17;Villaverde
+2021;octubre;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;octubre;ANIMALES MUERTOS;99;Sin Distrito
+2021;octubre;PILAS;99;Sin Distrito
+2021;noviembre;RESTO;1;Centro
+2021;noviembre;RESTO;6;Tetuán
+2021;noviembre;RESTO;7;Chamberí
+2021;noviembre;RESTO;8;Fuencarral - El Pardo
+2021;noviembre;RESTO;9;Moncloa - Aravaca
+2021;noviembre;RESTO;10;Latina
+2021;noviembre;ENVASES;1;Centro
+2021;noviembre;ENVASES;6;Tetuán
+2021;noviembre;ENVASES;7;Chamberí
+2021;noviembre;ENVASES;8;Fuencarral - El Pardo
+2021;noviembre;ENVASES;9;Moncloa - Aravaca
+2021;noviembre;ENVASES;10;Latina
+2021;noviembre;VIDRIO;1;Centro
+2021;noviembre;VIDRIO;6;Tetuán
+2021;noviembre;VIDRIO;7;Chamberí
+2021;noviembre;VIDRIO;8;Fuencarral - El Pardo
+2021;noviembre;VIDRIO;9;Moncloa - Aravaca
+2021;noviembre;VIDRIO;10;Latina
+2021;noviembre;VIDRIO COMERCIAL;1;Centro
+2021;noviembre;CLINICOS;1;Centro
+2021;noviembre;CLINICOS;6;Tetuán
+2021;noviembre;CLINICOS;8;Fuencarral - El Pardo
+2021;noviembre;CLINICOS;9;Moncloa - Aravaca
+2021;noviembre;CLINICOS;10;Latina
+2021;noviembre;ORGANICA;1;Centro
+2021;noviembre;ORGANICA;6;Tetuán
+2021;noviembre;ORGANICA;7;Chamberí
+2021;noviembre;ORGANICA;8;Fuencarral - El Pardo
+2021;noviembre;ORGANICA;9;Moncloa - Aravaca
+2021;noviembre;ORGANICA;10;Latina
+2021;noviembre;PAPEL-CARTON;1;Centro
+2021;noviembre;PAPEL-CARTON;6;Tetuán
+2021;noviembre;PAPEL-CARTON;7;Chamberí
+2021;noviembre;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;noviembre;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;noviembre;PAPEL-CARTON;10;Latina
+2021;noviembre;CARTON COMERCIAL;1;Centro
+2021;noviembre;CARTON COMERCIAL;6;Tetuán
+2021;noviembre;CARTON COMERCIAL;7;Chamberí
+2021;noviembre;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;noviembre;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;noviembre;CARTON COMERCIAL;10;Latina
+2021;noviembre;RCD;1;Centro
+2021;noviembre;RCD;6;Tetuán
+2021;noviembre;RCD;7;Chamberí
+2021;noviembre;RCD;8;Fuencarral - El Pardo
+2021;noviembre;RCD;9;Moncloa - Aravaca
+2021;noviembre;RCD;10;Latina
+2021;noviembre;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;noviembre;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;noviembre;PUNTOS LIMPIOS;10;Latina
+2021;noviembre;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;noviembre;RESTO;3;Retiro
+2021;noviembre;RESTO;4;Salamanca
+2021;noviembre;RESTO;5;Chamartín
+2021;noviembre;RESTO;14;Moratalaz
+2021;noviembre;RESTO;15;Ciudad Lineal
+2021;noviembre;RESTO;16;Hortaleza
+2021;noviembre;RESTO;19;Vicálvaro
+2021;noviembre;RESTO;20;San Blas - Canillejas
+2021;noviembre;RESTO;21;Barajas
+2021;noviembre;ENVASES;3;Retiro
+2021;noviembre;ENVASES;4;Salamanca
+2021;noviembre;ENVASES;5;Chamartín
+2021;noviembre;ENVASES;14;Moratalaz
+2021;noviembre;ENVASES;15;Ciudad Lineal
+2021;noviembre;ENVASES;16;Hortaleza
+2021;noviembre;ENVASES;19;Vicálvaro
+2021;noviembre;ENVASES;20;San Blas - Canillejas
+2021;noviembre;ENVASES;21;Barajas
+2021;noviembre;VIDRIO;3;Retiro
+2021;noviembre;VIDRIO;4;Salamanca
+2021;noviembre;VIDRIO;5;Chamartín
+2021;noviembre;VIDRIO;14;Moratalaz
+2021;noviembre;VIDRIO;15;Ciudad Lineal
+2021;noviembre;VIDRIO;16;Hortaleza
+2021;noviembre;VIDRIO;19;Vicálvaro
+2021;noviembre;VIDRIO;20;San Blas - Canillejas
+2021;noviembre;VIDRIO;21;Barajas
+2021;noviembre;VIDRIO COMERCIAL;4;Salamanca
+2021;noviembre;CLINICOS;3;Retiro
+2021;noviembre;CLINICOS;4;Salamanca
+2021;noviembre;CLINICOS;15;Ciudad Lineal
+2021;noviembre;ORGANICA;3;Retiro
+2021;noviembre;ORGANICA;4;Salamanca
+2021;noviembre;ORGANICA;5;Chamartín
+2021;noviembre;ORGANICA;14;Moratalaz
+2021;noviembre;ORGANICA;15;Ciudad Lineal
+2021;noviembre;ORGANICA;16;Hortaleza
+2021;noviembre;ORGANICA;19;Vicálvaro
+2021;noviembre;ORGANICA;20;San Blas - Canillejas
+2021;noviembre;ORGANICA;21;Barajas
+2021;noviembre;PAPEL-CARTON;3;Retiro
+2021;noviembre;PAPEL-CARTON;4;Salamanca
+2021;noviembre;PAPEL-CARTON;5;Chamartín
+2021;noviembre;PAPEL-CARTON;14;Moratalaz
+2021;noviembre;PAPEL-CARTON;15;Ciudad Lineal
+2021;noviembre;PAPEL-CARTON;16;Hortaleza
+2021;noviembre;PAPEL-CARTON;19;Vicálvaro
+2021;noviembre;PAPEL-CARTON;20;San Blas - Canillejas
+2021;noviembre;PAPEL-CARTON;21;Barajas
+2021;noviembre;CARTON COMERCIAL;3;Retiro
+2021;noviembre;CARTON COMERCIAL;4;Salamanca
+2021;noviembre;CARTON COMERCIAL;5;Chamartín
+2021;noviembre;CARTON COMERCIAL;14;Moratalaz
+2021;noviembre;CARTON COMERCIAL;15;Ciudad Lineal
+2021;noviembre;CARTON COMERCIAL;16;Hortaleza
+2021;noviembre;CARTON COMERCIAL;19;Vicálvaro
+2021;noviembre;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;noviembre;CARTON COMERCIAL;21;Barajas
+2021;noviembre;RCD;3;Retiro
+2021;noviembre;RCD;4;Salamanca
+2021;noviembre;RCD;5;Chamartín
+2021;noviembre;RCD;14;Moratalaz
+2021;noviembre;RCD;15;Ciudad Lineal
+2021;noviembre;RCD;16;Hortaleza
+2021;noviembre;RCD;19;Vicálvaro
+2021;noviembre;RCD;20;San Blas - Canillejas
+2021;noviembre;RCD;21;Barajas
+2021;noviembre;PUNTOS LIMPIOS;3;Retiro
+2021;noviembre;PUNTOS LIMPIOS;5;Chamartín
+2021;noviembre;PUNTOS LIMPIOS;14;Moratalaz
+2021;noviembre;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;noviembre;PUNTOS LIMPIOS;16;Hortaleza
+2021;noviembre;PUNTOS LIMPIOS;19;Vicálvaro
+2021;noviembre;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;noviembre;PUNTOS LIMPIOS;21;Barajas
+2021;noviembre;RESTO;2;Arganzuela
+2021;noviembre;RESTO;11;Carabanchel
+2021;noviembre;RESTO;12;Usera
+2021;noviembre;RESTO;13;Puente de Vallecas
+2021;noviembre;RESTO;17;Villaverde
+2021;noviembre;RESTO;18;Villa de Vallecas
+2021;noviembre;ENVASES;2;Arganzuela
+2021;noviembre;ENVASES;11;Carabanchel
+2021;noviembre;ENVASES;12;Usera
+2021;noviembre;ENVASES;13;Puente de Vallecas
+2021;noviembre;ENVASES;17;Villaverde
+2021;noviembre;ENVASES;18;Villa de Vallecas
+2021;noviembre;VIDRIO;2;Arganzuela
+2021;noviembre;VIDRIO;11;Carabanchel
+2021;noviembre;VIDRIO;12;Usera
+2021;noviembre;VIDRIO;13;Puente de Vallecas
+2021;noviembre;VIDRIO;17;Villaverde
+2021;noviembre;VIDRIO;18;Villa de Vallecas
+2021;noviembre;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;noviembre;CLINICOS;12;Usera
+2021;noviembre;CLINICOS;13;Puente de Vallecas
+2021;noviembre;ORGANICA;2;Arganzuela
+2021;noviembre;ORGANICA;11;Carabanchel
+2021;noviembre;ORGANICA;12;Usera
+2021;noviembre;ORGANICA;13;Puente de Vallecas
+2021;noviembre;ORGANICA;17;Villaverde
+2021;noviembre;ORGANICA;18;Villa de Vallecas
+2021;noviembre;PAPEL-CARTON;2;Arganzuela
+2021;noviembre;PAPEL-CARTON;11;Carabanchel
+2021;noviembre;PAPEL-CARTON;12;Usera
+2021;noviembre;PAPEL-CARTON;13;Puente de Vallecas
+2021;noviembre;PAPEL-CARTON;17;Villaverde
+2021;noviembre;PAPEL-CARTON;18;Villa de Vallecas
+2021;noviembre;CARTON COMERCIAL;2;Arganzuela
+2021;noviembre;CARTON COMERCIAL;11;Carabanchel
+2021;noviembre;CARTON COMERCIAL;12;Usera
+2021;noviembre;CARTON COMERCIAL;13;Puente de Vallecas
+2021;noviembre;CARTON COMERCIAL;17;Villaverde
+2021;noviembre;RCD;2;Arganzuela
+2021;noviembre;RCD;11;Carabanchel
+2021;noviembre;RCD;12;Usera
+2021;noviembre;RCD;13;Puente de Vallecas
+2021;noviembre;RCD;17;Villaverde
+2021;noviembre;RCD;18;Villa de Vallecas
+2021;noviembre;PUNTOS LIMPIOS;2;Arganzuela
+2021;noviembre;PUNTOS LIMPIOS;11;Carabanchel
+2021;noviembre;PUNTOS LIMPIOS;12;Usera
+2021;noviembre;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;noviembre;PUNTOS LIMPIOS;17;Villaverde
+2021;noviembre;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;noviembre;ANIMALES MUERTOS;99;Sin Distrito
+2021;diciembre;RESTO;1;Centro
+2021;diciembre;RESTO;6;Tetuán
+2021;diciembre;RESTO;7;Chamberí
+2021;diciembre;RESTO;8;Fuencarral - El Pardo
+2021;diciembre;RESTO;9;Moncloa - Aravaca
+2021;diciembre;RESTO;10;Latina
+2021;diciembre;ENVASES;1;Centro
+2021;diciembre;ENVASES;6;Tetuán
+2021;diciembre;ENVASES;7;Chamberí
+2021;diciembre;ENVASES;8;Fuencarral - El Pardo
+2021;diciembre;ENVASES;9;Moncloa - Aravaca
+2021;diciembre;ENVASES;10;Latina
+2021;diciembre;VIDRIO;1;Centro
+2021;diciembre;VIDRIO;6;Tetuán
+2021;diciembre;VIDRIO;7;Chamberí
+2021;diciembre;VIDRIO;8;Fuencarral - El Pardo
+2021;diciembre;VIDRIO;9;Moncloa - Aravaca
+2021;diciembre;VIDRIO;10;Latina
+2021;diciembre;VIDRIO COMERCIAL;1;Centro
+2021;diciembre;CLINICOS;1;Centro
+2021;diciembre;CLINICOS;6;Tetuán
+2021;diciembre;CLINICOS;8;Fuencarral - El Pardo
+2021;diciembre;CLINICOS;9;Moncloa - Aravaca
+2021;diciembre;CLINICOS;10;Latina
+2021;diciembre;ORGANICA;1;Centro
+2021;diciembre;ORGANICA;6;Tetuán
+2021;diciembre;ORGANICA;7;Chamberí
+2021;diciembre;ORGANICA;8;Fuencarral - El Pardo
+2021;diciembre;ORGANICA;9;Moncloa - Aravaca
+2021;diciembre;ORGANICA;10;Latina
+2021;diciembre;PAPEL-CARTON;1;Centro
+2021;diciembre;PAPEL-CARTON;6;Tetuán
+2021;diciembre;PAPEL-CARTON;7;Chamberí
+2021;diciembre;PAPEL-CARTON;8;Fuencarral - El Pardo
+2021;diciembre;PAPEL-CARTON;9;Moncloa - Aravaca
+2021;diciembre;PAPEL-CARTON;10;Latina
+2021;diciembre;CARTON COMERCIAL;1;Centro
+2021;diciembre;CARTON COMERCIAL;6;Tetuán
+2021;diciembre;CARTON COMERCIAL;7;Chamberí
+2021;diciembre;CARTON COMERCIAL;8;Fuencarral - El Pardo
+2021;diciembre;CARTON COMERCIAL;9;Moncloa - Aravaca
+2021;diciembre;CARTON COMERCIAL;10;Latina
+2021;diciembre;RCD;1;Centro
+2021;diciembre;RCD;6;Tetuán
+2021;diciembre;RCD;7;Chamberí
+2021;diciembre;RCD;8;Fuencarral - El Pardo
+2021;diciembre;RCD;9;Moncloa - Aravaca
+2021;diciembre;RCD;10;Latina
+2021;diciembre;PUNTOS LIMPIOS;8;Fuencarral - El Pardo
+2021;diciembre;PUNTOS LIMPIOS;9;Moncloa - Aravaca
+2021;diciembre;PUNTOS LIMPIOS;10;Latina
+2021;diciembre;CAMA DE CABALLO;9;Moncloa - Aravaca
+2021;diciembre;RESTO;3;Retiro
+2021;diciembre;RESTO;4;Salamanca
+2021;diciembre;RESTO;5;Chamartín
+2021;diciembre;RESTO;14;Moratalaz
+2021;diciembre;RESTO;15;Ciudad Lineal
+2021;diciembre;RESTO;16;Hortaleza
+2021;diciembre;RESTO;19;Vicálvaro
+2021;diciembre;RESTO;20;San Blas - Canillejas
+2021;diciembre;RESTO;21;Barajas
+2021;diciembre;ENVASES;3;Retiro
+2021;diciembre;ENVASES;4;Salamanca
+2021;diciembre;ENVASES;5;Chamartín
+2021;diciembre;ENVASES;14;Moratalaz
+2021;diciembre;ENVASES;15;Ciudad Lineal
+2021;diciembre;ENVASES;16;Hortaleza
+2021;diciembre;ENVASES;19;Vicálvaro
+2021;diciembre;ENVASES;20;San Blas - Canillejas
+2021;diciembre;ENVASES;21;Barajas
+2021;diciembre;VIDRIO;3;Retiro
+2021;diciembre;VIDRIO;4;Salamanca
+2021;diciembre;VIDRIO;5;Chamartín
+2021;diciembre;VIDRIO;14;Moratalaz
+2021;diciembre;VIDRIO;15;Ciudad Lineal
+2021;diciembre;VIDRIO;16;Hortaleza
+2021;diciembre;VIDRIO;19;Vicálvaro
+2021;diciembre;VIDRIO;20;San Blas - Canillejas
+2021;diciembre;VIDRIO;21;Barajas
+2021;diciembre;VIDRIO COMERCIAL;4;Salamanca
+2021;diciembre;CLINICOS;3;Retiro
+2021;diciembre;CLINICOS;4;Salamanca
+2021;diciembre;CLINICOS;15;Ciudad Lineal
+2021;diciembre;ORGANICA;3;Retiro
+2021;diciembre;ORGANICA;4;Salamanca
+2021;diciembre;ORGANICA;5;Chamartín
+2021;diciembre;ORGANICA;14;Moratalaz
+2021;diciembre;ORGANICA;15;Ciudad Lineal
+2021;diciembre;ORGANICA;16;Hortaleza
+2021;diciembre;ORGANICA;19;Vicálvaro
+2021;diciembre;ORGANICA;20;San Blas - Canillejas
+2021;diciembre;ORGANICA;21;Barajas
+2021;diciembre;PAPEL-CARTON;3;Retiro
+2021;diciembre;PAPEL-CARTON;4;Salamanca
+2021;diciembre;PAPEL-CARTON;5;Chamartín
+2021;diciembre;PAPEL-CARTON;14;Moratalaz
+2021;diciembre;PAPEL-CARTON;15;Ciudad Lineal
+2021;diciembre;PAPEL-CARTON;16;Hortaleza
+2021;diciembre;PAPEL-CARTON;19;Vicálvaro
+2021;diciembre;PAPEL-CARTON;20;San Blas - Canillejas
+2021;diciembre;PAPEL-CARTON;21;Barajas
+2021;diciembre;CARTON COMERCIAL;3;Retiro
+2021;diciembre;CARTON COMERCIAL;4;Salamanca
+2021;diciembre;CARTON COMERCIAL;5;Chamartín
+2021;diciembre;CARTON COMERCIAL;14;Moratalaz
+2021;diciembre;CARTON COMERCIAL;15;Ciudad Lineal
+2021;diciembre;CARTON COMERCIAL;16;Hortaleza
+2021;diciembre;CARTON COMERCIAL;19;Vicálvaro
+2021;diciembre;CARTON COMERCIAL;20;San Blas - Canillejas
+2021;diciembre;CARTON COMERCIAL;21;Barajas
+2021;diciembre;RCD;3;Retiro
+2021;diciembre;RCD;4;Salamanca
+2021;diciembre;RCD;5;Chamartín
+2021;diciembre;RCD;14;Moratalaz
+2021;diciembre;RCD;15;Ciudad Lineal
+2021;diciembre;RCD;16;Hortaleza
+2021;diciembre;RCD;19;Vicálvaro
+2021;diciembre;RCD;20;San Blas - Canillejas
+2021;diciembre;RCD;21;Barajas
+2021;diciembre;PUNTOS LIMPIOS;3;Retiro
+2021;diciembre;PUNTOS LIMPIOS;5;Chamartín
+2021;diciembre;PUNTOS LIMPIOS;14;Moratalaz
+2021;diciembre;PUNTOS LIMPIOS;15;Ciudad Lineal
+2021;diciembre;PUNTOS LIMPIOS;16;Hortaleza
+2021;diciembre;PUNTOS LIMPIOS;19;Vicálvaro
+2021;diciembre;PUNTOS LIMPIOS;20;San Blas - Canillejas
+2021;diciembre;PUNTOS LIMPIOS;21;Barajas
+2021;diciembre;RESTO;2;Arganzuela
+2021;diciembre;RESTO;11;Carabanchel
+2021;diciembre;RESTO;12;Usera
+2021;diciembre;RESTO;13;Puente de Vallecas
+2021;diciembre;RESTO;17;Villaverde
+2021;diciembre;RESTO;18;Villa de Vallecas
+2021;diciembre;ENVASES;2;Arganzuela
+2021;diciembre;ENVASES;11;Carabanchel
+2021;diciembre;ENVASES;12;Usera
+2021;diciembre;ENVASES;13;Puente de Vallecas
+2021;diciembre;ENVASES;17;Villaverde
+2021;diciembre;ENVASES;18;Villa de Vallecas
+2021;diciembre;VIDRIO;2;Arganzuela
+2021;diciembre;VIDRIO;11;Carabanchel
+2021;diciembre;VIDRIO;12;Usera
+2021;diciembre;VIDRIO;13;Puente de Vallecas
+2021;diciembre;VIDRIO;17;Villaverde
+2021;diciembre;VIDRIO;18;Villa de Vallecas
+2021;diciembre;VIDRIO COMERCIAL;13;Puente de Vallecas
+2021;diciembre;CLINICOS;12;Usera
+2021;diciembre;CLINICOS;13;Puente de Vallecas
+2021;diciembre;ORGANICA;2;Arganzuela
+2021;diciembre;ORGANICA;11;Carabanchel
+2021;diciembre;ORGANICA;12;Usera
+2021;diciembre;ORGANICA;13;Puente de Vallecas
+2021;diciembre;ORGANICA;17;Villaverde
+2021;diciembre;ORGANICA;18;Villa de Vallecas
+2021;diciembre;PAPEL-CARTON;2;Arganzuela
+2021;diciembre;PAPEL-CARTON;11;Carabanchel
+2021;diciembre;PAPEL-CARTON;12;Usera
+2021;diciembre;PAPEL-CARTON;13;Puente de Vallecas
+2021;diciembre;PAPEL-CARTON;17;Villaverde
+2021;diciembre;PAPEL-CARTON;18;Villa de Vallecas
+2021;diciembre;CARTON COMERCIAL;2;Arganzuela
+2021;diciembre;CARTON COMERCIAL;11;Carabanchel
+2021;diciembre;CARTON COMERCIAL;12;Usera
+2021;diciembre;CARTON COMERCIAL;13;Puente de Vallecas
+2021;diciembre;CARTON COMERCIAL;17;Villaverde
+2021;diciembre;RCD;2;Arganzuela
+2021;diciembre;RCD;11;Carabanchel
+2021;diciembre;RCD;12;Usera
+2021;diciembre;RCD;13;Puente de Vallecas
+2021;diciembre;RCD;17;Villaverde
+2021;diciembre;RCD;18;Villa de Vallecas
+2021;diciembre;PUNTOS LIMPIOS;2;Arganzuela
+2021;diciembre;PUNTOS LIMPIOS;11;Carabanchel
+2021;diciembre;PUNTOS LIMPIOS;12;Usera
+2021;diciembre;PUNTOS LIMPIOS;13;Puente de Vallecas
+2021;diciembre;PUNTOS LIMPIOS;17;Villaverde
+2021;diciembre;PUNTOS LIMPIOS;18;Villa de Vallecas
+2021;diciembre;ANIMALES MUERTOS;99;Sin Distrito
+2021;diciembre;PILAS;99;Sin Distrito

@@ -296,8 +296,10 @@ logger.info("Ejecutando resumen")
     fun getOption(args: Array<String>): Int {
         var opt = -1
         if (args.size < 3 || args.size > 7) {
+
             logger.info("El comando introducido no tiene los campos necesarios")
             println("El formato del comando es el incorrecto")
+
         }
         if (args.size == 3) {
             logger.info("Leyendo comando")

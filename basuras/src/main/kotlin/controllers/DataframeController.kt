@@ -143,12 +143,13 @@ class DataframeController(
     }
 
     fun consultaEstadisticasDistrito(distrito: String): String {
-        return residuosData.groupBy("nombreDistrito", "mes", "residuo")
+        return residuosData.groupBy("nombreDistrito", "residuo")
             .filter { compararDistrito(distrito, it.nombreDistrito) }
             .aggregate {
                 max("toneladas") into "Maximo"
                 min("toneladas") into "Minimo"
                 mean("toneladas") into "Media"
+                std("toneladas") into "Desviacion"
             }.html()
 
     }

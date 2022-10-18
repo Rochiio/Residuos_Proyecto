@@ -31,7 +31,9 @@ object BasuraController {
 
 
     /**
-     * Revisa cúal es el comando elegido.
+     * Ejecuta el comando introducido como argumento y devuelve true si tiene exito, false si falla
+     * @param args Array<String>
+     * @return Boolean
      */
     fun executeCommand(args: Array<String>) : Boolean{
         var salida : Boolean
@@ -59,6 +61,7 @@ object BasuraController {
      */
     fun parser(origen: String, destino: String): Boolean {
 
+        logger.info("Ejecutando parseo")
         if (!checkPath(origen) || !checkPath(destino)) {
             println("Ruta destino o origen incorrectas. Por favor revisa que el directorio exista y esté bien escrito")
             return false
@@ -133,28 +136,54 @@ object BasuraController {
         return true
     }
 
+    /**
+     * Comprueba la cabecera del archivo csv con la cabecera necesaria para residuos
+     * @param s String
+     * @return Boolean
+     */
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)
     }
-
+    /**
+     * Comprueba la cabecera del archivo csv con la cabecera necesaria para contenedores
+     * @param s String
+     * @return Boolean
+     */
     fun cabeceraContenedores(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERACONTENEDOR)
     }
 
+    /**
+     * Lee el csv en file y devuelve una lista de ContenedorDTO
+     * @param file File
+     * @return List<ContenedorDTO>
+     */
     fun readContenedoresCsv(file: File): List<ContenedorDTO> {
         return contenedorMapper.readCSV(file.path)
     }
 
+    /**
+     * Lee el csv en file y devuelve una lista de ResiduosDTO
+     * @param file File
+     * @return List<ContenedorDTO>
+     */
     fun readResiduosCsv(file: File): List<ResiduosDTO> {
         return residuosMapper.readCsvResiduo(file.path)!!
     }
 
+    /**
+     * Realiza las consultas necesarias para contenedores y residuos leídos en origen. Devuelve true si tiene exito y false si falla
+     * @param origen String
+     * @param destino String
+     * @param distrito String
+     * @return Boolean
+     */
     fun resumen(origen: String, destino: String, distrito: String): Boolean {
         var contenedores: List<ContenedorDTO> = mutableListOf()
         var residuos: List<ResiduosDTO> = mutableListOf()
-
+logger.info("Ejecutando resumen")
         //Lectura de archivos
         if (checkPath(origen)) {
             if(!File(destino).exists())
@@ -162,6 +191,7 @@ object BasuraController {
             //primero busca csvs
             val csvs = retrieveCsv(origen)
             if (csvs.isNotEmpty()) {
+                logger.info("Leyendo archivos csv: $csvs")
                 for (f in csvs) {
                     val file = File(origen + File.separator + f.path)
 
@@ -175,6 +205,7 @@ object BasuraController {
 
             //ahora busca jsons
             if (contenedores.isEmpty()) {
+                logger.info("Leyendo contenedores desde JSon")
                 val json = retrieveJson(origen)
                 if (json.isNotEmpty()) {
                     for (f in json) {
@@ -185,6 +216,7 @@ object BasuraController {
                 }
             }
             if (residuos.isEmpty()) {
+                logger.info("Leyendo residuos desde JSon")
                 val json = retrieveJson(origen)
                 if (json.isNotEmpty()) {
                     for (f in json) {
@@ -201,6 +233,7 @@ object BasuraController {
 
             //ahora busca XML
             if (contenedores.isEmpty()) {
+                logger.info("Leyendo contenedores desde XML")
                 val xml = retrieveXml(origen)
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
@@ -211,6 +244,7 @@ object BasuraController {
                 }
             }
             if (residuos.isEmpty()) {
+                logger.info("Leyendo residuos desde XML")
                 val xml = retrieveXml(origen)
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
@@ -221,7 +255,7 @@ object BasuraController {
                 }
             }
         } else {
-            println("La ruta de destino o de origen no son correctas")
+            logger.info("La ruta de destino o de origen no son correctas")
             return false
         }
 
@@ -235,11 +269,14 @@ object BasuraController {
                 listContenedores, listResiduos
             )
             if (distrito == "") {
+                logger.info("Generando resumen en $destino")
+
                 HtmlDirectory.copyHtmlDataResumen(dataFrameController.resumen(), destino)
             } else {
                 if (listResiduos.any { collator.compare(distrito, it.nombreDistrito) == 0 }
                     && listContenedores.any { collator.compare(distrito, it.distrito) == 0 }
                 ) {
+                    logger.info("Generando resumen para $distrito en $destino")
                     HtmlDirectory.copyHtmlDataResumen(dataFrameController.resumenDistrito(distrito), destino)
                 } else {
                     println("No existe el distrito $distrito")
@@ -251,12 +288,19 @@ object BasuraController {
         return false
     }
 
+    /**
+     * Comprueba el comando recibido y la validez de los argumentos de entrada
+     * @param args Array<String>
+     * @return Int
+     */
     fun getOption(args: Array<String>): Int {
         var opt = -1
         if (args.size < 3 || args.size > 7) {
+            logger.info("El comando introducido no tiene los campos necesarios")
             println("El formato del comando es el incorrecto")
         }
         if (args.size == 3) {
+            logger.info("Leyendo comando")
             opt = when (args[0]) {
                 "parser" -> 1
                 "resumen" -> 2
@@ -270,12 +314,20 @@ object BasuraController {
         return opt
     }
 
-
+    /**
+     * Comprueba que el path existe y es un directorio
+     * @param path String
+     * @return Boolean
+     */
     fun checkPath(path: String): Boolean {
         return File(path).exists() && File(path).isDirectory
     }
 
-
+    /**
+     * Lista los archivos csv en directory y genera una lista con ellos
+     * @param directory String
+     * @return List<File>
+     */
     private fun retrieveCsv(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {
@@ -286,6 +338,11 @@ object BasuraController {
         return list
     }
 
+    /**
+     * Lista los archivos json en directory y genera una lista con ellos
+     * @param directory String
+     * @return List<File>
+     */
     fun retrieveJson(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {
@@ -295,6 +352,11 @@ object BasuraController {
         return list
     }
 
+    /**
+     * Lista los archivos xml en directory y genera una lista con ellos
+     * @param directory String
+     * @return List<File>
+     */
     fun retrieveXml(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {

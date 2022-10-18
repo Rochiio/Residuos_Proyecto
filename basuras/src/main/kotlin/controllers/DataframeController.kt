@@ -143,7 +143,7 @@ class DataframeController(
     }
 
     fun consultaEstadisticasDistrito(distrito: String): String {
-        return residuosData.groupBy("nombreDistrito", "residuo")
+        return residuosData.groupBy("nombreDistrito", "mes", "residuo")
             .filter { compararDistrito(distrito, it.nombreDistrito) }
             .aggregate {
                 max("toneladas") into "Maximo"
@@ -341,10 +341,9 @@ class DataframeController(
      * TODO Este es imposible
      */
     private fun consultaMediaContenedoresTipoDistrito(): String {
-        return contenedoresTipoDistrito.groupBy("distrito","tipoContenedor")
-            .aggregate {
-                mean("total") into "media"
-            }.sortBy("distrito").html()
+        return contenedoresData.groupBy("distrito", "tipoContenedor")
+            .aggregate { sum("cantidad") into "Total" }.aggregate { mean("Total") }.toDataFrame().html()
+
     }
 
 

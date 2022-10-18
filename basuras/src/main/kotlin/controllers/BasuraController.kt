@@ -62,10 +62,13 @@ object BasuraController {
     fun parser(origen: String, destino: String): Boolean {
 
         logger.info("Ejecutando parseo")
-        if (!checkPath(origen) || !checkPath(destino)) {
-            println("Ruta destino o origen incorrectas. Por favor revisa que el directorio exista y esté bien escrito")
+        if (!checkPath(origen)) {
+            println("Ruta origen incorrecta. Por favor revisa que el directorio exista y esté bien escrito")
             return false
         } else {
+            if(!File(destino).exists()){
+                Files.createDirectories(Path.of(destino))
+            }
             val list = File(origen).listFiles()
             if (list != null) {
                 if (list.isNotEmpty()) {
@@ -123,7 +126,6 @@ object BasuraController {
                                     println("La cabecera no coincide con residuos o con contenedores.")
                                     return false
                                 }
-                                return true
                             }
                         }
                     } else

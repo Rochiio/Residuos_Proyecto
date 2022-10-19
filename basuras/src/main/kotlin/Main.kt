@@ -10,11 +10,13 @@ import kotlin.system.measureTimeMillis
 fun main(args: Array<String>) {
     var bitacoraMapper = BitacoraMapper()
     var exito: Boolean
-    var tiempo = measureTimeMillis {
+
+    measureTimeMillis {
         exito = BasuraController.executeCommand(args)
+    }.also {
+        var bitacora = Bitacora(args[0], exito, it)
+        bitacoraMapper.makeBitacora(bitacora)
     }
 
-    var bitacora = Bitacora(args[0], exito, tiempo)
-    bitacoraMapper.makeBitacora(bitacora)
 
 }

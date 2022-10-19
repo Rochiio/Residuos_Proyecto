@@ -1,3 +1,5 @@
+
+
 package models
 
 import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
@@ -5,6 +7,7 @@ import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
 /**
  * Clase para la creación de contenedores.
  */
+
 @DataSchema
 data class Contenedor(
     val codigoSituacion: String,
@@ -23,9 +26,11 @@ data class Contenedor(
 )
 
 
+
 /**
  * Enum de tipos de contenedores.
  */
+
 enum class TipoContenedor(val tipo: String) {
     ENVASES("ENVASES"),
     ORGANICA("ORGANICA"),

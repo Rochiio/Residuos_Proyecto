@@ -5,6 +5,7 @@ import org.jetbrains.kotlinx.dataframe.annotations.DataSchema
 /**
  * Clase para la creación de residuos.
  */
+
 @DataSchema
 data class Residuos(
     val año: Short,

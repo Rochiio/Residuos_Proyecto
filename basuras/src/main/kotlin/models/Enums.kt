@@ -1,8 +1,6 @@
 package models
 
-/**
- * Enum de tipos de residuos.
- */
+
 enum class tipoResiduo(valor: String) {
     RESTO("RESTO"),
     ENVASES("ENVASES"),

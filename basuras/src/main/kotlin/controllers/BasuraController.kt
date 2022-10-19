@@ -7,6 +7,7 @@ import exceptions.InputFormatException
 import repositories.ListaResiduosDTO
 import mappers.ContenedorMapper
 import mappers.ResiduosMapper
+
 import mu.KotlinLogging
 import repositories.ListaContenedorDTO
 import utils.html.HtmlDirectory
@@ -16,6 +17,7 @@ import java.nio.file.Path
 import java.nio.file.Paths
 import java.text.Collator
 
+
 object BasuraController {
     const val CABECERARESIDUOS = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
     const val CABECERACONTENEDOR =
@@ -23,6 +25,7 @@ object BasuraController {
 
     val contenedorMapper: ContenedorMapper = ContenedorMapper()
     val residuosMapper: ResiduosMapper = ResiduosMapper()
+
 
 
     private val logger = KotlinLogging.logger {}
@@ -54,11 +57,13 @@ object BasuraController {
     }
 
 
+
     /**
      * Lee todos los csv en origen y los escribe en destino como csv, xml y json
      * @param origen String
      * @param destino String
      */
+
     fun parser(origen: String, destino: String): Boolean {
 
         logger.info("Ejecutando parseo")
@@ -69,6 +74,7 @@ object BasuraController {
             if(!File(destino).exists()){
                 Files.createDirectories(Path.of(destino))
             }
+
             val list = File(origen).listFiles()
             if (list != null) {
                 if (list.isNotEmpty()) {
@@ -122,6 +128,7 @@ object BasuraController {
                                         ListaResiduosDTO(residuos),
                                         "$destino${File.separator}residuos_parsed.csv"
                                     )
+
                                 } else {
                                     println("La cabecera no coincide con residuos o con contenedores.")
                                     return false
@@ -143,37 +150,45 @@ object BasuraController {
      * @param s String
      * @return Boolean
      */
+
     fun cabeceraResiduos(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERARESIDUOS)
     }
+
     /**
      * Comprueba la cabecera del archivo csv con la cabecera necesaria para contenedores
      * @param s String
      * @return Boolean
      */
+
     fun cabeceraContenedores(s: String): Boolean {
         val line = s.replace("\uFEFF", "")
         return (line == CABECERACONTENEDOR)
     }
+
 
     /**
      * Lee el csv en file y devuelve una lista de ContenedorDTO
      * @param file File
      * @return List<ContenedorDTO>
      */
+
     fun readContenedoresCsv(file: File): List<ContenedorDTO> {
         return contenedorMapper.readCSV(file.path)
     }
+
 
     /**
      * Lee el csv en file y devuelve una lista de ResiduosDTO
      * @param file File
      * @return List<ContenedorDTO>
      */
+
     fun readResiduosCsv(file: File): List<ResiduosDTO> {
         return residuosMapper.readCsvResiduo(file.path)!!
     }
+
 
     /**
      * Realiza las consultas necesarias para contenedores y residuos leídos en origen. Devuelve true si tiene exito y false si falla
@@ -182,18 +197,18 @@ object BasuraController {
      * @param distrito String
      * @return Boolean
      */
-    fun resumen(origen: String, destino: String, distrito: String): Boolean {
+
+    fun resumen(origen: String, destino: String, distrito : String): Boolean {
         var contenedores: List<ContenedorDTO> = mutableListOf()
         var residuos: List<ResiduosDTO> = mutableListOf()
-logger.info("Ejecutando resumen")
+
         //Lectura de archivos
-        if (checkPath(origen)) {
-            if(!File(destino).exists())
-                Files.createDirectories(Path.of(destino))
+        if (checkPath(origen) && checkPath(destino)) {
+
             //primero busca csvs
             val csvs = retrieveCsv(origen)
             if (csvs.isNotEmpty()) {
-                logger.info("Leyendo archivos csv: $csvs")
+
                 for (f in csvs) {
                     val file = File(origen + File.separator + f.path)
 
@@ -206,17 +221,20 @@ logger.info("Ejecutando resumen")
             }
 
             //ahora busca jsons
+
             if (contenedores.isEmpty()) {
                 logger.info("Leyendo contenedores desde JSon")
                 val json = retrieveJson(origen)
                 if (json.isNotEmpty()) {
                     for (f in json) {
                         if (f.readLines().drop(1).contains("contenedores")) {
+
                             contenedores = contenedorMapper.fromJson(f.path).contenedores
                         }
                     }
                 }
             }
+
             if (residuos.isEmpty()) {
                 logger.info("Leyendo residuos desde JSon")
                 val json = retrieveJson(origen)
@@ -226,6 +244,7 @@ logger.info("Ejecutando resumen")
                             try {
                                 residuos = residuosMapper.fromJson(f.path).residuos
                             } catch (e: FileFormatException) {
+
                                 println(e.message)
                             }
                         }
@@ -234,12 +253,14 @@ logger.info("Ejecutando resumen")
             }
 
             //ahora busca XML
+
             if (contenedores.isEmpty()) {
                 logger.info("Leyendo contenedores desde XML")
                 val xml = retrieveXml(origen)
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
                         if (f.readLines().first().contains("ListaContenedorDTO")) {
+
                             contenedores = contenedorMapper.fromXML(f.path).contenedores
                         }
                     }
@@ -251,11 +272,13 @@ logger.info("Ejecutando resumen")
                 if (xml.isNotEmpty()) {
                     for (f in xml) {
                         if (f.readLines().first().contains("ListaResiduosDto")) {
+
                             residuos = residuosMapper.fromXml(f.path)
                         }
                     }
                 }
             }
+
         } else {
             logger.info("La ruta de destino o de origen no son correctas")
             return false
@@ -305,6 +328,7 @@ logger.info("Ejecutando resumen")
         }
         if (args.size == 3) {
             logger.info("Leyendo comando")
+
             opt = when (args[0]) {
                 "parser" -> 1
                 "resumen" -> 2
@@ -318,20 +342,24 @@ logger.info("Ejecutando resumen")
         return opt
     }
 
+
     /**
      * Comprueba que el path existe y es un directorio
      * @param path String
      * @return Boolean
      */
+
     fun checkPath(path: String): Boolean {
         return File(path).exists() && File(path).isDirectory
     }
+
 
     /**
      * Lista los archivos csv en directory y genera una lista con ellos
      * @param directory String
      * @return List<File>
      */
+
     private fun retrieveCsv(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {
@@ -342,11 +370,14 @@ logger.info("Ejecutando resumen")
         return list
     }
 
+
     /**
      * Lista los archivos json en directory y genera una lista con ellos
      * @param directory String
      * @return List<File>
      */
+
+
     fun retrieveJson(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {
@@ -356,11 +387,13 @@ logger.info("Ejecutando resumen")
         return list
     }
 
+
     /**
      * Lista los archivos xml en directory y genera una lista con ellos
      * @param directory String
      * @return List<File>
      */
+
     fun retrieveXml(directory: String): List<File> {
         val list = mutableListOf<File>()
         if (checkPath(directory)) {

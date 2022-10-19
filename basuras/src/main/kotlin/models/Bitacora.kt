@@ -1,6 +1,7 @@
 package models
 
 import kotlinx.serialization.Serializable
+
 import kotlinx.serialization.encodeToString
 import mu.KotlinLogging
 import nl.adaptivity.xmlutil.serialization.XML
@@ -25,6 +26,7 @@ class Bitacora(
     private val id: String = UUID.randomUUID().toString()
     @XmlElement(true)
     private val instante: String = LocalDateTime.now().toString()
+
 
 }
 

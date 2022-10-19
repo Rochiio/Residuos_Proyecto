@@ -1,5 +1,6 @@
 package dto
 
+
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 
@@ -7,6 +8,7 @@ import nl.adaptivity.xmlutil.serialization.XmlElement
  * Clase de Data Transfer Object de Contenedor
  */
 @Serializable
+
 data class ContenedorDTO(
     @XmlElement(true)
     val codigoSituacion: String,
@@ -43,10 +45,12 @@ data class ContenedorDTO(
 ){
 
 
+
     /**
      * Para añadirlo a un csv.
      * @return contenedor en forma csv.
      */
+
     fun toLine() : String{
         return "$codigoSituacion;$tipoContenedor;$modeloContenedor;$descripcionModelo;" +
                 "$cantidad;" +

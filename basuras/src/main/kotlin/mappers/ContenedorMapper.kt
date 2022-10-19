@@ -2,19 +2,24 @@ package mappers
 
 import exceptions.CSVFormatException
 import dto.ContenedorDTO
+
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.Contenedor
+
 import models.TipoContenedor
 import mu.KotlinLogging
+
 import nl.adaptivity.xmlutil.serialization.XML
 import repositories.ListaContenedorDTO
 import java.io.File
 
+
 /**
  * Clase de mapeo de contenedores.
  */
+
 class ContenedorMapper {
     val cabecera = "Código Interno del Situad;Tipo Contenedor;Modelo;Descripcion Modelo;" +
             "Cantidad;Lote;Distrito;Barrio;Tipo Vía;Nombre;Número;COORDENADA X;" +
@@ -23,13 +28,16 @@ class ContenedorMapper {
     private val logger = KotlinLogging.logger {}
 
 
+
     /**
      * Convierte de ContenedorDTO a Contenedor
      * @param contenedorDto ContenedorDTO
      * @return Contenedor
      */
     fun fromDto(contenedorDto: ContenedorDTO): Contenedor {
+
         logger.info("Convirtiendo contenedor DTO a contenedor")
+
         return Contenedor(
             contenedorDto.codigoSituacion,
             tipoContenedor = TipoContenedor.valueOf(contenedorDto.tipoContenedor.replace("-", "")),
@@ -44,8 +52,10 @@ class ContenedorMapper {
             numeroVia = contenedorDto.numeroVia,
             coordenadas = Pair(contenedorDto.coordX, contenedorDto.coodY),
             coordenadasGeo = Pair(contenedorDto.longitud, contenedorDto.latitud)
+
         )
     }
+
 
 
     /**
@@ -54,7 +64,9 @@ class ContenedorMapper {
      * @return ContenedorDTO
      */
     fun toDTO(contenedor: Contenedor): ContenedorDTO {
+
         logger.info("Convirtiendo contenedor a contenedor DTO")
+
         return ContenedorDTO(
             contenedor.codigoSituacion,
             contenedor.tipoContenedor.tipo,
@@ -77,13 +89,17 @@ class ContenedorMapper {
     }
 
 
+
+
     /**
      * Lee un archivo CSV desde una ruta y devuelve una lista de DTO
      * @param ruta String
      * @return List<Contenedor>
      */
     fun readCSV(ruta: String): List<ContenedorDTO> {
+
         logger.info("Leyendo CSV")
+
         val file = File(ruta)
         if (!checkCSV(file))
             throw CSVFormatException()
@@ -96,13 +112,17 @@ class ContenedorMapper {
     }
 
 
+
+
     /**
      * Comprueba si el archivo tiene la cabecera correcta y si tiene contenido
      * @param file File
      * @return Boolean
      */
+
     fun checkCSV(file: File): Boolean {
         logger.info("Comprobando si el csv es correcto")
+
         val head = file.readLines().take(1).first().split(";").size == 16
         val lines = file.readLines().size > 1
         return head && lines
@@ -115,7 +135,9 @@ class ContenedorMapper {
      * @return Contenedor
      */
     private fun mapContenedorDTO(it: List<String>): ContenedorDTO {
+
         logger.info("Mappeando String a contenedor DTO")
+
         if (it.size != 16)
             throw CSVFormatException()
         else return ContenedorDTO(
@@ -142,12 +164,12 @@ class ContenedorMapper {
         )
     }
 
-
     /**
      * Escribe la lista de contenedores en la ruta indicada
      */
     fun writeCsv(contendores: List<ContenedorDTO>, ruta: String) {
         logger.info("Escribiendo CSV")
+
         var destino = ruta
         if (!ruta.endsWith(".csv"))
             destino += "contenedores-procesado.csv"
@@ -166,7 +188,9 @@ class ContenedorMapper {
      * @param contenedores List<ContenedorDTO>
      */
     fun toJson(ruta: String, contenedores: ListaContenedorDTO) {
+
         logger.info("Creando JSON e3 lista contenedor DTO")
+
         val json = Json { prettyPrint = true }
         File(ruta).writeText(json.encodeToString(contenedores))
     }
@@ -178,10 +202,13 @@ class ContenedorMapper {
      * @return List<ContenedorDTO>
      */
     fun fromJson(ruta: String): ListaContenedorDTO {
+
         logger.info("Conviertiendo JSON a lista contenedor DTO")
+
         val json = Json { prettyPrint = true }
         return Json.decodeFromString<ListaContenedorDTO>(File(ruta).readText())
     }
+
 
 
     /**
@@ -195,6 +222,7 @@ class ContenedorMapper {
         val file = File(ruta)
         file.writeText(xml.encodeToString(contenedores))
     }
+
 
 
     /**
@@ -227,7 +255,9 @@ class ContenedorMapper {
      * @return lista ya mappeada
      */
     fun mapListToDTO(contenedores: List<Contenedor>):List<ContenedorDTO>{
+
         logger.info("Mappear una lista de contenedores a una lista de contenedores DTO")
+
         return contenedores.map { toDTO(it) }.toList()
     }
 
@@ -238,7 +268,9 @@ class ContenedorMapper {
      * @return lista ya mappeada.
      */
     fun mapListFromDTO(contenedores: List<ContenedorDTO>):List<Contenedor>{
+
         logger.info("Mappear una lista de contenedores DTO a una lista de contenedores")
+
         return contenedores.map { fromDto(it) }.toList()
     }
 }

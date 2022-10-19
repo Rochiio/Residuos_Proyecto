@@ -198,7 +198,7 @@ object BasuraController {
      * @return Boolean
      */
 
-    fun resumen(origen: String, destino: String, distrito : String) {
+    fun resumen(origen: String, destino: String, distrito : String): Boolean {
         var contenedores: List<ContenedorDTO> = mutableListOf()
         var residuos: List<ResiduosDTO> = mutableListOf()
 

@@ -1,5 +1,8 @@
 package controllers
-
+/* Nombre: Mohamed Asidah Bchiri
+ * github: loopedMoha
+ * email: moha.as172@gmail.com
+ */
 import jetbrains.datalore.base.values.Color
 import jetbrains.letsPlot.*
 import jetbrains.letsPlot.Stat.identity
@@ -240,6 +243,7 @@ class DataframeController(
                 sum("toneladas") into "total_recogido"
             }.html()
     }
+
 
 
     /**

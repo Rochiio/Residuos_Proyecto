@@ -6,4 +6,25 @@
     <id>97ac2d19-4303-41c7-ada4-1960e7b535d3</id>
     <instante>2022-10-19T17:18:00.842486</instante>
   </Bitacora>
+  <Bitacora>
+    <opcionElegida>parser</opcionElegida>
+    <exito>true</exito>
+    <tiempo>22386</tiempo>
+    <id>78a6b963-6189-430b-9564-dcbcd8a7fbc0</id>
+    <instante>2022-10-19T20:00:26.692156</instante>
+  </Bitacora>
+  <Bitacora>
+    <opcionElegida>resumen</opcionElegida>
+    <exito>true</exito>
+    <tiempo>11770</tiempo>
+    <id>5615cf06-3fb6-4451-898e-d1ba9c23caef</id>
+    <instante>2022-10-19T20:02:39.161041</instante>
+  </Bitacora>
+  <Bitacora>
+    <opcionElegida>resumen</opcionElegida>
+    <exito>true</exito>
+    <tiempo>21784</tiempo>
+    <id>791b937d-987b-447a-89fa-7f6a2727fd5c</id>
+    <instante>2022-10-19T20:03:28.372982</instante>
+  </Bitacora>
 </ListaBitacora>

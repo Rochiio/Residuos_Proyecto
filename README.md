@@ -1,6 +1,7 @@
 <h1 align="center">Reciclaje y Limpieza de Madrid♻🗑</h1>
 <h2 align="center">Práctica Accesso a Datos</h2>
 
+
 <p  align="center" ><img src="./img/logo.png" width="500px"></p>
 
 <br>
@@ -8,6 +9,7 @@
 
 ### Autores:
 #### Rocío Palao Fernández🙋🏻‍♀️ & Mohamed Asidah Bchiri🙋🏽‍♂️
+
 
 <br>
 

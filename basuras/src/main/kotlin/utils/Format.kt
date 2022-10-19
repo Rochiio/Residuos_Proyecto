@@ -9,8 +9,6 @@ import java.util.*
  * Clase para formateo de datos
  */
 object Format {
-
-
     /**
      * Formatear una fecha a string, con un formato indicado.
      * @param date Fecha a formatear.

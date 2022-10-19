@@ -1,4 +1,8 @@
 package exceptions
 
-class InputFormatException(var s : String ) : Exception() {
+/**
+ * Excepcion con el formato de input.
+ */
+class InputFormatException : Exception() {
+
 }

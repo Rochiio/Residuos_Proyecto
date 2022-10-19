@@ -1,5 +1,6 @@
 package models
 
+
 enum class tipoResiduo(valor: String) {
     RESTO("RESTO"),
     ENVASES("ENVASES"),

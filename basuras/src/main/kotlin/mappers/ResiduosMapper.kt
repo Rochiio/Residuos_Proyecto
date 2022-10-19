@@ -8,6 +8,9 @@ import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
 import models.Residuos
 import models.tipoResiduo
+
+import mu.KotlinLogging
+
 import nl.adaptivity.xmlutil.serialization.XML
 import repositories.ListaResiduosDTO
 import java.io.File
@@ -16,11 +19,12 @@ import java.nio.file.Path
 
 /**
  * Clase de mapeo de Residuos
- * TODO pobrarlo con csv de prueba
- * TODO toJson jsonTo toXML xmlTo
  */
 class ResiduosMapper {
     val CABECERA = "Año;Mes;Lote;Residuo;Distrito;Nombre Distrito;Toneladas"
+
+
+    private val logger = KotlinLogging.logger {}
 
 
 
@@ -30,6 +34,9 @@ class ResiduosMapper {
      * @return el residuo en tipo residuo
      */
     fun fromDto(residuoDto: ResiduosDTO): Residuos{
+
+        logger.info("Pasando un residuoDto a Residuo")
+
         return Residuos(
             año = residuoDto.año,
             mes = residuoDto.mes,
@@ -41,12 +48,16 @@ class ResiduosMapper {
         )
     }
 
+
     /**
      * Pasar un residuo a residuoDto
      * @param residuo en tipo residuo
      * @return el residuo en tipo residuoDto
      */
     fun toDto(residuo: Residuos): ResiduosDTO{
+
+        logger.info("Pasando un residuo a residuoDTO")
+
         return ResiduosDTO(
             año = residuo.año,
             mes = residuo.mes,
@@ -63,8 +74,11 @@ class ResiduosMapper {
      * Comprueba si el archivo tiene la CABECERA correcta y si tiene contenido
      * @param file File
      * @return Boolean
-     */
-    private fun checkCSV(file: File): Boolean {
+*/
+
+    fun checkCSV(file: File): Boolean {
+        logger.info("Comprobando si el csv es correcto")
+
         val head = file.readLines().take(1).first().split(";").size == 7
         val lines = file.readLines().size > 1
         return head && lines
@@ -72,11 +86,13 @@ class ResiduosMapper {
 
 
     /**
-     * pasar un csv a residuos
+     * pasar un csv a residuos DTO
      * @param directorio directorio donde se encuentra el fichero csv
-     * @return lista de residuos.
+     * @return lista de residuos DTO.
      */
     fun readCsvResiduo(directorio: String): List<ResiduosDTO> {
+        logger.info("Leyendo csv a residuoDTO")
+
         val file = File(directorio)
         if (!checkCSV(file))
             throw CSVFormatException()
@@ -89,9 +105,14 @@ class ResiduosMapper {
 
 
     /**
-     * Escribe la lista de contenedores en la ruta indicada
+
+     * Escribe la lista de residuos en la ruta indicada
+     * @param residuoLista lista de residuos a pasar al csv.
+     * @param ruta directorio donde se va a almacenar el fichero csv.
      */
     fun writeCsvResiduo(residuoLista: ListaResiduosDTO, ruta: String) {
+        logger.info("Escribiendo lista de residuos DTO a CSV")
+
         var destino = ruta
         if (!ruta.endsWith(".csv"))
             destino += File.separator + "residuos-procesado.csv"
@@ -110,6 +131,9 @@ class ResiduosMapper {
      * @return residuo creado
      */
     private fun mapToResiduo(line:String):ResiduosDTO{
+
+        logger.info("Mappeando linea a ResiduoDTO")
+
         val campos = line.split(";")
         return ResiduosDTO(
             año = campos[0].toShort(),
@@ -129,6 +153,9 @@ class ResiduosMapper {
      * @return tipo de residuo
      */
     private fun toTipoResiduo(campo: String): tipoResiduo {
+
+        logger.info("Buscando tipo de residuo")
+
         var tipo:tipoResiduo = tipoResiduo.PILAS
         when(campo){
             "RESTO" -> tipo =tipoResiduo.RESTO
@@ -156,8 +183,11 @@ class ResiduosMapper {
      * @param listaResiduosDto lista de residuos para pasar a xml
      */
     fun toXml (directorio: String, listaResiduosDto: ListaResiduosDTO){
+
+        logger.info("Creando xml de lista de residuos DTO")
         val xml = XML { indentString = "  " }
-        val fichero = File(directorio + File.separator +  "intercambio.xml")
+        val fichero = File(directorio)
+
         fichero.writeText(xml.encodeToString(listaResiduosDto))
     }
 
@@ -167,6 +197,9 @@ class ResiduosMapper {
      * @return lista de residuos dto
      */
     fun fromXml(directorio: String):List<ResiduosDTO>{
+
+        logger.info("Pasando xml a lista de residuos DTO")
+
         val xml = XML {indentString = "  "}
         val fichero = File(directorio)
         return xml.decodeFromString<List<ResiduosDTO>>(fichero.readText())
@@ -180,19 +213,11 @@ class ResiduosMapper {
      * @param listaResiduosDto lista de residuos para pasar a json
      */
     fun toJson(ruta: String, listaResiduosDto: ListaResiduosDTO){
-        var fichero :File
-        if(ruta.endsWith(".json"))
-            fichero = File(ruta)
-        else
-            fichero = File(ruta + File.separator +"fichero.json")
 
-        if (!fichero.exists()) {
-            File("fichero.json").createNewFile()
-            fichero = File("fichero.json")
-        }
-
+        logger.info("Creando JSON de lista de residuos DTO")
         val json = Json { prettyPrint = true }
-        fichero.writeText(json.encodeToString(listaResiduosDto))
+        File(ruta).writeText(json.encodeToString(listaResiduosDto))
+
     }
 
 
@@ -202,13 +227,18 @@ class ResiduosMapper {
      * @return lista de residuos dto
      */
     fun fromJson(directorio: String):ListaResiduosDTO{
+
+        logger.info("Pasando de JSON a una lista de residuos DTO")
+
         var fichero = File(directorio)
 
         if(fichero.exists() && fichero.endsWith(".json")){
             val json = Json { prettyPrint = true }
-            return Json.decodeFromString<ListaResiduosDTO>(File(directorio).readText())
+
+            return json.decodeFromString<ListaResiduosDTO>(File(directorio).readText())
         }
-        throw FileFormatException("El archivo JSON no es correcto")
+        throw FileFormatException()
+
     }
 
 
@@ -218,6 +248,9 @@ class ResiduosMapper {
      * @return lista ya mappeada
      */
     fun mapListToDTO(residuos: List<Residuos>):List<ResiduosDTO>{
+
+        logger.info("Mappeando una lista de residuos a una lista de residuos DTO")
+
         return residuos.map { toDto(it) }.toList()
     }
 
@@ -228,6 +261,9 @@ class ResiduosMapper {
      * @return lista ya mappeada.
      */
     fun mapListFromDTO(residuosDto: List<ResiduosDTO>):List<Residuos>{
+
+        logger.info("Mappeando una lista de residuos DTO a una lista de residuos")
+
         return residuosDto.map { fromDto(it) }.toList()
     }
 }

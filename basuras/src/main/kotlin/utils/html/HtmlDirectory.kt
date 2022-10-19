@@ -1,5 +1,6 @@
 package utils.html
 
+import mu.KotlinLogging
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
@@ -14,8 +15,11 @@ import kotlin.io.path.Path
 object HtmlDirectory {
     private val generator = System.getProperty("user.dir")+"${File.separator}src${File.separator}" +
         "main${File.separator}resources${File.separator}resumenGenerator${File.separator}"
+
     private val img = generator+"img"+File.separator
     private val css = generator+"css"+File.separator
+
+    private val logger = KotlinLogging.logger {}
 
 
     /**
@@ -25,6 +29,7 @@ object HtmlDirectory {
      * @return verdadero o false si ha salido todo correctamente, para crear la bitácora.
      */
     fun copyHtmlDataResumen(html:String,directory: String):Boolean{
+        logger.info("Entrando en la copia de recursos html en destino")
         var fichero = File(directory+ File.separator +"resumen.html")
         var cssDestino = File(directory+File.separator+"css"+File.separator)
         var imgDestino = File(directory+File.separator+"img"+File.separator)
@@ -46,6 +51,7 @@ object HtmlDirectory {
      * TODO da problemas cuando existen las carpetas en el destino
      */
     private fun addData(html:String,fichero: File, cssDestino: File, imgDestino: File) {
+        logger.info("Añadiendo los datos al directorio destino")
         fichero.writeText(html)
 
         Files.walk(Paths.get(css))
@@ -82,6 +88,7 @@ object HtmlDirectory {
      * @param imgDestino carpeta destino de las imágenes.
      */
     private fun createDirectories(cssDestino:File, imgDestino:File){
+        logger.info("Revisando si exsiten los directorios destino")
         if (!cssDestino.exists()) { cssDestino.mkdir() }
         if (!imgDestino.exists()) { imgDestino.mkdir() }
 

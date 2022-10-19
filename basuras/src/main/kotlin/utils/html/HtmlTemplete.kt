@@ -1,5 +1,10 @@
 package utils.html
 
+import mu.KotlinLogging
+
+/**
+ * Clase para la generación del html.
+ */
 class HtmlTemplete(
     //Variables iguales
     private val distrito: String,
@@ -15,12 +20,15 @@ class HtmlTemplete(
     private val sumaRecogidoDistrito: String="",
     private val porDistritoTipoResiduoCantidad: String=""
 ) {
+    private val logger = KotlinLogging.logger {}
+
 
     /**
      * Generación html para la opción RESUMEN
      * @return string con el html ya generado.
      */
     fun generateHtmlResumen():String {
+        logger.info("Generando Html de RESUMEN")
         return """
             <!DOCTYPE html>
             <html lang="en">
@@ -94,6 +102,7 @@ class HtmlTemplete(
          * @return string con el html ya generado.
          */
         fun generateHtmlResumenDistrito(): String {
+            logger.info("Generando html de RESUMEN DISTRITO")
             return """
             <!DOCTYPE html>
         <html lang="en">

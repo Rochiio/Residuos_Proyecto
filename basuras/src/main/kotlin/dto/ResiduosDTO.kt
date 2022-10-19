@@ -3,6 +3,9 @@ package dto
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
 
+/**
+ * Clase de Data Transfer Object de Residuos
+ */
 @Serializable
 data class ResiduosDTO(
     @XmlElement(true)
@@ -21,6 +24,11 @@ data class ResiduosDTO(
     val toneladas: Float
 ) {
 
+
+    /**
+     * Para añadirlo a un csv.
+     * @return residuo en forma csv.
+     */
     fun toLine() : String{
         return "$año;$mes;$lote;$residuo;$distrito;$nombreDistrito;$toneladas"
     }
